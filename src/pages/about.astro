@@ -1,0 +1,171 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Heading from "@/components/common/Heading.astro";
+import Text from "@/components/common/Text.astro";
+import { Icon } from "astro-icon/components";
+
+const creadores = [
+  {
+    nombre: "Dr. Gato",
+    usuario: "@naranjoso",
+    rol: "Desarrollo y Arquitectura",
+    foto_url:
+      "/naranjoso.webp",
+    bio: "Gracias, me gusta el dinero",
+  },
+  {
+    nombre: "Flan",
+    usuario: "@trika",
+    rol: "Diseño e Investigación",
+    foto_url:
+      "/trika.webp",
+    bio: "Flusheen :3",
+  },
+];
+
+const principios = [
+  {
+    icono: "mdi:scale-balance",
+    titulo: "Independencia Total",
+    desc: "No recibimos financiamiento de ningún partido político, candidato o entidad gubernamental. Nuestro único compromiso es con el elector.",
+  },
+  {
+    icono: "mdi:database-search",
+    titulo: "Datos Abiertos",
+    desc: "Toda la información mostrada proviene de fuentes oficiales (Voto informado JNE, periódicos reconocidos) y es procesada para ser entendible, no alterada.",
+  },
+  {
+    icono: "mdi:code-tags",
+    titulo: "Código Abierto",
+    desc: "Creemos en la transparencia tecnológica. El código que hace funcionar a Chapa tu Presi está disponible para ser auditado por cualquier ciudadano.",
+  },
+];
+---
+
+<Layout title="Sobre el Proyecto - Chapa tu Presi">
+  <header
+    class="bg-stone-50 dark:bg-stone-950 pt-32 pb-20 border-b border-stone-200 dark:border-stone-800"
+  >
+    <div class="max-w-4xl mx-auto px-8 text-center space-y-8">
+      <Heading
+        level="h1"
+        className="text-4xl md:text-5xl font-black tracking-tighter"
+      >
+        El voto informado no debería ser un <span
+          class="text-roof-terracotta-600">privilegio</span
+        >.
+      </Heading>
+      <Text class="text-lg text-stone-600 dark:text-stone-400 leading-relaxed">
+        <strong>Chapa tu Presi</strong> es una iniciativa ciudadana nacida del hartazgo.
+        Transformamos los PDFs burocráticos y la opacidad estatal en información clara,
+        rápida y accesible para las Elecciones Generales 2026.
+      </Text>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-8 py-20 space-y-32">
+    <section class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <Heading level="h2" className="text-3xl mb-4">Lo que nos mueve</Heading>
+        <Text
+          >Las reglas bajo las cuales construimos y mantenemos esta plataforma.</Text
+        >
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {
+          principios.map((p) => (
+            <div class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-8 rounded-3xl shadow-sm hover:-translate-y-2 transition-transform">
+              <div class="w-14 h-14 bg-stone-100 dark:bg-stone-800 rounded-2xl flex items-center justify-center mb-6">
+                <Icon name={p.icono} class="w-8 h-8 text-roof-terracotta-600" />
+              </div>
+              <h3 class="font-black text-xl mb-3 dark:text-white">
+                {p.titulo}
+              </h3>
+              <p class="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
+                {p.desc}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <Heading level="h2" className="text-3xl mb-4">El Equipo</Heading>
+        <Text
+          >Dos ciudadanos con internet y ganas de que las cosas cambien.</Text
+        >
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        {
+          creadores.map((creador) => (
+            <div class="bg-stone-50 dark:bg-stone-900/50 border border-stone-200 dark:border-stone-800 rounded-4xl p-8 md:p-10 flex flex-col items-center text-center group">
+              <div class="w-32 h-32 mb-6 relative">
+                <div class="absolute inset-0 bg-roof-terracotta-500 blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 rounded-full" />
+                <img
+                  src={creador.foto_url}
+                  alt={creador.nombre}
+                  class="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-stone-800 shadow-lg grayscale group-hover:grayscale-0 transition-all duration-500"
+                />
+              </div>
+
+              <h3 class="text-2xl font-black dark:text-white mb-1">
+                {creador.nombre}
+              </h3>
+              <p class="text-sm font-bold text-roof-terracotta-600 mb-2">
+                {creador.rol}
+              </p>
+              <p class="text-[10px] font-black uppercase tracking-widest text-stone-400 mb-6 bg-stone-200 dark:bg-stone-800 px-3 py-1 rounded-full">
+                {creador.usuario}
+              </p>
+
+              <p class="text-stone-600 dark:text-stone-400 mb-8 italic">
+                "{creador.bio}"
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section
+      class="max-w-4xl mx-auto bg-roof-terracotta-600 text-white rounded-[3rem] p-12 text-center relative overflow-hidden shadow-2xl"
+    >
+      <div class="absolute inset-0 opacity-10">
+        <Icon
+          name="mdi:code-braces"
+          class="w-120 h-120 absolute -top-20 -right-20 text-white transform rotate-12"
+        />
+      </div>
+
+      <div class="relative z-10 space-y-8">
+        <Heading level="h2" className="text-4xl text-white"
+          >¿Encontraste un error o quieres ayudar?</Heading
+        >
+        <p class="text-roof-terracotta-100 text-lg max-w-2xl mx-auto">
+          Este proyecto está en constante evolución. Si detectas un dato
+          desactualizado o eres desarrollador/a y quieres sumar fuerzas,
+          escríbenos.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+          <a
+            href="mailto:contacto@chapatupresi.pe"
+            class="bg-white text-roof-terracotta-700 font-black px-8 py-4 rounded-2xl hover:scale-105 transition-transform flex items-center justify-center gap-2 shadow-lg"
+          >
+            <Icon name="mdi:email" class="w-5 h-5" /> MANDAR UN CORREO
+          </a>
+          <a
+            href="https://github.com/drgatooo/ChapaTuPresi"
+            target="_blank"
+            class="bg-roof-terracotta-800 text-white font-black px-8 py-4 rounded-2xl hover:bg-roof-terracotta-900 transition-colors flex items-center justify-center gap-2"
+          >
+            <Icon name="mdi:github" class="w-5 h-5" /> VER CÓDIGO FUENTE
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

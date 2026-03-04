@@ -1,0 +1,70 @@
+---
+import Text from "../common/Text.astro";
+import Heading from "../common/Heading.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<section
+  class="max-w-7xl w-full mx-auto px-8 py-12 bg-livid-brown-600/10 xl:rounded-2xl"
+>
+  <div class="grid gap-6 grid-cols-1 lg:grid-cols-2">
+    <div>
+      <Heading level="h2" className="mb-4"
+        >Regreso de la Bicameralidad:<br />¿Por qué importa?</Heading
+      >
+      <Text>
+        Después de más de 30 años, el Perú recupera su sistema bicameral. Ahora
+        tu voto elegirá a dos grupos distintos de congresistas con funciones
+        diferentes.
+      </Text>
+      <br />
+      <div class="space-y-4">
+        <div
+          class={`p-5 rounded-3xl border flex gap-4 transition-all hover:shadow-lg dark:bg-stone-900 dark:border-stone-800 bg-white border-white shadow-sm`}
+        >
+          <div
+            class="w-12 h-12 shrink-0 bg-red-600 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-red-600/30"
+          >
+            <Icon name="mdi:award" size={24} />
+          </div>
+          <div>
+            <Text class="font-bold text-lg">Senado (60 Miembros)</Text>
+            <Text class="text-xs text-slate-500">
+              Revisión de leyes, elección de Defensor del Pueblo, TC y
+              ratificación de altos mandos.
+            </Text>
+          </div>
+        </div>
+
+        <div
+          class={`p-5 rounded-3xl border flex gap-4 transition-all hover:shadow-lg dark:bg-stone-900 dark:border-stone-800 bg-white border-white shadow-sm`}
+        >
+          <div
+            class="w-12 h-12 shrink-0 bg-blue-600 text-white rounded-2xl flex items-center justify-center shadow-lg shadow-blue-600/30"
+          >
+            <Icon name="mdi:users" size={24} />
+          </div>
+          <div>
+            <Text class="font-bold text-lg">
+              Cámara de Diputados (130 Miembros)
+            </Text>
+            <Text class="text-xs">
+              Iniciativa legislativa, interpelación a ministros y fiscalización
+              directa.
+            </Text>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full h-full">
+      <iframe
+        class="w-full aspect-video rounded-xl"
+        frameborder="0"
+        src="https://www.youtube-nocookie.com/embed/XFfO4mYDd-Y?si=i0piHwbad1ys40Ku"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</section>

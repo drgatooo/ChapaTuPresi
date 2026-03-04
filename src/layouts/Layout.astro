@@ -1,0 +1,165 @@
+---
+import "@fontsource/merriweather/400"; // Normal
+import "@fontsource/merriweather/700"; // Bold
+import "@fontsource/merriweather/900"; // Black
+import "../styles/global.css";
+import Text from "@/components/common/Text.astro";
+import { Icon } from "astro-icon/components";
+import Heading from "@/components/common/Heading.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  color?: string;
+}
+
+const { title, description = "Default description", color } = Astro.props;
+
+const isRoot = Astro.url.pathname === "/";
+const isSearchOrRoot =
+  Astro.url.pathname === "/" || Astro.url.pathname === "/buscador";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-stone-50 dark:bg-stone-950">
+    <nav
+      class="flex items-center gap-8 justify-between w-full border-b-2 px-5 border-stone-200 dark:border-stone-800"
+      style={`background-color: ${color ? color + "11" : "var(--color-stone-500/10)"};`}
+    >
+      <div class="flex gap-4 items-center py-4">
+        <Icon
+          name="mdi:chevron-left"
+          class={`w-6 h-6 text-stone-400 hover:text-stone-600 transition-colors ${isRoot ? "hidden" : ""}`}
+          onclick={"history.back()"}
+        />
+        <Text
+          tag="a"
+          href="/"
+          class="text-lg font-bold text-stone-800 dark:text-stone-200"
+        >
+          <img src="/logo.png" alt="Logo" class="w-8 h-8 inline-block mr-2" />
+          <span class="hidden md:inline">Chapa tu Presi</span>
+        </Text>
+      </div>
+      <div class="py-2 w-max flex">
+        <!-- search bar button (redirect to /buscador) -->
+        <Text
+          tag="a"
+          href="/buscador"
+          class={`${isSearchOrRoot ? "hidden" : ""} flex items-center gap-1 text-stone-400 transition-colors bg-stone-500/30 hover:bg-stone-500/20 px-8 w-full py-2 rounded-full`}
+        >
+          <Icon name="mdi:magnify" class="w-5 h-5" />
+          <span class="hidden sm:inline">Buscar</span>
+        </Text>
+      </div>
+      <div class="flex items-center gap-8 py-4">
+        <Text tag="a" class="uppercase tracking-widest text-xs font-bold hover:text-livid-brown-600" href="/diccionario">
+          <Icon name="mdi:book-open-page-variant-outline" class="w-5 h-5 md:hidden" />
+          <span class="md:inline hidden">
+            Diccionario (beta)
+          </span>
+        </Text>
+        <Text tag="a" class="uppercase tracking-widest text-xs font-bold hover:text-livid-brown-600" href="/about">
+          <Icon name="mdi:information-outline" class="w-5 h-5 md:hidden" />
+          <span class="hidden md:inline">Acerca de</span>
+        </Text>
+      </div>
+    </nav>
+    <slot />
+    <footer
+      class={`pt-20 pb-10 border-t dark:bg-stone-950 dark:border-stone-800 bg-white border-stone-200`}
+    >
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-2 mb-6">
+              <div class="bg-stone-500/10 p-1 rounded-lg">
+                <img src="/logo.png" alt="Logo" class="w-6 h-6" />
+              </div>
+              <h1 class="text-xl font-black dark:text-white">
+                Chapa tu <span class="text-red-600">Presi</span>
+              </h1>
+            </div>
+            <p class="text-stone-500 text-sm max-w-sm mb-6 leading-relaxed">
+              Plataforma cívica independiente. No recibimos financiamiento de
+              partidos políticos. Nuestra misión es reducir el voto nulo y el
+              voto desinformado en el Perú.
+            </p>
+            <div class="flex gap-4">
+              <Text
+                tag="a"
+                target="_blank"
+                href="https://www.tiktok.com/@chapatupresi"
+                class="gap-2 px-3 h-10 bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-full flex items-center justify-center text-stone-500 hover:text-roof-terracotta-600 hover:border-roof-terracotta-500 transition-all hover:scale-110 shadow-sm"
+              >
+                <Icon name="fa-brands:tiktok" class="w-5 h-5" />
+              </Text>
+              <Text
+                tag="a"
+                target="_blank"
+                href="https://github.com/drgatooo/ChapaTuPresi"
+                class="gap-2 px-3 h-10 bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-full flex items-center justify-center text-stone-500 hover:text-roof-terracotta-600 hover:border-roof-terracotta-500 transition-all hover:scale-110 shadow-sm"
+              >
+                <Icon name="fa-brands:github" class="w-5 h-5" />
+              </Text>
+            </div>
+          </div>
+
+          <div>
+            <Heading level="h6" className="font-bold mb-6">Recursos</Heading>
+            <ul class="space-y-4 text-sm text-stone-500">
+              <li
+                class="hover:text-pavlova-600 font-medium cursor-pointer transition-colors"
+              >
+                <a href="/about">Sobre nosotros</a>
+              </li>
+              <li
+                class="hover:text-pavlova-600 font-medium cursor-pointer transition-colors"
+              >
+                <a target="_blank" href="https://votoinformado.jne.gob.pe/home"
+                  >Voto Informado (JNE)</a>
+              </li>
+              <li
+                class="hover:text-pavlova-600 font-medium cursor-pointer transition-colors"
+              >
+                <a target="_blank" href="https://eg2026.onpe.gob.pe/"
+                  >Plataforma ONPE</a>
+              </li>
+              <li
+                class="hover:text-pavlova-600 font-medium cursor-pointer transition-colors"
+              >
+                <a target="_blank" href="https://ojo-publico.com/"
+                  >Fact-checking: Ojo Público</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="pt-8 border-t border-stone-200 dark:border-stone-800 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-xs text-stone-400 font-medium">
+            © 2026 Chapa tu Presi - Por un Perú más informado.
+          </p>
+          <div
+            class="flex items-center gap-2 text-[10px] text-stone-400 font-bold uppercase tracking-widest"
+          >
+            Hecho por una 🍨 y un 🍊
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global></style>

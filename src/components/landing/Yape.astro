@@ -1,0 +1,134 @@
+---
+import { Icon } from "astro-icon/components";
+import Heading from "../common/Heading.astro";
+import Text from "../common/Text.astro";
+
+const metasDonacion = [
+  {
+    monto: "S/ 20",
+    titulo: "Buscador de Propuestas",
+    desc: "Herramienta para evaluar propuestas de los partidos respecto a diversos temas.",
+    alcanzado: false,
+  },
+  {
+    monto: "S/ 50",
+    titulo: "Comparador de Candidatos",
+    desc: "Herramienta interactiva para poner cara a cara a 2 candidatos.",
+    alcanzado: false,
+  },
+  {
+    monto: "S/ 101",
+    titulo: "Estadísticas gráficas y análisis de datos",
+    desc: "Visualizaciones claras sobre la distribución de candidatos por región, género, etc.",
+    alcanzado: false,
+  },
+  {
+    monto: "Meta Final",
+    titulo: "Independencia Total",
+    desc: "Garantizar que la web aguante el tráfico del día de las elecciones sin caerse y 100% libre de anuncios.",
+    alcanzado: false,
+    especial: true,
+  },
+];
+---
+
+  <section class="max-w-7xl w-full mx-auto px-8 py-20">
+    <div
+      class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-[3rem] p-8 md:p-16 shadow-lg relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 right-0 w-96 h-96 bg-[#742384] opacity-5 blur-[100px] rounded-full pointer-events-none"
+      >
+      </div>
+
+      <div
+        class="grid lg:grid-cols-12 gap-12 lg:gap-8 relative z-10 items-center"
+      >
+        <div class="lg:col-span-7 flex flex-col gap-8">
+          <div>
+            <Heading level="h2" className="text-4xl md:text-5xl mb-4">Ayúdanos a mantener esto <span class="text-[#742384] dark:text-[#a957b9]">público y gratis</span>.</Heading>
+            <Text class="text-lg">
+              "Chapa tu Presi" se construye con el apoyo de la gente. Cada sol
+              donado va directamente a programar las siguientes funcionalidades.
+            </Text>
+          </div>
+
+          <div
+            class="space-y-4 mt-2 relative before:absolute before:inset-y-0 before:left-[1.35rem] before:w-0.5 before:bg-stone-200 dark:before:bg-stone-800"
+          >
+            {
+              metasDonacion.map((meta) => (
+                <div
+                  class={`relative pl-14 transition-all ${!meta.alcanzado && !meta.especial ? "opacity-60 grayscale" : ""}`}
+                >
+                  <div
+                    class={`absolute left-0 w-11 h-11 rounded-full flex items-center justify-center border-4 border-white dark:border-stone-900 z-10 
+                  ${
+                    meta.alcanzado
+                      ? "bg-[#00E096] text-[#41135E]"
+                      : meta.especial
+                        ? "bg-pavlova-500 text-white"
+                        : "bg-stone-200 dark:bg-stone-800 text-stone-400"
+                  }`}
+                  >
+                    <Icon
+                      name={
+                        meta.alcanzado
+                          ? "mdi:check-bold"
+                          : meta.especial
+                            ? "mdi:star"
+                            : "mdi:lock"
+                      }
+                      class="w-5 h-5"
+                    />
+                  </div>
+
+                  <div
+                    class={`p-5 rounded-2xl border ${meta.especial ? "bg-pavlova-50 dark:bg-pavlova-900/10 border-pavlova-200 dark:border-pavlova-900/30" : "bg-white dark:bg-stone-950 border-stone-200 dark:border-stone-800 shadow-sm"}`}
+                  >
+                    <div class="flex justify-between items-start gap-4 mb-1">
+                      <h4
+                        class={`font-black ${meta.especial ? "text-pavlova-700 dark:text-pavlova-400" : "text-stone-900 dark:text-white"}`}
+                      >
+                        {meta.titulo}
+                      </h4>
+                      <span
+                        class={`text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded-md shrink-0 
+                      ${meta.alcanzado ? "bg-[#00E096]/20 text-[#009b68] dark:text-[#00E096]" : "bg-stone-100 dark:bg-stone-800 text-stone-500"}`}
+                      >
+                        {meta.monto}
+                      </span>
+                    </div>
+                    <p class="text-sm text-stone-500 dark:text-stone-400">
+                      {meta.desc}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <div class="bg-[#742384] p-8 rounded-3xl w-full max-w-sm text-center shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-300">            
+            <div class="rounded-2xl mb-6 shadow-inner mx-auto w-fit">
+              <img src="/yapeqr.jpg" alt="Código QR Yape" class="w-64 h-64 object-contain rounded-lg" />
+            </div>
+
+            <p class="text-white/80 font-medium text-sm mb-6">
+              Escanea el QR desde tu app :3
+            </p>
+
+            <a 
+              href="/yapeqr.jpg" 
+              download="yape-chapatupresi.jpg"
+              class="w-full bg-[#00E096] text-[#41135E] font-black py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-[#00c986] hover:scale-105 active:scale-95 transition-all shadow-lg"
+            >
+              <Icon name="mdi:download" class="w-5 h-5" />
+              DESCARGAR QR
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

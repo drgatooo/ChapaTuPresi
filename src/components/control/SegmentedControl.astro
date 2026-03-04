@@ -1,0 +1,71 @@
+---
+export interface Option {
+  label: string;
+  value: string;
+}
+
+export interface Props {
+  name: string;
+  options: Option[];
+  defaultValue?: string;
+}
+
+const { name, options, defaultValue = options[0]?.value } = Astro.props;
+---
+
+<div class="segmented-control w-full bg-white dark:bg-stone-950 p-1.5 rounded-xl border border-stone-200 dark:border-stone-800 flex relative" data-name={name}>
+  <input type="hidden" name={name} id={`segment-${name}`} value={defaultValue} />
+  
+  {options.map((opt) => (
+    <button
+      type="button"
+      class={`segment-btn flex-1 py-2.5 px-4 text-xs font-black uppercase tracking-widest rounded-lg transition-all duration-300 z-10 ${
+        opt.value === defaultValue 
+          ? 'text-white bg-roof-terracotta-600 shadow-md' 
+          : 'text-stone-400 hover:text-stone-600 dark:hover:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-900'
+      }`}
+      data-value={opt.value}
+    >
+      {opt.label}
+    </button>
+  ))}
+</div>
+
+<script>
+  function initSegmentedControls() {
+    const controls = document.querySelectorAll('.segmented-control');
+
+    controls.forEach(control => {
+      // Evitar doble inicialización con Astro View Transitions
+      if(control.hasAttribute('data-init')) return;
+      control.setAttribute('data-init', 'true');
+
+      const btns = control.querySelectorAll('.segment-btn');
+      const hiddenInput = control.querySelector('input[type="hidden"]') as HTMLInputElement;
+
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const val = btn.getAttribute('data-value') || '';
+          
+          // Actualizar valor oculto
+          hiddenInput.value = val;
+
+          // Actualizar estilos de los botones
+          btns.forEach(b => {
+            b.classList.remove('text-white', 'bg-roof-terracotta-600', 'shadow-md');
+            b.classList.add('text-stone-400', 'hover:text-stone-600', 'dark:hover:text-stone-200', 'hover:bg-stone-100', 'dark:hover:bg-stone-900');
+          });
+
+          btn.classList.add('text-white', 'bg-roof-terracotta-600', 'shadow-md');
+          btn.classList.remove('text-stone-400', 'hover:text-stone-600', 'dark:hover:text-stone-200', 'hover:bg-stone-100', 'dark:hover:bg-stone-900');
+
+          // Disparar evento para que otros scripts reaccionen (ej. ocultar filtros)
+          hiddenInput.dispatchEvent(new Event('change', { bubbles: true }));
+        });
+      });
+    });
+  }
+
+  document.addEventListener('astro:page-load', initSegmentedControls);
+  initSegmentedControls();
+</script>

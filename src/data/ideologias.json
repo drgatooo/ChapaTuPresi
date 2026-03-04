@@ -1,0 +1,382 @@
+{
+  "Socialdemocracia": {
+    "resumen": "La socialdemocracia es una ideología política, social y económica, que busca apoyar las intervenciones estatales, tanto económicas como sociales, para promover mayor equidad económica e igualdad social en el marco de una economía capitalista.",
+    "relacionados": ["Socialismo democrático", "Progresismo", "Capitalismo social"],
+    "pilares": ["Justicia social", "Economía mixta", "Estado de bienestar", "Pacto social"]
+  },
+  "Nacionalismo de izquierda": {
+    "resumen": "El nacionalismo de izquierda​ describe una forma de nacionalismo que, en lugar de basarse en la familia tradicional y los derechos de ésta, se fundamenta en conceptos filosóficos compartidos con distintos sectores de la izquierda política, como los de justicia social, soberanía popular y autodeterminación nacional.",
+    "relacionados": ["Antiimperialismo", "Mariateguismo", "Soberanismo"],
+    "pilares": ["Soberanía nacional", "Control de recursos naturales", "Justicia social", "Emancipación popular"]
+  },
+  "Reformismo": {
+    "resumen": "El reformismo es un tipo de ideología social o política que generalmente apunta a realizar cambios graduales a fin de mejorar un sistema, proyecto o sociedad.",
+    "relacionados": ["Reformismo institucional", "Centrismo", "Socialdemocracia"],
+    "pilares": ["Cambio gradual", "Institucionalidad", "Progreso social", "Evolución democrática"]
+  },
+  "Antifujimorismo": {
+    "resumen": "El antifujimorismo es un movimiento político peruano heterogéneo caracterizado por su oposición al fujimorismo. Se caracteriza por oponerse a las medidas autoritarias y populistas ejecutadas por el gobierno, hasta la caída del régimen el 21 de noviembre de 2000.",
+    "relacionados": ["Democracia participativa", "Progresismo", "Antisistema"],
+    "pilares": ["Oposición al autoritarismo", "Memoria histórica", "Defensa democrática", "Vigilancia ciudadana"]
+  },
+  "Socialismo democrático": {
+    "resumen": "El socialismo democrático es una variante del socialismo que rechaza los métodos autoritarios de transición del capitalismo al socialismo en favor de los movimientos de base defensores de los derechos humanos y de la naturaleza con el objetivo de la creación inmediata de descentralización y democracia económica.",
+    "relacionados": ["Socialdemocracia", "Marxismo", "Progresismo"],
+    "pilares": ["Propiedad social", "Democracia política", "Igualdad económica", "Autogestión"]
+  },
+  "Progresismo": {
+    "resumen": "El progresismo es una doctrina política y social orientada, generalmente, hacia el desarrollo de un estado del bienestar, la defensa de derechos civiles, la participación ciudadana y cierta redistribución de la riqueza.",
+    "relacionados": ["Feminismo", "Ecologismo", "Socialdemocracia"],
+    "pilares": ["Derechos civiles", "Reformas sociales", "Igualdad", "Inclusión"]
+  },
+  "Mariateguismo": {
+    "resumen": "El mariateguismo es un concepto utilizado para definir el desarrollo del marxismo-leninismo e indigenismo en el Perú y toda América Latina. Fue la ideología dominante en el Partido Unificado Mariateguista desde su fundación en 1984 hasta su disolución en 1996.",
+    "relacionados": ["Indigenismo", "Marxismo-Leninismo", "Socialismo democrático"],
+    "pilares": ["Socialismo indoamericano", "Problema del indio", "Cuestión agraria", "Creación heroica"]
+  },
+  "Anticapitalismo": {
+    "resumen": "El término anticapitalismo se refiere a una extensa colección de ideologías, movimientos y actitudes que se oponen en forma total, o parcial, al capitalismo.",
+    "relacionados": ["Marxismo", "Comunismo", "Antiimperialismo"],
+    "pilares": ["Oposición al mercado libre", "Propiedad colectiva", "Lucha de clases", "Crítica al valor de cambio"]
+  },
+  "Populismo de izquierda": {
+    "resumen": "El populismo de izquierda es una corriente política que combina elementos del populismo con posiciones ideológicas propias de la izquierda política, tales como el anticapitalismo, justicia social y antiglobalismo, mientras que los contenidos ideológicos relacionados con la lucha de clases o la teoría socialista no son tan importantes como para los partidos de la izquierda tradicional.",
+    "relacionados": ["Bolivarianismo", "Antiimperialismo", "Antineoliberalismo"],
+    "pilares": ["Liderazgo carismático", "Redistribución", "Movilización popular", "Dicotomía pueblo-oligarquía"]
+  },
+  "Antiimperialismo": {
+    "resumen": "El antiimperialismo es una corriente política e ideológica que se expresa una oposición activa al dominio y expansión de potencias imperiales sobre otros pueblos o territorios.",
+    "relacionados": ["Soberanismo", "Nacionalismo", "Antiglobalismo"],
+    "pilares": ["Autodeterminación", "Anticolonialismo", "Soberanía económica", "Solidaridad internacional"]
+  },
+  "Antineoliberalismo": {
+    "resumen": "El antineoliberalismo engloba diversas corrientes políticas y económicas que rechazan la desregulación, privatización y reducción del papel del Estado promovidas por el neoliberalismo.",
+    "relacionados": ["Proteccionismo de derechas", "Anticapitalismo", "Populismo de izquierda"],
+    "pilares": ["Estado fuerte", "Regulación económica", "Oposición a privatizaciones", "Soberanía de servicios públicos"]
+  },
+  "Autoritarismo": {
+    "resumen": "En las relaciones sociales, el autoritarismo es una modalidad del ejercicio de la autoridad que impone la voluntad de quien ejerce el poder en ausencia de un consenso construido de forma participativa, originando un orden social opresivo, carente de libertad y autonomía.",
+    "relacionados": ["Populismo penal", "Fujimorismo", "Inteligencia estratégica"],
+    "pilares": ["Concentración de poder", "Control estatal", "Limitación de libertades", "Jerarquía vertical"]
+  },
+  "Marxismo": {
+    "resumen": "El marxismo es una perspectiva teórica y un método de análisis y síntesis socioeconómico de la realidad y la historia, que considera las relaciones de clase y el conflicto social utilizando una interpretación materialista del desarrollo histórico y adopta una visión dialéctica de la transformación social y análisis crítico del capitalismo, compuesto principalmente por el pensamiento desarrollado en la obra del filósofo Karl Marx.",
+    "relacionados": ["Comunismo", "Marxismo-Leninismo", "Anticapitalismo"],
+    "pilares": ["Materialismo histórico", "Lucha de clases", "Fin de la propiedad privada", "Plusvalía"]
+  },
+  "Socialismo del siglo XXI": {
+    "resumen": "El socialismo del siglo XXI supone que es necesario un reforzamiento radical del poder estatal democráticamente controlado por la sociedad para avanzar el desarrollo.",
+    "relacionados": ["Bolivarianismo", "Populismo de izquierda", "Latinoamericanismo"],
+    "pilares": ["Democracia participativa", "Economía de equivalencias", "Regionalismo", "Poder comunal"]
+  },
+  "Atrapalotodo": {
+    "resumen": "Un partido atrapalotodo es un tipo de partido político que busca atraer votantes de diversos puntos de vista e ideologías, en contraposición con otros partidos que defienden una ideología determinada y que buscan votantes que se adhieran a esa ideología específica.",
+    "relacionados": ["Pragmatismo", "Populismo", "Centrismo"],
+    "pilares": ["Flexibilidad ideológica", "Voto masivo", "Desideologización", "Estrategia electoralista"]
+  },
+  "Conservadurismo": {
+    "resumen": "En filosofía política, se denomina conservadurismo en sentido amplio al conjunto de doctrinas y movimientos políticos que favorecen el uso del poder político o la fuerza del Estado para conservar o restaurar tradiciones —creencias o costumbres— de un pueblo o nación, que pueden ser de tipo religiosas, culturales o políticas.",
+    "relacionados": ["Conservadurismo social", "Conservadurismo liberal", "Derecha cristiana"],
+    "pilares": ["Tradición", "Orden social", "Preservación institucional", "Prudencia política"]
+  },
+  "Liberalismo económico": {
+    "resumen": "El liberalismo económico es el pensamiento económico del liberalismo, que promueve la libertad económica y está en contra de la intervención del Estado en la economía.",
+    "relacionados": ["Libertad individual", "Neoliberalismo", "Conservadurismo fiscal"],
+    "pilares": ["Libre mercado", "Propiedad privada", "Estado mínimo", "Laissez-faire"]
+  },
+  "Conservadurismo liberal": {
+    "resumen": "El conservadurismo liberal es una ideología política que combina políticas conservadoras con posturas liberales, especialmente sobre cuestiones éticas y sociales, o una marca de conservadurismo político fuertemente influida por el liberalismo.",
+    "relacionados": ["Liberalismo conservador", "Conservadurismo fiscal", "Liberalismo"],
+    "pilares": ["Mercado libre", "Valores tradicionales", "Estado de derecho", "Estabilidad gradual"]
+  },
+  "Populismo": {
+    "resumen": "El populismo, según la RAE, es una «tendencia política que pretende atraerse a las clases populares».​ Su origen es un movimiento ruso del siglo XIX, llamado narodnismo, derivado del lema «ir hacia el pueblo», que obraba como guía para los movimientos democráticos rusos de la segunda mitad del siglo XIX.",
+    "relacionados": ["Atrapalotodo", "Antisistema", "Nacionalpopulismo"],
+    "pilares": ["Pueblo vs Élite", "Liderazgo directo", "Simplificación política", "Emotivismo político"]
+  },
+  "Neoliberalismo": {
+    "resumen": "El neoliberalismo es una corriente de pensamiento económico y político que promueve la reducción del papel del Estado en la economía, la privatización de empresas y servicios públicos, así como la desregulación del mercado y la apertura comercial.",
+    "relacionados": ["Liberalismo económico", "Conservadurismo fiscal", "Liberalismo"],
+    "pilares": ["Desregulación", "Privatización", "Apertura comercial", "Individualismo metodológico"]
+  },
+  "Anticomunismo": {
+    "resumen": "El anticomunismo es la oposición política e ideológica al comunismo. El anticomunismo organizado se desarrolló después de la Revolución de Octubre de 1917 en Rusia y alcanzó dimensiones globales durante la Guerra Fría, cuando Estados Unidos y la Unión Soviética entablaron una intensa rivalidad.",
+    "relacionados": ["Conservadurismo", "Neoconservadurismo", "Liberalismo"],
+    "pilares": ["Defensa de la propiedad", "Libertad individual", "Oposición al marxismo", "Preservación del modelo occidental"]
+  },
+  "Neoconservadurismo": {
+    "resumen": "Según el diccionario de Cambridge, un neoconservador es alguien cuya política es “conservadora” o “de derecha”, que cree firmemente en el libre mercado y piensa que su país debería usar su poder militar para involucrarse o tratar de controlar los problemas en otros países.",
+    "relacionados": ["Conservadurismo", "Derecha cristiana", "Inteligencia estratégica"],
+    "pilares": ["Intervencionismo moral", "Política exterior fuerte", "Valores occidentales", "Promoción democrática externa"]
+  },
+  "Proteccionismo de derechas": {
+    "resumen": "La derecha proteccionista (a veces llamada proteccionismo de derecha) es una ideología que combina el libre mercado con el proteccionismo. Estos están dispuestos a tomar medidas de libre mercado siempre y cuando esto no entre en conflicto con sus objetivos proteccionistas.",
+    "relacionados": ["Nacionalpopulismo", "Antiglobalismo", "Nativismo"],
+    "pilares": ["Aranceles", "Defensa de industria nacional", "Soberanía económica", "Prioridad al mercado interno"]
+  },
+  "Reformismo institucional": {
+    "resumen": "La reforma institucional es el proceso de revisión y reestructuración de las instituciones estatales para que respeten los derechos humanos, preserven el estado de derecho y rindan cuentas a sus electores.",
+    "relacionados": ["Tecnocracia", "Republicanismo", "Reformismo"],
+    "pilares": ["Fortalecimiento del Estado", "Transparencia", "Legalidad", "Modernización pública"]
+  },
+  "Pragmatismo": {
+    "resumen": "El pragmatismo es una corriente filosófica centrada en la vinculación de la práctica y la teoría. Describe un proceso en el que la teoría se extrae de la práctica y se aplica de nuevo a la práctica para formar lo que se denomina práctica inteligente.",
+    "relacionados": ["Atrapalotodo", "Tecnocracia", "Centrismo"],
+    "pilares": ["Resultados sobre teoría", "Realismo político", "Eficacia", "Adaptabilidad"]
+  },
+  "Populismo penal": {
+    "resumen": "El populismo penal, populismo punitivo o punitivismo[cita requerida] designa la tendencia a reformar el derecho y el procedimiento penal en un sentido iliberal y antigarantista con el fin de obtener el favor del electorado, sin tener en cuenta la idoneidad de las medidas adoptadas para reducir la delincuencia y promover la justicia.",
+    "relacionados": ["Autoritarismo", "Fujimorismo", "Inteligencia estratégica"],
+    "pilares": ["Mano dura", "Aumento de penas", "Seguridad ciudadana", "Retribución penal"]
+  },
+  "Antisistema": {
+    "resumen": "Antisistema (o movimiento antisistema, o grupo antisistema, o contrapoder) se refiere a aquella persona o grupo de personas con una ideología disconforme con el orden político o social establecido, que mediante reivindicaciones o acciones tratan de cambiar el statu quo.",
+    "relacionados": ["Antiglobalismo", "Populismo", "Nacionalismo"],
+    "pilares": ["Rechazo al establishment", "Cambio radical", "Impugnación institucional", "Acción directa"]
+  },
+  "Fujimorismo": {
+    "resumen": "El fujimorismo es una corriente política personalista en torno a la figura del expresidente peruano Alberto Fujimori y su hija y sucesora política Keiko Fujimori.",
+    "relacionados": ["Populismo de derecha", "Conservadurismo social", "Neoliberalismo"],
+    "pilares": ["Liderazgo fuerte", "Antisubsidios", "Seguridad interna", "Pragmatismo gubernamental"]
+  },
+  "Conservadurismo social": {
+    "resumen": "El conservadurismo social o socialconservadurismo es la ideología política que defiende los valores tradicionales, las jerarquías, y las estructuras de poder, por sobre la diversidad social.",
+    "relacionados": ["Ultraconservadurismo", "Anti-LGBT", "Antifeminismo"],
+    "pilares": ["Familia tradicional", "Religiosidad", "Moral pública", "Preservación de jerarquías"]
+  },
+  "Populismo de derecha": {
+    "resumen": "El populismo de derecha es una corriente política que combina elementos del populismo —como la apelación directa al pueblo frente a las élites— con posiciones ideológicas propias de la derecha política, tales como el nacionalismo, el conservadurismo social y la defensa del libre mercado.",
+    "relacionados": ["Nacionalpopulismo", "Fujimorismo", "Antiinmigración"],
+    "pilares": ["Nacionalismo", "Identidad cultural", "Discurso anti-élite", "Ley y orden"]
+  },
+  "Fundamentalismo cristiano": {
+    "resumen": "El fundamentalismo cristiano es el movimiento ultraconservador surgido entre los cristianos protestantes en Estados Unidos, a finales del siglo XIX como consecuencia de las teorías de la alta crítica alemana y el liberalismo teológico.",
+    "relacionados": ["Derecha cristiana", "Ultraconservadurismo", "Israelismo"],
+    "pilares": ["Literalismo bíblico", "Moralismo religioso", "Teocracia", "Inerrancia de las escrituras"]
+  },
+  "Tecnocracia": {
+    "resumen": "La tecnocracia es la perspectiva de un sistema de gobierno en el que los responsables de la toma de decisiones se seleccionan en función de su experiencia en un área determinada de responsabilidad, particularmente con respecto al conocimiento científico o técnico.",
+    "relacionados": ["Pragmatismo", "Reformismo institucional", "Inteligencia estratégica"],
+    "pilares": ["Gobierno de expertos", "Eficiencia técnica", "Desideologización", "Criterio científico"]
+  },
+  "Descentralismo": {
+    "resumen": "La descentralización es el proceso de dispersar funciones, poderes, personas o cosas fuera de una ubicación o autoridad central.",
+    "relacionados": ["Federalismo", "Municipalismo", "Regionalismo"],
+    "pilares": ["Autonomía regional", "Reparto de recursos", "Desconcentración", "Equidad territorial"]
+  },
+  "Humanismo": {
+    "resumen": "Los humanistas tienden a defender los derechos humanos, la libertad de expresión, las políticas progresistas y la democracia. A partir del siglo XX, los movimientos humanistas organizados son casi exclusivamente laicos y se alinean con el secularismo.",
+    "relacionados": ["Progresismo", "Humanismo cristiano", "Democracia cristiana"],
+    "pilares": ["Valor humano", "Ética", "Persona como centro", "Pensamiento crítico"]
+  },
+  "Indigenismo": {
+    "resumen": "El indigenismo es un término que designa una corriente política, cultural y académica surgida en América Latina, centrada en la representación, defensa o integración de los pueblos indígenas dentro del marco de los Estados nacionales.",
+    "relacionados": ["Mariateguismo", "Nacionalismo de izquierda", "Agrarismo"],
+    "pilares": ["Reivindicación étnica", "Derechos colectivos", "Identidad cultural", "Plurinacionalidad"]
+  },
+  "Feminismo": {
+    "resumen": "El feminismo es un movimiento político y social, una teoría política y una perspectiva filosófica que, según la RAE, postula el «principio de igualdad de derechos de la mujer y el hombre».",
+    "relacionados": ["Progresismo", "Feminismo liberal", "Liberalismo"],
+    "pilares": ["Igualdad de género", "Derechos reproductivos", "Fin del patriarcado", "Justicia histórica"]
+  },
+  "Nacionalismo": {
+    "resumen": "El nacionalismo es una ideología que enfatiza el sentido de pertenencia y lealtad de un individuo o grupo a una nación. En este sentido, antepone la identidad nacional a cualquier otra identidad grupal o individual. Defiende la unión de Estado y nación, pues considera que la nación debe ser la base del Estado.",
+    "relacionados": ["Soberanismo", "Nacionalpopulismo", "Industrialismo"],
+    "pilares": ["Identidad nacional", "Unidad territorial", "Interés nacional", "Autodeterminación"]
+  },
+  "Democracia participativa": {
+    "resumen": "La democracia participativa es una forma de democracia en la que los ciudadanos tienen mayor participación en la toma de las decisiones políticas que la que les otorga tradicionalmente la democracia representativa.",
+    "relacionados": ["Municipalismo", "Democracia cristiana", "Soberanismo"],
+    "pilares": ["Referéndum", "Control ciudadano", "Asamblearismo", "Presupuesto participativo"]
+  },
+  "Desarrollismo": {
+    "resumen": "El desarrollismo es una teoría económica referida al desarrollo surgida en América Latina que sostiene que el orden económico mundial sigue un esquema centro industrial-periferia agrícola, razón por la cual se produce un deterioro estructural de los términos de intercambio en el comercio internacional en perjuicio de los países periféricos, que reproduce el subdesarrollo y amplía la brecha entre países desarrollados y países en vía de desarrollo.",
+    "relacionados": ["Industrialismo", "Tecnocracia", "Capitalismo social"],
+    "pilares": ["Crecimiento económico", "Sustitución de importaciones", "Infraestructura", "Intervención productiva"]
+  },
+  "Ecologismo": {
+    "resumen": "El ecologismo es un variado movimiento político, social y global, que defiende la naturaleza y la protección del medio ambiente. Habitualmente, el ecologismo se defiende desde posiciones antropocéntricas, es decir, para satisfacer una necesidad humana, incluyendo necesidades de salud y sociales.",
+    "relacionados": ["Bienestar animal", "Progresismo", "Socialdemocracia"],
+    "pilares": ["Sustentabilidad", "Conservación", "Lucha contra el cambio climático", "Justicia ambiental"]
+  },
+  "Federalismo": {
+    "resumen": "El federalismo es un modo de gobierno que combina un gobierno general con gobiernos regionales en un único sistema político, dividiendo los poderes entre ambos.",
+    "relacionados": ["Descentralismo", "Regionalismo", "Municipalismo"],
+    "pilares": ["Soberanía de estados", "Autogobierno", "Pacto federal", "Equilibrio de poderes territoriales"]
+  },
+  "Industrialismo": {
+    "resumen": "Se conoce como industrialización al proceso por el que un Estado o comunidad social pasa de una economía basada en la agricultura a otra fundamentada en el desarrollo industrial y en el que este representa, en términos económicos, el sostén fundamental del producto interno bruto y, en términos de ocupación, ofrece trabajo a la mayoría de la población. Supone, además, una economía de libres cambios.",
+    "relacionados": ["Desarrollismo", "Proteccionismo de derechas", "Nacionalismo"],
+    "pilares": ["Manufactura nacional", "Progreso tecnológico", "Autosuficiencia", "Modernización económica"]
+  },
+  "Conservadurismo peruano": {
+    "resumen": "El conservadurismo en el Perú comprende al sistema político de creencias conservadoras en territorio peruano, caracterizado por el apoyo a los valores cristianos, la estabilidad social y el orden social.",
+    "relacionados": ["Fujimorismo", "Doctrina social de la iglesia", "Nativismo"],
+    "pilares": ["Hispanismo", "Orden interno", "Moral católica", "Autoridad tradicional"]
+  },
+  "Democracia cristiana": {
+    "resumen": "La Democracia Cristiana es una corriente política personalista comunitaria cuya base es la imagen cristiana del ser humano, su libertad y dignidad física y espiritual intrínseca, y el valor de la comunidad al servicio de las personas concretas, no de fuerzas anónimas colectivas.",
+    "relacionados": ["Humanismo cristiano", "Doctrina social de la iglesia", "Centrismo"],
+    "pilares": ["Bien común", "Subsidiariedad", "Valores cristianos", "Personalismo"]
+  },
+  "Municipalismo": {
+    "resumen": "El municipalismo consiste en una ideología política que tiene como objetivo proporcionar una mayor autonomía a los municipios, teniendo en cuenta en particular la organización y las prerrogativas de las ciudades y pueblos, a través de una descentralización de la administración pública.",
+    "relacionados": ["Descentralismo", "Democracia participativa", "Regionalismo"],
+    "pilares": ["Autonomía local", "Gestión vecinal", "Cercanía al ciudadano", "Democracia de proximidad"]
+  },
+  "Republicanismo": {
+    "resumen": "El republicanismo es una ideología y una teoría política que postula gobernar una nación como una república, es decir, como una «cosa pública» o un asunto que compete a toda la ciudadanía y no solo a una determinada clase social o a unas élites.",
+    "relacionados": ["Liberalismo", "Reformismo institucional", "Reformismo"],
+    "pilares": ["Res pública", "División de poderes", "Igualdad ante la ley", "Virtud cívica"]
+  },
+  "Centrismo": {
+    "resumen": "En ciencia política, se conoce por centro al conjunto de partidos, políticas e ideologías, que se caracteriza por considerarse a sí mismo en el espectro político, como intermedio o como árbitro de posiciones antagónicas tanto de derecha como de izquierda.",
+    "relacionados": ["Socioliberalismo", "Reformismo", "Democracia cristiana"],
+    "pilares": ["Moderación", "Consenso", "Equilibrio político", "Anti-extremismo"]
+  },
+  "Socioliberalismo": {
+    "resumen": "El socioliberalismo nace como corriente progresista del liberalismo clásico, e introduce el concepto de justicia social y la democracia liberal en su programa de reformas.",
+    "relacionados": ["Liberalismo", "Centrismo", "Socialdemocracia"],
+    "pilares": ["Libertad individual", "Justicia social", "Economía regulada", "Igualdad de oportunidades"]
+  },
+  "Feminismo liberal": {
+    "resumen": "El feminismo liberal es una forma individualista de teoría feminista centrada en la capacidad de las mujeres para mantener su equidad a través de sus propias acciones y decisiones. [...] Su lucha es, pues, lograr la igualdad entre los sexos a través de la reforma política y legal.",
+    "relacionados": ["Feminismo", "Liberalismo", "Libertad individual"],
+    "pilares": ["Igualdad legal", "Mérito", "Autonomía individual", "Empoderamiento personal"]
+  },
+  "Liberalismo conservador": {
+    "resumen": "El liberalismo conservador es una ideología política que combina posiciones liberales y conservadoras en asuntos sociales, económicos o éticos.",
+    "relacionados": ["Conservadurismo liberal", "Conservadurismo fiscal", "Liberalismo"],
+    "pilares": ["Orden", "Propiedad privada", "Tradición", "Responsabilidad individual"]
+  },
+  "Nacionalpopulismo": {
+    "resumen": "El nacionalpopulismo es un término empleado por algunos politólogos para designar al populismo de derechas que se caracteriza fundamentalmente por su ultranacionalismo.",
+    "relacionados": ["Populismo de derecha", "Antiglobalismo", "Soberanismo"],
+    "pilares": ["Pueblo nacional", "Liderazgo fuerte", "Identidad", "Anti-cosmopolitismo"]
+  },
+  "Antiglobalismo": {
+    "resumen": "El antiglobalismo de derecha es una posición política que argumenta que la globalización pone en peligro las economías nacionales, las identidades culturales y fomenta la inmigración.",
+    "relacionados": ["Soberanismo", "Nacionalpopulismo", "Antiimperialismo"],
+    "pilares": ["Rechazo a organismos mundiales", "Soberanía", "Proteccionismo", "Identitarismo"]
+  },
+  "Nativismo": {
+    "resumen": "El nativismo es una ideología o pensamiento político y social que defiende o privilegia a los nativos o autóctonos de un territorio y sus intereses, y, por tanto, rechaza a los inmigrantes extranjeros.",
+    "relacionados": ["Antiinmigración", "Nacionalpopulismo", "Antiglobalismo"],
+    "pilares": ["Prioridad nacional", "Cultura local", "Rechazo a lo foráneo", "Proteccionismo demográfico"]
+  },
+  "Inteligencia estratégica": {
+    "resumen": "La inteligencia estratégica es un proceso de recopilación, análisis y uso de información relevante para la toma de decisiones a largo plazo en el ámbito político, económico o militar.",
+    "relacionados": ["Tecnocracia", "Autoritarismo", "Seguridad nacional"],
+    "pilares": ["Seguridad nacional", "Planificación", "Defensa", "Prospectiva política"]
+  },
+  "Bolivarianismo": {
+    "resumen": "El bolivarianismo es una corriente política latinoamericana que se basa en las ideas y acciones del libertador Simón Bolívar, enfocándose en la integración regional, la justicia social y la lucha contra el imperialismo.",
+    "relacionados": ["Socialismo del siglo XXI", "Latinoamericanismo", "Antiimperialismo"],
+    "pilares": ["Unidad latinoamericana", "Patriotismo", "Justicia social", "Segunda independencia"]
+  },
+  "Soberanismo": {
+    "resumen": "El soberanismo es una corriente política que defiende la soberanía nacional, es decir, la capacidad de un Estado para gobernarse a sí mismo sin interferencias externas.",
+    "relacionados": ["Antiglobalismo", "Nacionalismo", "Antiimperialismo"],
+    "pilares": ["Independencia estatal", "No intervención", "Poder nacional", "Primacía constitucional"]
+  },
+  "Marxismo-Leninismo": {
+    "resumen": "El marxismo-leninismo es una corriente del marxismo que se basa en las ideas de Karl Marx y Vladimir Lenin, y que se caracteriza por la defensa de la dictadura del proletariado, la vanguardia del partido comunista y la lucha contra el capitalismo.",
+    "relacionados": ["Comunismo", "Marxismo", "Mariateguismo"],
+    "pilares": ["Vanguardia del proletariado", "Dictadura del proletariado", "Partido único", "Centralismo democrático"]
+  },
+  "Comunismo": {
+    "resumen": "El comunismo es una ideología política y económica que busca la abolición de las clases sociales, la eliminación del estado y la creación de una sociedad sin propiedad privada ni explotación.",
+    "relacionados": ["Marxismo-Leninismo", "Anticapitalismo", "Marxismo"],
+    "pilares": ["Abolición de clases", "Sin estado", "Propiedad común", "De cada cual según su capacidad"]
+  },
+  "Latinoamericanismo": {
+    "resumen": "El latinoamericanismo es una corriente de pensamiento político y cultural que promueve la unidad y la identidad común de los países de América Latina, basada en su historia, cultura y desafíos compartidos.",
+    "relacionados": ["Bolivarianismo", "Regionalismo", "Soberanismo"],
+    "pilares": ["Integración regional", "Identidad común", "Hermandad", "Bloque geopolítico"]
+  },
+  "Regionalismo": {
+    "resumen": "El regionalismo es una corriente política que enfatiza la importancia de las regiones dentro de un país, promoviendo la autonomía y el desarrollo local, así como la preservación de las identidades culturales regionales.",
+    "relacionados": ["Descentralismo", "Federalismo", "Latinoamericanismo"],
+    "pilares": ["Identidad regional", "Autonomía política", "Intereses locales", "Desarrollo endógeno"]
+  },
+  "Capitalismo social": {
+    "resumen": "El capitalismo social es una corriente del capitalismo que busca combinar la eficiencia económica del mercado con la justicia social, promoviendo políticas que reduzcan la desigualdad y protejan a los más vulnerables.",
+    "relacionados": ["Socialdemocracia", "Socioliberalismo", "Doctrina social de la iglesia"],
+    "pilares": ["Mercado con rostro humano", "Bienestar", "Responsabilidad corporativa", "Cohesión social"]
+  },
+  "Conservadurismo fiscal": {
+    "resumen": "El conservadurismo fiscal es una corriente política que aboga por la reducción del gasto público, la baja de impuestos y el equilibrio presupuestario, con el objetivo de promover la estabilidad económica y el crecimiento a largo plazo.",
+    "relacionados": ["Liberalismo económico", "Conservadurismo liberal", "Neoliberalismo"],
+    "pilares": ["Equilibrio presupuestario", "Baja de impuestos", "Reducción de deuda", "Austeridad pública"]
+  },
+  "Nacionalismo liberal": {
+    "resumen": "El nacionalismo liberal es una corriente política que combina elementos del nacionalismo con principios liberales, promoviendo la identidad nacional junto con los derechos individuales y la democracia.",
+    "relacionados": ["Nacionalismo", "Liberalismo", "Soberanismo"],
+    "pilares": ["Libertad y nación", "Identidad cívica", "Soberanía popular", "Patriotismo constitucional"]
+  },
+  "Liberalismo": {
+    "resumen": "El liberalismo es una corriente política y filosófica que se basa en la defensa de la libertad individual, la igualdad ante la ley y la limitación del poder del Estado, promoviendo una sociedad abierta y pluralista.",
+    "relacionados": ["Libertad individual", "Liberalismo económico", "Republicanismo"],
+    "pilares": ["Derechos individuales", "Igualdad ante la ley", "Libertad de expresión", "Estado de derecho"]
+  },
+  "Bienestar animal": {
+    "resumen": "El bienestar animal es un concepto que se refiere al estado físico y mental de los animales, y a la calidad de vida que tienen, incluyendo su salud, comodidad, alimentación, seguridad y capacidad para expresar comportamientos naturales.",
+    "relacionados": ["Ecologismo", "Progresismo", "Humanismo"],
+    "pilares": ["Derechos de los animales", "Ética ambiental", "Protección", "Sintiencia"]
+  },
+  "Ultraconservadurismo": {
+    "resumen": "El ultraconservadurismo es una corriente política que se caracteriza por su defensa extrema de los valores tradicionales, la oposición a los cambios sociales y culturales, y la resistencia a las reformas progresistas.",
+    "relacionados": ["Fundamentalismo cristiano", "Anti-LGBT", "Antifeminismo"],
+    "pilares": ["Reacción", "Tradicionalismo extremo", "Moral rígida", "Contrarreforma"]
+  },
+  "Antiinmigración": {
+    "resumen": "El antiinmigración es una postura política que se opone a la inmigración, ya sea por razones económicas, culturales o de seguridad, y que busca restringir o controlar el flujo de personas hacia un país.",
+    "relacionados": ["Nativismo", "Populismo de derecha", "Nacionalismo"],
+    "pilares": ["Control fronterizo", "Identidad cultural", "Prioridad laboral nativa", "Seguridad demográfica"]
+  },
+  "Antifeminismo": {
+    "resumen": "El antifeminismo es una postura política y social que se opone al feminismo, ya sea por desacuerdo con sus objetivos, métodos o ideología, y que busca mantener o restaurar las estructuras de poder tradicionales basadas en el patriarcado.",
+    "relacionados": ["Ultraconservadurismo", "Conservadurismo social", "Anti-LGBT"],
+    "pilares": ["Roles tradicionales", "Rechazo a la ideología de género", "Defensa de la familia", "Diferencialismo"]
+  },
+  "Anti-LGBT": {
+    "resumen": "El anti-LGBT es una postura política y social que se opone a los derechos y la aceptación de las personas lesbianas, gays, bisexuales y transgénero, promoviendo una visión tradicionalista de la identidad de género y la orientación sexual.",
+    "relacionados": ["Antifeminismo", "Fundamentalismo cristiano", "Ultraconservadurismo"],
+    "pilares": ["Moralidad tradicional", "Familia nuclear", "Rechazo a nuevos derechos", "Heteronormatividad"]
+  },
+  "Derecha cristiana": {
+    "resumen": "La derecha cristiana es un movimiento político y social que se basa en la interpretación literal de la Biblia y en la defensa de los valores cristianos tradicionales, como la familia, la moralidad y la oposición al aborto y al matrimonio igualitario.",
+    "relacionados": ["Fundamentalismo cristiano", "Conservadurismo social", "Doctrina social de la iglesia"],
+    "pilares": ["Valores bíblicos", "Influencia religiosa en política", "Pro-vida", "Moralidad pública"]
+  },
+  "Doctrina social de la iglesia": {
+    "resumen": "La doctrina social de la Iglesia es el conjunto de enseñanzas y principios que la Iglesia Católica ha desarrollado a lo largo de su historia para abordar cuestiones sociales, económicas y políticas, con el objetivo de promover la justicia social, la dignidad humana y el bien común.",
+    "relacionados": ["Democracia cristiana", "Humanismo cristiano", "Humanismo"],
+    "pilares": ["Dignidad", "Solidaridad", "Bien común", "Destino universal de los bienes"]
+  },
+  "Anticaviarismo": {
+    "resumen": "El anticaviarismo es una postura política que se opone a la ideología y a los valores asociados con el progresismo, el feminismo, el ecologismo y otras corrientes de izquierda, a menudo caracterizando a sus seguidores como elitistas, hipócritas o desconectados de la realidad.",
+    "relacionados": ["Conservadurismo", "Populismo de derecha", "Antifeminismo"],
+    "pilares": ["Oposición a élites progresistas", "Crítica a ONGs", "Defensa de lo tradicional", "Anti-establisment cultural"]
+  },
+  "Libertad individual": {
+    "resumen": "La libertad individual es un concepto político y filosófico que se refiere a la autonomía de cada persona para tomar decisiones sobre su vida sin interferencia externa, incluyendo la libertad de pensamiento, expresión, elección y acción.",
+    "relacionados": ["Liberalismo", "Socioliberalismo", "Liberalismo económico"],
+    "pilares": ["Autonomía", "Derechos naturales", "No interferencia", "Responsabilidad personal"]
+  },
+  "Humanismo cristiano": {
+    "resumen": "El humanismo cristiano es una corriente de pensamiento que combina los principios del humanismo con la fe cristiana, enfatizando la dignidad humana, la libertad y la responsabilidad social desde una perspectiva cristiana.",
+    "relacionados": ["Democracia cristiana", "Humanismo", "Doctrina social de la iglesia"],
+    "pilares": ["Persona humana", "Evangelio", "Fraternidad", "Trascendencia"]
+  },
+  "Israelismo": {
+    "resumen": "La Asociación Evangélica de la Misión Israelita del Nuevo Pacto Universal (Aeminpu) es una institución religiosa peruana de corte nazarena. Sus seguidores son comúnmente denominados «israelitas». (término generalmente utilizado para la gente que profesa el judaísmo o es originaria de Israel).",
+    "relacionados": ["Fundamentalismo cristiano", "Derecha cristiana", "Soberanismo"],
+    "pilares": ["Sionismo cristiano", "Religiosidad", "Apoyo a Israel", "Mesianismo agrarista"]
+  },
+  "Agrarismo": {
+    "resumen": "El agrarismo es una corriente de pensamiento político, económico y social que defiende la importancia de la agricultura y el campesinado como base de la sociedad, promoviendo la reforma agraria, los derechos campesinos y el desarrollo rural como pilares fundamentales para el bienestar de las comunidades rurales y la sostenibilidad del medio ambiente.",
+    "relacionados": ["Indigenismo", "Mariateguismo", "Nacionalismo de izquierda"],
+    "pilares": ["Reforma agraria", "Derechos campesinos", "Desarrollo rural", "Soberanía alimentaria"]
+  }
+}

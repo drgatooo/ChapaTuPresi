@@ -1,0 +1,139 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Candidato {
+  id                String @id @default(auto()) @map("_id") @db.ObjectId
+  slug              String @unique
+  nombre            String
+  apellido_p        String
+  apellido_m        String
+  dni               String @unique
+  foto_url          String
+  region            String
+  postula_region    String?
+  educacion         Educacion  
+  experiencia       ExperienciaLaboral[]
+  sentencias        SentenciaPenal[]
+  alertas           AlertaPeriodistica[]
+  cv_url            String
+  cargo             Cargo[]
+  etiquetas         String[]
+  numero_lista      Int?
+  links             Link[]
+  searchable        String?
+
+  partido           Partido @relation(fields: [partidoId], references: [id])
+  partidoId         String  @db.ObjectId
+}
+
+type Educacion {
+  primaria          Boolean
+  secundaria        Boolean
+  tecnico           EducacionSuperior[]
+  universitario     EducacionSuperior[]
+}
+
+type EducacionSuperior {
+  grado             String
+  centro_educativo  String
+  concluido         Boolean
+  postgrado         Boolean
+  fecha_conclusion  String?
+}
+
+type ExperienciaLaboral {
+  centro_trabajo    String
+  ocupacion         String
+  periodo           String
+  politica          Boolean
+}
+
+type SentenciaPenal {
+  id_expediente     String
+  delito            String
+  fallo             String
+  fecha             String
+  tx_pena           String
+  comentario        String?
+}
+
+type AlertaPeriodistica {
+  fecha             DateTime @default(now())
+  titulo            String
+  medio             String
+  resumen           String
+  enlace            String
+  categoria         AlertaTipo @default(INVESTIGACION)
+}
+
+enum AlertaTipo {
+  INVESTIGACION
+  DENUNCIA
+  CONTROVERSIA
+  SANCION_ADMINISTRATIVA
+}
+
+type Noticia {
+  titulo             String
+  descripcion        String
+  url                String
+  fecha_publicacion  String
+  medio              String
+  imagen_url         String?
+}
+
+type Link {
+  key                String
+  enlace             String
+}
+
+enum Cargo {
+  PRESIDENTE
+  PRIMER_VICEPRESIDENTE
+  SEGUNDO_VICEPRESIDENTE
+  SENADOR
+  DIPUTADO
+  PARLAMENTO_ANDINO
+}
+
+model Partido {
+  id                 String @id @default(auto()) @map("_id") @db.ObjectId
+  slug               String @unique
+  nombre             String
+  siglas             String @unique
+  logo_url           String
+  resumen            String
+  fundacion          String
+  ideologia          String[]
+  posicion           String
+  plan_de_gobierno   PlanGobierno?
+  color              String  // #${string}
+  alianza            Boolean
+  links              Link[]
+
+  candidatos         Candidato[]
+}
+
+type PlanGobierno {
+  url                      String
+  resumen                  String
+  dimension_social         PlanGobiernoDimension[]
+  dimension_economica      PlanGobiernoDimension[]
+  dimension_ambiental      PlanGobiernoDimension[]
+  dimension_institucional  PlanGobiernoDimension[]
+  ai_generated             Boolean?
+}
+
+type PlanGobiernoDimension {
+  problema                String
+  objetivo                String
+  indicador               String
+  meta                    String
+  categoria               String
+}

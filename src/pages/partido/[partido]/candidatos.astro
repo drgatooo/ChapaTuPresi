@@ -1,0 +1,412 @@
+---
+export const prerender = false;
+
+import Layout from "@/layouts/Layout.astro";
+import Heading from "@/components/common/Heading.astro";
+import Text from "@/components/common/Text.astro";
+import { Icon } from "astro-icon/components";
+import prisma from "@/lib/prisma";
+import { Cargo, type Candidato } from "@prisma/client";
+
+const { partido: partidoSlug } = Astro.params;
+
+// Traemos al partido y a TODOS sus candidatos, pre-ordenados por número de lista
+const partido = await prisma.partido.findUnique({
+  where: { slug: partidoSlug },
+  include: {
+    candidatos: {
+      orderBy: [{ numero_lista: "asc" }, { apellido_p: "asc" }],
+    },
+  },
+});
+
+if (!partido) return Astro.redirect("/404");
+
+// 1. ESTRUCTURAS DE DATOS PARA AGRUPAR
+const plancha: typeof partido.candidatos = [];
+const senadores: Record<string, typeof partido.candidatos> = {};
+const diputados: Record<string, typeof partido.candidatos> = {};
+const parlamento: typeof partido.candidatos = [];
+
+// 2. LÓGICA DE AGRUPACIÓN Y CLASIFICACIÓN
+partido.candidatos.forEach((c) => {
+  // Plancha Presidencial
+  if (
+    c.cargo.some((cargo) =>
+      [
+        Cargo.PRESIDENTE,
+        Cargo.PRIMER_VICEPRESIDENTE,
+        Cargo.SEGUNDO_VICEPRESIDENTE,
+      ].includes(cargo as any),
+    )
+  ) {
+    plancha.push(c);
+  }
+  // Senadores
+  else if (c.cargo.includes(Cargo.SENADOR)) {
+    const region = c.postula_region || "Distrito Único";
+    if (!senadores[region]) senadores[region] = [];
+    senadores[region].push(c);
+  }
+  // Diputados
+  else if (c.cargo.includes(Cargo.DIPUTADO)) {
+    const region = c.postula_region || "Distrito Único";
+    if (!diputados[region]) diputados[region] = [];
+    diputados[region].push(c);
+  }
+  // Parlamento Andino
+  else if (c.cargo.includes(Cargo.PARLAMENTO_ANDINO)) {
+    parlamento.push(c);
+  }
+});
+
+// Ordenar la plancha por jerarquía (Presidente -> 1er Vice -> 2do Vice)
+const planchaOrder: Record<string, number> = {
+  [Cargo.PRESIDENTE]: 1,
+  [Cargo.PRIMER_VICEPRESIDENTE]: 2,
+  [Cargo.SEGUNDO_VICEPRESIDENTE]: 3,
+};
+
+plancha.sort((a, b) => {
+  const cargoA = a.cargo.find((c) => planchaOrder[c]) || "";
+  const cargoB = b.cargo.find((c) => planchaOrder[c]) || "";
+  return (planchaOrder[cargoA] || 99) - (planchaOrder[cargoB] || 99);
+});
+
+// Helper para ordenar las regiones alfabéticamente
+const sortRegiones = (obj: Record<string, any>) =>
+  Object.entries(obj).sort(([a], [b]) => a.localeCompare(b));
+---
+
+<Layout title={`Candidatos de ${partido.nombre} - Elecciones 2026`}>
+  <header
+    class="border-b border-stone-200 dark:border-stone-800 pt-32 pb-12 relative overflow-hidden"
+  >
+    <div
+      class="absolute inset-0 opacity-5 pointer-events-none"
+      style={`background-color: ${partido.color}`}
+    >
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <a
+        href={`/partido/${partido.slug}`}
+        class="text-xs font-bold text-stone-400 hover:text-roof-terracotta-600 flex items-center gap-2 mb-6 transition-colors w-fit"
+      >
+        <Icon name="mdi:arrow-left" class="w-5 h-5" /> VOLVER AL PERFIL DEL PARTIDO
+      </a>
+
+      <div class="flex flex-col md:flex-row items-center md:items-end gap-6">
+        <div
+          class="w-24 h-24 bg-white p-2 rounded-2xl shadow-md border-2"
+          style={`border-color: ${partido.color}`}
+        >
+          <img
+            src={partido.logo_url}
+            class="w-full h-full object-contain"
+            alt={`Logo ${partido.siglas}`}
+          />
+        </div>
+        <div class="text-center md:text-left">
+          <Heading level="h1" className="text-4xl md:text-5xl font-black mb-2"
+            >Lista Oficial de Candidatos</Heading
+          >
+          <Text class="text-stone-500 font-medium"
+            >{partido.nombre} ({partido.siglas}) • Elecciones Generales 2026</Text
+          >
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div
+    class="sticky top-0 z-40 bg-white/80 dark:bg-stone-950/80 backdrop-blur-md border-b border-stone-200 dark:border-stone-800"
+  >
+    <div class="max-w-7xl mx-auto px-6 overflow-x-auto no-scrollbar">
+      <div class="flex items-center gap-6 py-4 min-w-max">
+        <Text
+          tag="span"
+          class="text-[10px] font-black uppercase tracking-widest text-stone-400"
+          >Saltar a:</Text
+        >
+        {
+          plancha.length > 0 && (
+            <a
+              href="#plancha"
+              class="text-xs font-bold dark:text-white hover:text-roof-terracotta-600 transition-colors"
+            >
+              Plancha Presidencial
+            </a>
+          )
+        }
+        {
+          Object.keys(senadores).length > 0 && (
+            <a
+              href="#senado"
+              class="text-xs font-bold dark:text-white hover:text-roof-terracotta-600 transition-colors"
+            >
+              Senado
+            </a>
+          )
+        }
+        {
+          Object.keys(diputados).length > 0 && (
+            <a
+              href="#diputados"
+              class="text-xs font-bold dark:text-white hover:text-roof-terracotta-600 transition-colors"
+            >
+              Diputados
+            </a>
+          )
+        }
+        {
+          parlamento.length > 0 && (
+            <a
+              href="#parlamento"
+              class="text-xs font-bold dark:text-white hover:text-roof-terracotta-600 transition-colors"
+            >
+              Parlamento Andino
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-6 py-16 space-y-24">
+    {
+      plancha.length > 0 && (
+        <section id="plancha" class="scroll-mt-24">
+          <div class="flex items-center gap-4 mb-8">
+            <Icon
+              name="mdi:account-tie-voice"
+              class="w-8 h-8 text-roof-terracotta-600"
+            />
+            <Heading level="h2" className="text-3xl">
+              Plancha Presidencial
+            </Heading>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {plancha.map((c) => {
+              const hasSentencias = c.sentencias.length > 0;
+              const mainCargo =
+                c.cargo.find((car) =>
+                  [
+                    Cargo.PRESIDENTE,
+                    Cargo.PRIMER_VICEPRESIDENTE,
+                    Cargo.SEGUNDO_VICEPRESIDENTE,
+                  ].includes(car as any),
+                ) || "";
+
+              return (
+                <a
+                  href={`/candidato/${c.slug}`}
+                  class="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-3xl p-8 flex flex-col items-center text-center group hover:border-roof-terracotta-500 hover:shadow-xl hover:-translate-y-1 transition-all relative"
+                >
+                  {hasSentencias && (
+                    <span class="absolute top-4 right-4 bg-red-100 text-red-700 text-[10px] font-black px-2 py-1 rounded uppercase flex items-center gap-1">
+                      <Icon name="mdi:alert" /> Sentencias
+                    </span>
+                  )}
+
+                  <div class="w-32 h-32 mb-6 rounded-full overflow-hidden border-4 border-stone-100 dark:border-stone-800 group-hover:border-roof-terracotta-200 transition-colors">
+                    <img
+                      src={c.foto_url}
+                      class="w-full h-full object-cover candidate lg:grayscale group-hover:grayscale-0 transition-all duration-500"
+                      alt={c.nombre}
+                    />
+                  </div>
+
+                  <span class="text-[10px] font-black text-roof-terracotta-600 uppercase tracking-widest mb-2 bg-roof-terracotta-50 dark:bg-roof-terracotta-900/20 px-3 py-1 rounded-full">
+                    {mainCargo.replace(/_/g, " ")}
+                  </span>
+
+                  <h4 class="font-black text-xl leading-tight dark:text-white group-hover:text-roof-terracotta-600 transition-colors">
+                    {c.nombre} {c.apellido_p}
+                  </h4>
+                  <p class="text-xs text-stone-500 mt-2">{c.apellido_m}</p>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      Object.keys(senadores).length > 0 && (
+        <section id="senado" class="scroll-mt-24">
+          <div class="flex items-center gap-4 mb-10">
+            <Icon name="mdi:bank" class="w-8 h-8 text-roof-terracotta-600" />
+            <Heading level="h2" className="text-3xl">
+              Candidatos al Senado
+            </Heading>
+          </div>
+
+          <div class="space-y-12">
+            {sortRegiones(senadores).map(([region, candidatos]) => (
+              <div class="bg-stone-50 dark:bg-stone-900/40 p-6 md:p-8 rounded-3xl border border-stone-100 dark:border-stone-800">
+                <h3 class="text-lg font-black uppercase tracking-widest text-stone-800 dark:text-stone-200 mb-6 flex items-center gap-3">
+                  <Icon name="mdi:map-marker" class="text-stone-400" /> {region}
+                  <span class="text-xs font-bold bg-stone-200 dark:bg-stone-800 text-stone-500 px-2 py-0.5 rounded-md">
+                    {candidatos.length}
+                  </span>
+                </h3>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                  {candidatos.map(
+                    (c: {
+                      slug: any;
+                      numero_lista: any;
+                      nombre: unknown;
+                      apellido_p: unknown;
+                      sentencias: string | any[];
+                      foto_url: string | null | undefined;
+                    }) => (
+                      <a
+                        href={`/candidato/${c.slug}`}
+                        class="flex items-center gap-4 p-3 bg-white dark:bg-stone-900 rounded-2xl border border-stone-200 dark:border-stone-800 hover:border-roof-terracotta-500 transition-all group shadow-sm"
+                      >
+                        <div class="w-12 h-12 bg-stone-100 dark:bg-stone-800 rounded-xl flex flex-col items-center justify-center shrink-0 border border-stone-200 dark:border-stone-700">
+                          <span class="font-black text-lg text-stone-800 dark:text-white leading-none">
+                            {c.numero_lista || "-"}
+                          </span>
+                        </div>
+                        <div class="grow overflow-hidden">
+                          <p class="text-sm font-bold dark:text-white truncate group-hover:text-roof-terracotta-600 transition-colors">
+                            {c.nombre} {c.apellido_p}
+                          </p>
+                          {c.sentencias.length > 0 && (
+                            <span class="text-[9px] text-red-600 font-bold uppercase">
+                              Registra sentencias
+                            </span>
+                          )}
+                        </div>
+                        <div class="w-10 h-10 rounded-full overflow-hidden shrink-0 opacity-80 group-hover:opacity-100 transition-opacity">
+                          <img
+                            src={c.foto_url}
+                            class="w-full h-full object-cover candidate"
+                          />
+                        </div>
+                      </a>
+                    ),
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      Object.keys(diputados).length > 0 && (
+        <section id="diputados" class="scroll-mt-24">
+          <div class="flex items-center gap-4 mb-10">
+            <Icon
+              name="mdi:account-group"
+              class="w-8 h-8 text-roof-terracotta-600"
+            />
+            <div>
+              <Heading level="h2" className="text-3xl">
+                Candidatos a Diputados
+              </Heading>
+              <Text class="text-sm">
+                Representantes territoriales y poblacionales.
+              </Text>
+            </div>
+          </div>
+
+          <div class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+            {sortRegiones(diputados).map(([region, candidatos]) => (
+              <div class="break-inside-avoid-column bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-3xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <h3 class="text-sm font-black uppercase tracking-widest text-stone-800 dark:text-stone-200 border-b border-stone-100 dark:border-stone-800 pb-3 mb-4 flex justify-between items-center">
+                  {region}
+                  <span class="text-[10px] bg-stone-100 dark:bg-stone-800 px-2 py-1 rounded text-stone-500">
+                    {candidatos.length} escaños
+                  </span>
+                </h3>
+
+                <div class="space-y-3">
+                  {candidatos.map((c: Candidato) => (
+                    <a
+                      href={`/candidato/${c.slug}`}
+                      class="flex items-center gap-3 group"
+                    >
+                      <span class="w-6 text-center font-black text-stone-400 group-hover:text-roof-terracotta-600 transition-colors">
+                        {c.numero_lista || "-"}
+                      </span>
+                      <div class="w-8 h-8 rounded-full overflow-hidden shrink-0">
+                        <img
+                          src={c.foto_url}
+                          class="w-full h-full object-cover candidate grayscale group-hover:grayscale-0"
+                        />
+                      </div>
+                      <p class="text-xs font-bold dark:text-stone-300 group-hover:text-roof-terracotta-600 transition-colors line-clamp-1">
+                        {c.nombre} {c.apellido_p}
+                      </p>
+
+                      {/* punto rojo si tiene sentencias */}
+                      {c.sentencias.length > 0 && (
+                        <Icon
+                          name="mdi:court-hammer"
+                          class="w-4 h-4 text-red-600 inline-block ml-auto"
+                        />
+                      )}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      parlamento.length > 0 && (
+        <section id="parlamento" class="scroll-mt-24">
+          <div class="flex items-center gap-4 mb-8">
+            <Icon name="mdi:earth" class="w-8 h-8 text-roof-terracotta-600" />
+            <Heading level="h2" className="text-3xl">
+              Parlamento Andino
+            </Heading>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {parlamento.map((c) => (
+              <a
+                href={`/candidato/${c.slug}`}
+                class="flex items-center gap-4 p-4 bg-white dark:bg-stone-900 rounded-2xl border border-stone-200 dark:border-stone-800 hover:border-roof-terracotta-500 transition-all group shadow-sm"
+              >
+                <div class="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-800 flex items-center justify-center font-black text-stone-500">
+                  {c.numero_lista || "-"}
+                </div>
+                <div class="overflow-hidden">
+                  <p class="text-sm font-bold dark:text-white truncate group-hover:text-roof-terracotta-600 transition-colors">
+                    {c.nombre} {c.apellido_p}
+                  </p>
+                  {c.sentencias.length > 0 && (
+                    <p class="text-[10px] font-bold text-red-400 uppercase">
+                      Registra sentencias
+                    </p>
+                  )}
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )
+    }
+  </main>
+</Layout>
+
+<script>
+  import { prepareFallback } from "@/lib/imageFallback";
+
+  document.addEventListener("astro:page-load", () => {
+    prepareFallback("candidate");
+  });
+  prepareFallback("candidate");
+</script>

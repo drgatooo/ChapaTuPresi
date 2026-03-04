@@ -1,0 +1,498 @@
+---
+export const prerender = false;
+
+import Layout from "@/layouts/Layout.astro";
+import Heading from "@/components/common/Heading.astro";
+import Text from "@/components/common/Text.astro";
+import Pill from "@/components/common/Pill.astro";
+import { Icon } from "astro-icon/components";
+import prisma from "@/lib/prisma";
+import { cargoSort } from "@/lib/sorts";
+import { marked } from "marked";
+
+const { candidato: candidatoSlug } = Astro.params;
+
+const candidato = await prisma.candidato
+  .findUnique({
+    where: { slug: candidatoSlug },
+    include: { partido: true },
+  })
+  .catch(() => null);
+
+if (!candidato) return Astro.redirect("/404");
+
+const full_name = `${candidato.nombre} ${candidato.apellido_p} ${candidato.apellido_m}`;
+const biografiaHtml = marked.parse(
+  candidato.partido.resumen.slice(0, 200) +
+    (candidato.partido.resumen.length > 200 ? "..." : ""),
+);
+
+// Formateador de títulos de cargos
+const formatCargo = (c: string) => c.replace(/_/g, " ");
+
+const hasEstudios = candidato.educacion.universitario.length > 0 || candidato.educacion.tecnico.length > 0;
+const hasExperiencia = candidato.experiencia.length > 0;
+const isPresidente = candidato.cargo.some(c => c === "PRESIDENTE");
+---
+
+<Layout
+  title={`${candidato.nombre} ${candidato.apellido_p} - Perfil del Candidato`}
+  description={`Conoce la trayectoria de ${full_name}. Candidato por ${candidato.partido.nombre} para las elecciones 2026.`}
+  image={candidato.foto_url}
+>
+  <header
+    class="relative pt-32 pb-16 overflow-hidden"
+    style={`background-color: ${candidato.partido.color}11`}
+  >
+    <div class="max-w-7xl mx-auto px-8 relative z-10">
+      <div class="flex flex-col md:flex-row gap-12 items-center md:items-end">
+        <div class="relative group">
+          <div
+            class="absolute -inset-2 bg-linear-to-tr from-stone-200 to-stone-300 dark:from-stone-800 dark:to-stone-700 rounded-[3rem] blur-xl opacity-50"
+          >
+          </div>
+          <div
+            class="relative aspect-3/4 h-64 rounded-[2.5rem] overflow-hidden border-4 border-white dark:border-stone-800 shadow-2xl"
+          >
+            <img
+              src={candidato.foto_url}
+              alt={full_name}
+              class="w-full h-full object-cover candidate"
+            />
+          </div>
+          {
+            candidato.numero_lista && (
+              <div
+                class="absolute -bottom-4 -right-4 w-16 h-16 text-black dark:text-white bg-white dark:bg-stone-900 border-4 rounded-2xl flex items-center justify-center shadow-xl"
+                style={`border-color: ${candidato.partido.color}`}
+              >
+                <span class="text-2xl font-black">
+                  {candidato.numero_lista}
+                </span>
+              </div>
+            )
+          }
+        </div>
+
+        <div class="grow text-center md:text-left space-y-6">
+          <div class="flex flex-wrap justify-center md:justify-start gap-3">
+            <a
+              href={`/partido/${candidato.partido.slug}`}
+              class="flex items-center gap-2 bg-white dark:bg-stone-800 px-4 py-2 rounded-xl shadow-sm hover:scale-105 transition"
+            >
+              <img
+                src={candidato.partido.logo_url}
+                class="w-6 h-6 object-contain"
+              />
+              <Text
+                tag="span"
+                class="text-xs font-black uppercase tracking-tighter"
+                >{candidato.partido.siglas}</Text
+              >
+            </a>
+            <Pill
+              className="bg-stone-200 dark:bg-stone-700 text-stone-600 dark:text-stone-300 border-none uppercase text-[10px] font-bold"
+              >DNI {candidato.dni}</Pill
+            >
+            {
+              (candidato.postula_region?.length || 0) > 1 && (
+                <Pill
+                  icon="mdi:map-marker"
+                  className="bg-blue-50 text-blue-600 border-none font-bold uppercase text-[10px]"
+                >
+                  {candidato.postula_region}
+                </Pill>
+              )
+            }
+          </div>
+
+          <div>
+            <Heading
+              level="h1"
+              className="text-5xl md:text-7xl font-black tracking-tighter leading-none mb-4"
+            >
+              {candidato.nombre}
+              <br />
+              <span class="text-stone-400"
+                >{candidato.apellido_p + " " + candidato.apellido_m}</span
+              >
+            </Heading>
+            <div class="flex flex-wrap justify-center md:justify-start gap-2">
+              {
+                candidato.cargo
+                  .sort(cargoSort)
+                  .map((c) => (
+                    <span class="bg-stone-900 dark:bg-white text-white dark:text-stone-900 px-3 py-1 rounded-lg text-xs font-black uppercase tracking-widest">
+                      {formatCargo(c)}
+                    </span>
+                  ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-8 py-16 grid lg:grid-cols-12 gap-16">
+    <div class="lg:col-span-8 space-y-16">
+      <section id="antecedentes" class="scroll-mt-24">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="p-3 bg-red-100 dark:bg-red-900/30 rounded-2xl">
+            <Icon name="mdi:gavel" class="w-8 h-8 text-red-600" />
+          </div>
+          <Heading level="h2">Sentencias Judiciales</Heading>
+        </div>
+
+        {
+          candidato.sentencias.length > 0 ? (
+            <div class="space-y-4">
+              {candidato.sentencias.map((s) => (
+                <div class="bg-red-50 dark:bg-red-950/20 border-l-4 border-red-600 p-6 rounded-r-2xl">
+                  <div class="flex justify-between items-start mb-2">
+                    <h4 class="font-black text-red-700 dark:text-red-400 uppercase text-sm">
+                      {s.delito}
+                    </h4>
+                    <span class="text-[10px] font-bold text-red-600/50 uppercase">
+                      Exp: {s.id_expediente}
+                    </span>
+                  </div>
+                  <Text class="text-sm font-bold mb-2">{s.fallo}</Text>
+                  <p class="text-xs text-stone-500 dark:text-stone-400 italic">
+                    "{s.tx_pena}"
+                  </p>
+                  {s.comentario && (
+                    <Text class="mt-4 p-3 bg-white/50 dark:bg-stone-900/50 rounded-lg text-sm border border-red-100 dark:border-red-900/30">
+                      {s.comentario}
+                    </Text>
+                  )}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div class="flex items-center gap-4 p-8 bg-green-50 dark:bg-green-900/20 rounded-3xl border border-green-100 dark:border-green-900/30">
+              <Icon name="mdi:check-circle" class="w-10 h-10 text-green-600" />
+              <div>
+                <p class="font-black text-green-800 dark:text-green-400">
+                  No registra sentencias penales
+                </p>
+                <p class="text-sm text-green-600/70">
+                  Según la información declarada ante el JNE para este proceso
+                  electoral.
+                </p>
+              </div>
+            </div>
+          )
+        }
+      </section>
+
+      <section id="educacion" class="scroll-mt-24">
+        <Heading level="h2" className="mb-6 flex items-center gap-4">
+          <Icon name="mdi:school" class="w-8 h-8 text-stone-400" />
+          Formación Académica
+        </Heading>
+
+        <!-- work in progress UWU -->
+        <!-- <div class="flex flex-wrap gap-4 mb-8">
+          <div class={`flex items-center gap-2 px-4 py-3 rounded-2xl border ${candidato.educacion.primaria ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800 text-green-700 dark:text-green-400' : 'bg-stone-50 dark:bg-stone-900 border-stone-200 dark:border-stone-800 text-stone-500'}`}>
+             <Icon name={candidato.educacion.primaria ? "mdi:check-circle" : "mdi:minus-circle-outline"} class="w-5 h-5" />
+             <span class="text-xs font-black uppercase tracking-widest">Primaria {candidato.educacion.primaria ? 'Completa' : 'No Registra'}</span>
+          </div>
+          
+          <div class={`flex items-center gap-2 px-4 py-3 rounded-2xl border ${candidato.educacion.secundaria ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800 text-green-700 dark:text-green-400' : 'bg-stone-50 dark:bg-stone-900 border-stone-200 dark:border-stone-800 text-stone-500'}`}>
+             <Icon name={candidato.educacion.secundaria ? "mdi:check-circle" : "mdi:minus-circle-outline"} class="w-5 h-5" />
+             <span class="text-xs font-black uppercase tracking-widest">Secundaria {candidato.educacion.secundaria ? 'Completa' : 'No Registra'}</span>
+          </div>
+        </div> -->
+
+        {hasEstudios ? (
+          <div class="grid md:grid-cols-2 gap-6">
+            {/* Universitarios y Postgrados */}
+            {[
+              ...candidato.educacion.universitario,
+              ...candidato.educacion.tecnico,
+            ].map((edu) => (
+              <div class="relative p-6 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl shadow-sm hover:border-stone-400 transition">
+                {edu.postgrado && (
+                  <span class="absolute -top-3 right-4 bg-purple-600 text-white text-[8px] font-black px-2 py-1 rounded-full uppercase shadow-sm">
+                    Postgrado
+                  </span>
+                )}
+                <p class="text-[10px] font-black text-stone-400 uppercase mb-1">
+                  {edu.centro_educativo}
+                </p>
+                <h4 class="font-bold text-stone-900 dark:text-white leading-tight mb-3">
+                  {edu.grado}
+                </h4>
+                <div class="flex items-center justify-between text-xs">
+                  <span
+                    class={
+                      edu.concluido
+                        ? "text-green-600 dark:text-green-400 font-bold flex items-center gap-1"
+                        : "text-amber-600 dark:text-amber-500 font-bold flex items-center gap-1"
+                    }
+                  >
+                    <Icon name={edu.concluido ? "mdi:check" : "mdi:progress-clock"} class="w-4 h-4" />
+                    {edu.concluido ? "Concluido" : "En curso"}
+                  </span>
+                  {edu.fecha_conclusion && (
+                    <span class="text-stone-400 font-medium bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded">
+                      {edu.fecha_conclusion}
+                    </span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div class="flex items-center gap-4 p-8 bg-stone-50 dark:bg-stone-900/50 rounded-3xl border border-stone-200 dark:border-stone-800 border-dashed">
+            <Icon name="mdi:book-off" class="w-10 h-10 text-stone-400" />
+            <div>
+              <p class="font-black text-stone-600 dark:text-stone-300">
+                No registra formación superior (Técnica o Universitaria)
+              </p>
+              <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">
+                Según la declaración jurada de hoja de vida (DJHV) presentada ante el JNE.
+              </p>
+            </div>
+          </div>
+        )}
+      </section>
+
+      <section id="experiencia" class="scroll-mt-24">
+        <Heading level="h2" className="mb-8 flex items-center gap-4">
+          <Icon name="mdi:briefcase-variant" class="w-8 h-8 text-stone-400" />
+          Experiencia Laboral
+        </Heading>
+
+        <div
+          class={`space-y-12 relative ${hasExperiencia ? 'before:absolute before:left-4 before:top-2 before:bottom-2 before:w-0.5 before:bg-stone-200 dark:before:bg-stone-800' : ''}`}
+        >
+          {
+            hasExperiencia ?
+            candidato.experiencia
+              .sort((a, b) => {
+                const dateA = +a.periodo.split("-")[0];
+                const dateB = +b.periodo.split("-")[0];
+                return dateB - dateA;
+              })
+              .map((exp) => (
+                <div class="relative pl-12">
+                  <div
+                    class={`absolute left-4 -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white dark:border-stone-950 ${exp.politica ? "bg-roof-terracotta-600" : "bg-stone-400"}`}
+                  />
+                  <div class="flex flex-col md:flex-row md:justify-between gap-1 mb-2">
+                    <h4 class="font-black text-lg text-stone-900 dark:text-white leading-none">
+                      {exp.ocupacion}
+                    </h4>
+                    <span class="text-xs font-bold text-stone-400 tabular-nums">
+                      {exp.periodo}
+                    </span>
+                  </div>
+                  <p class="text-sm text-stone-600 dark:text-stone-400 font-medium mb-2">
+                    {exp.centro_trabajo}
+                  </p>
+                  {exp.politica && (
+                    <span class="text-[9px] font-black uppercase tracking-widest text-roof-terracotta-600 bg-roof-terracotta-50 dark:bg-roof-terracotta-900/20 px-2 py-1 rounded">
+                      Cargo Político
+                    </span>
+                  )}
+                </div>
+              ))
+              : (
+                <div class="flex items-center gap-4 p-8 bg-stone-50 dark:bg-stone-900/50 rounded-3xl border border-stone-200 dark:border-stone-800 border-dashed">
+                  <Icon name="mdi:briefcase-off" class="w-10 h-10 text-stone-400" />
+                  <div>
+                    <p class="font-black text-stone-600 dark:text-stone-300">
+                      No registra experiencia laboral
+                    </p>
+                    <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">
+                      Según la declaración jurada de hoja de vida (DJHV) presentada ante el JNE.
+                    </p>
+                  </div>
+                </div>
+              )
+          }
+        </div>
+      </section>
+
+      {isPresidente && (
+        <section id="noticias" class="scroll-mt-24" data-candidato={`${candidato.nombre} ${candidato.apellido_p}`} data-shortname={candidato.searchable || 0}>
+          <Heading level="h2" className="mb-8 flex items-center gap-4">
+            <Icon name="mdi:newspaper-variant-outline" class="w-8 h-8 text-stone-400" />
+            En las Noticias
+          </Heading>
+
+          <div id="news-container" class="space-y-4">
+            {[1, 2, 3].map(() => (
+              <div class="animate-pulse flex gap-4 p-5 bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-800 rounded-2xl shadow-sm">
+                <div class="w-24 h-24 bg-stone-200 dark:bg-stone-800 rounded-xl shrink-0"></div>
+                <div class="flex-1 space-y-3 py-1">
+                  <div class="h-4 bg-stone-200 dark:bg-stone-800 rounded w-3/4"></div>
+                  <div class="h-4 bg-stone-200 dark:bg-stone-800 rounded w-5/6"></div>
+                  <div class="h-3 bg-stone-200 dark:bg-stone-800 rounded w-1/4 mt-4"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
+
+    <aside class="lg:col-span-4">
+      <div class="sticky top-24 space-y-8">
+        {(candidato.cv_url || "") !== "" &&
+          <div class="space-y-4 flex justify-between">
+            <Text
+              tag="a"
+              target="_blank"
+              href={candidato.cv_url}
+              class="flex w-full items-center gap-2 px-4 py-3 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl text-sm font-bold hover:scale-105 transition"
+            >
+              <Icon name="mdi:file-document" class="w-5 h-5 inline-block mr-2" />
+              Ver hoja de vida (PDF)
+            </Text>
+          </div>
+        }
+
+        <div
+          class="bg-white dark:bg-stone-900 rounded-4xl p-8 border border-stone-200 dark:border-stone-800 shadow-sm text-center"
+        >
+          <img
+            src={candidato.partido.logo_url}
+            class="candidato w-24 h-24 mx-auto object-contain mb-6"
+          />
+          <Heading level="h4" className="text-xl mb-2"
+            >{candidato.partido.nombre}</Heading
+          >
+          <article
+            class="prose prose-stone dark:prose-invert max-w-none prose-p:text-sm prose-headings:font-black my-4"
+          >
+            <Fragment set:html={biografiaHtml} />
+          </article>
+          <Text
+            tag="a"
+            href={`/partido/${candidato.partido.slug}`}
+            class="inline-block w-full py-4 bg-stone-100 dark:bg-stone-800 rounded-2xl text-xs font-black hover:bg-stone-200 hover:text-black transition"
+            >VER PARTIDO POLÍTICO</Text
+          >
+        </div>
+
+        {
+          candidato.cargo.some(c => c === "PRESIDENTE") ? 
+            <div class="space-y-4">
+              <Heading
+                level="h3"
+                className="text-sm uppercase tracking-widest text-stone-400"
+              >
+                Alertas
+              </Heading>
+              {
+                candidato.alertas.length > 0 ? (
+                  candidato.alertas.map((a) => <span />)
+                ) : (
+                  <div class="p-6 border-2 border-dashed border-stone-200 dark:border-stone-800 rounded-2xl text-center">
+                    <Text class="text-xs text-stone-400 italic">
+                      Próximamente podrás ver aquí las alertas periodísticas
+                      relacionadas a este candidato.
+                    </Text>
+                  </div>
+                )
+              }
+            </div>
+            : <></>
+        }
+
+        <div class="flex flex-wrap gap-4">
+          {
+            candidato.links.map((link) => (
+              <a
+                href={link.enlace}
+                target="_blank"
+                class="grow flex items-center justify-center gap-2 p-4 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl hover:scale-105 transition shadow-sm"
+              >
+                <Icon
+                  name={`mdi:${link.key === "x" ? "twitter" : link.key}`}
+                  class="w-5 h-5"
+                />
+                <span class="text-xs font-bold capitalize">{link.key}</span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </aside>
+  </main>
+</Layout>
+
+<style>
+  /* Animación suave para la línea de tiempo */
+  .relative::before {
+    content: "";
+    transition: all 0.5s ease;
+  }
+</style>
+
+<script>
+  import { prepareFallback } from "@/lib/imageFallback";
+  
+  async function fetchCandidateNews() {
+    const newsSection = document.getElementById('noticias');
+    const newsContainer = document.getElementById('news-container');
+    
+    // Si no existe la sección (no es candidato presidencial), no hacemos nada
+    if (!newsSection || !newsContainer) return;
+
+    const candidatoName = newsSection.getAttribute('data-shortname') || newsSection.getAttribute('data-candidato');
+    if (!candidatoName) return;
+
+    try {
+      const res = await fetch(`/api/noticias?q=${encodeURIComponent(candidatoName)}`);
+      const noticias = await res.json();
+
+      if (!noticias || noticias.length === 0 || noticias.error) {
+        newsContainer.innerHTML = `
+          <div class="p-6 border-2 border-dashed border-stone-200 dark:border-stone-800 rounded-2xl text-center text-stone-500 text-sm">
+            No se encontraron noticias recientes relevantes para este candidato.
+          </div>`;
+        return;
+      }
+
+      // Renderizamos las noticias reales
+      newsContainer.innerHTML = noticias.filter((n: {image: string|null}) => !!n.image).map((n: any) => `
+        <a href="${n.link}" target="_blank" rel="noopener noreferrer" class="group flex flex-col sm:flex-row gap-4 p-5 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl hover:border-roof-terracotta-500 hover:shadow-md transition-all">
+          ${n.image ? `
+            <div class="w-full sm:w-32 h-32 sm:h-24 rounded-xl overflow-hidden shrink-0 bg-stone-100 dark:bg-stone-800">
+              <img src="${n.image}" alt="Imagen noticia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            </div>
+          ` : ''}
+          <div class="flex-grow flex flex-col justify-between">
+            <h3 class="font-bold line-clamp-2 text-sm md:text-base leading-tight mb-2 group-hover:text-roof-terracotta-600 transition-colors dark:text-stone-200">
+              ${n.title}
+            </h3>
+            <div class="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-stone-400">
+              <span class="text-roof-terracotta-600">${n.source || 'Medio Local'}</span>
+              <span>•</span>
+              <span>${n.date || 'Reciente'}</span>
+            </div>
+          </div>
+        </a>
+      `).join('');
+
+    } catch (error) {
+      console.error("Error cargando noticias del candidato:", error);
+      newsContainer.innerHTML = `
+        <div class="p-6 border-2 border-dashed border-red-200 dark:border-red-900/30 rounded-2xl text-center text-red-500 text-sm">
+          Ocurrió un error al cargar las noticias.
+        </div>`;
+    }
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    prepareFallback("candidate");
+    fetchCandidateNews();
+  });
+  
+  prepareFallback("candidate");
+  fetchCandidateNews();
+</script>

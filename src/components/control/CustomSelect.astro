@@ -1,0 +1,127 @@
+---
+import { Icon } from "astro-icon/components";
+
+export interface Option {
+  value: string;
+  label: string;
+  img?: string; // Opcional, para los logos
+}
+
+export interface Props {
+  name: string;
+  label?: string;
+  options: Option[];
+  defaultText?: string;
+  id?: string;
+}
+
+const { 
+  name, 
+  label, 
+  options, 
+  defaultText = "Seleccionar...", 
+  id = name 
+} = Astro.props;
+---
+
+<div class="custom-select-container relative w-full" data-name={name}>
+  {label && (
+    <label class="text-[10px] font-bold text-stone-400 mb-1 block uppercase tracking-widest">
+      {label}
+    </label>
+  )}
+  
+  <input type="hidden" name={name} id={id} value="">
+
+  <button 
+    type="button" 
+    class="custom-select-btn w-full flex items-center justify-between bg-white dark:bg-stone-950 border border-stone-200 dark:border-stone-800 p-3 rounded-xl text-sm font-bold transition-all hover:border-roof-terracotta-500 outline-none"
+  >
+    <span class="custom-select-selected flex items-center gap-2 text-stone-500 dark:text-stone-400 truncate">
+      {defaultText}
+    </span>
+    <Icon name="mdi:chevron-down" class="w-5 h-5 text-stone-400 pointer-events-none shrink-0" />
+  </button>
+
+  <ul class="custom-select-dropdown absolute z-50 w-full mt-2 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl shadow-xl max-h-60 overflow-y-auto hidden flex-col divide-y divide-stone-100 dark:divide-stone-800">
+    <li class="custom-select-option p-3 hover:bg-stone-50 dark:hover:bg-stone-800 cursor-pointer flex items-center gap-3 transition-colors" data-value="" data-label={defaultText}>
+      <span class="font-bold text-sm dark:text-white">{defaultText}</span>
+    </li>
+    
+    {options.map(opt => (
+      <li class="custom-select-option p-3 hover:bg-stone-50 dark:hover:bg-stone-800 cursor-pointer flex items-center gap-3 transition-colors" data-value={opt.value} data-label={opt.label} data-img={opt.img || ''}>
+        {opt.img && <img src={opt.img} class="w-6 h-6 object-contain shrink-0" alt={opt.label} />}
+        <span class="font-bold text-sm dark:text-white truncate">{opt.label}</span>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<script>
+  function initCustomSelects() {
+    const containers = document.querySelectorAll('.custom-select-container');
+    
+    // Evitar múltiples bindings al usar View Transitions
+    document.removeEventListener('click', closeAllSelects);
+    document.addEventListener('click', closeAllSelects);
+
+    function closeAllSelects(e: Event) {
+       containers.forEach(container => {
+         if (!container.contains(e.target as Node)) {
+            container.querySelector('.custom-select-dropdown')?.classList.add('hidden');
+            container.querySelector('.custom-select-dropdown')?.classList.remove('flex');
+         }
+       });
+    }
+
+    containers.forEach(container => {
+      if(container.hasAttribute('data-initialized')) return;
+      container.setAttribute('data-initialized', 'true');
+
+      const btn = container.querySelector('.custom-select-btn');
+      const dropdown = container.querySelector('.custom-select-dropdown');
+      const hiddenInput = container.querySelector('input[type="hidden"]') as HTMLInputElement;
+      const selectedContent = container.querySelector('.custom-select-selected');
+      const options = container.querySelectorAll('.custom-select-option');
+
+      btn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        // Cerrar otros dropdowns abiertos
+        containers.forEach(c => {
+           if (c !== container) {
+             c.querySelector('.custom-select-dropdown')?.classList.add('hidden');
+             c.querySelector('.custom-select-dropdown')?.classList.remove('flex');
+           }
+        });
+        dropdown?.classList.toggle('hidden');
+        dropdown?.classList.toggle('flex');
+      });
+
+      options.forEach(opt => {
+        opt.addEventListener('click', () => {
+          const val = opt.getAttribute('data-value') || '';
+          const label = opt.getAttribute('data-label') || '';
+          const img = opt.getAttribute('data-img');
+          
+          hiddenInput.value = val;
+          
+          let html = '';
+          if (img) html += `<img src="${img}" class="w-5 h-5 object-contain shrink-0" />`;
+          html += `<span class="truncate dark:text-white ${val ? 'text-stone-900' : ''}">${label}</span>`;
+          
+          if(selectedContent) selectedContent.innerHTML = html;
+          
+          dropdown?.classList.add('hidden');
+          dropdown?.classList.remove('flex');
+
+          // Disparamos un evento change para que otros scripts (como el de ocultar filtros) se enteren
+          hiddenInput.dispatchEvent(new Event('change', { bubbles: true }));
+        });
+      });
+    });
+  }
+
+  // Soporte para Astro View Transitions
+  document.addEventListener('astro:page-load', initCustomSelects);
+  initCustomSelects(); 
+</script>

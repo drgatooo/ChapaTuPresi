@@ -1,0 +1,149 @@
+---
+import Text from "../common/Text.astro";
+import Heading from "../common/Heading.astro";
+import Pill from "../common/Pill.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<section class="max-w-7xl w-full mx-auto px-8 py-14">
+  <div class="flex justify-between items-end mb-8">
+    <div>
+      <Heading level="h2">Últimas Noticias</Heading>
+      <Text>Elecciones 2026 en tiempo real.</Text>
+    </div>
+    <div class="hidden md:flex gap-2">
+      <button
+        id="prevBtn"
+        class="p-2 rounded-full bg-black/5 dark:bg-white/10 opacity-30 pointer-events-none"
+      >
+        <Icon name="mdi:chevron-left" class="w-6 h-6 dark:text-white" />
+      </button>
+      <button
+        id="nextBtn"
+        class="p-2 rounded-full bg-black/5 dark:bg-white/10 opacity-30 pointer-events-none"
+      >
+        <Icon name="mdi:chevron-right" class="w-6 h-6 dark:text-white" />
+      </button>
+    </div>
+  </div>
+
+  <div
+    id="newsCarousel"
+    class="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide scroll-smooth pb-4"
+  >
+    {
+      Array(3)
+        .fill(0)
+        .map(() => (
+          <div class="min-w-[85%] md:min-w-[45%] lg:min-w-[31%] animate-pulse bg-gray-200 dark:bg-white/5 h-72 rounded-xl" />
+        ))
+    }
+  </div>
+</section>
+
+<template id="news-template">
+  <a
+    href=""
+    target="_blank"
+    rel="noopener noreferrer"
+    class="min-w-[85%] md:min-w-[45%] lg:min-w-[31%] snap-start bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 block rounded-xl overflow-hidden duration-300 border border-transparent hover:border-black/10"
+  >
+    <div class="relative h-48 bg-gray-300 dark:bg-gray-800">
+      <img
+        src=""
+        alt=""
+        class="news-img w-full h-48 object-cover hidden"
+        loading="lazy"
+      />
+      <div
+        class="news-placeholder flex items-center justify-center h-full text-[10px] italic p-4 text-center opacity-50"
+      >
+      </div>
+      <Pill
+        className="news-source absolute top-2 left-2 bg-white/90 dark:bg-black/90 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider"
+        icon="mdi:newspaper"
+      />
+    </div>
+
+    <div class="p-5">
+      <Heading
+        level="h6"
+        className="news-title text-lg font-semibold mb-3 line-clamp-2 leading-tight"
+      />
+      <Text class="news-date text-sm opacity-70" />
+    </div>
+  </a>
+</template>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  import { setupCarousel } from "@/lib/carousel";
+
+  async function initNews() {
+    const carousel = document.getElementById("newsCarousel");
+    const template = document.getElementById(
+      "news-template",
+    ) as HTMLTemplateElement;
+
+    console.log("checking first");
+    if (!carousel || !template) return;
+    console.log("first check passed");
+
+    try {
+      const response = await fetch("/api/noticias");
+      const noticias = await response.json();
+
+      carousel.innerHTML = "";
+
+      noticias.filter((n: {image: string|null}) => n.image).forEach(
+        (noticia: {
+          link: string;
+          title: string | null;
+          source: string | null;
+          date: string | null;
+          image: string;
+        }) => {
+          const clone = template.content.cloneNode(true) as HTMLElement;
+
+          const link = clone.querySelector("a");
+          const img = clone.querySelector(".news-img") as HTMLImageElement;
+          const title = clone.querySelector(".news-title");
+          const source = clone.querySelector(".news-source span");
+          const date = clone.querySelector(".news-date");
+          const placeholder = clone.querySelector(".news-placeholder");
+
+          if (link) link.href = noticia.link;
+          if (title) title.textContent = noticia.title;
+          if (source) source.textContent = noticia.source;
+          if (date) date.textContent = noticia.date;
+
+          if (noticia.image) {
+            img.src = noticia.image;
+            img.classList.remove("hidden");
+            placeholder?.remove();
+          } else {
+            if (placeholder) placeholder.textContent = noticia.title;
+          }
+
+          carousel.appendChild(clone);
+        },
+      );
+
+      setupCarousel();
+    } catch (e) {
+      console.error("Error cargando noticias:", e);
+    }
+  }
+
+  document.addEventListener("astro:page-load", initNews);
+  initNews();
+</script>

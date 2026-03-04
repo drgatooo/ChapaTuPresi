@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes, HTMLTag } from 'astro/types';
+
+type ValidTags = 'p' | 'span' | 'div' | 'a';
+
+type Props<T extends ValidTags> = {
+    tag?: T;
+} & HTMLAttributes<T>;
+
+const { tag: Tag = 'p', class: className, ...rest } = Astro.props as Props<ValidTags>;
+
+const baseStyle = 'dark:text-stone-300 text-md';
+---
+
+<Tag class:list={[baseStyle, className]} {...rest}>
+    <slot />
+</Tag>

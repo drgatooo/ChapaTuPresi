@@ -1,0 +1,23 @@
+---
+interface Props {
+    level?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+    className?: string;
+}
+
+const { level: Tag = 'h1', className = '' } = Astro.props;
+
+const styles = {
+    h1: 'font-display dark:text-white text-3xl md:text-5xl font-black',
+    h2: 'font-display dark:text-white text-2xl md:text-3xl font-bold',
+    h3: 'font-display dark:text-white text-xl md:text-2xl font-semibold',
+    h4: 'font-display dark:text-white text-lg md:text-xl font-medium',
+    h5: 'font-display dark:text-white text-lg md:text-xl font-normal',
+    h6: 'font-display dark:text-white text-lg md:text-lg font-light',
+}
+
+const classes = [styles[Tag], className];
+---
+
+<Tag class:list={classes}>
+    <slot />
+</Tag>

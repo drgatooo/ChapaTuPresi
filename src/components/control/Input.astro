@@ -1,0 +1,28 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<'input'> {
+    placeholder?: string;
+    className?: string;
+    divClassName?: string;
+    id?: string;
+}
+
+const {
+    placeholder = "Introducir texto...",
+    className = "",
+    divClassName = "",
+    ...rest
+} = Astro.props as Props;
+
+const baseStyle =
+    "transition-all ring-2 ring-stone-300 dark:ring-stone-500 focus:ring-tuscany-400 rounded-xl py-3 px-4 outline-none dark:text-white";
+const baseDivStyle = "relative group";
+
+const styles = [baseStyle, className];
+const divStyles = [baseDivStyle, divClassName];
+---
+
+<div class:list={divStyles}>
+    <input type="text" placeholder={placeholder} class:list={styles} {...rest} />
+</div>

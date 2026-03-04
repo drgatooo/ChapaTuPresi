@@ -1,0 +1,218 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Heading from "@components/common/Heading.astro";
+import Text from "@components/common/Text.astro";
+import Pill from "@components/common/Pill.astro";
+import { Icon } from "astro-icon/components";
+import { Cargo } from "@prisma/client";
+import prisma from "@/lib/prisma";
+import NewsFeed from "@/components/landing/NewsFeed.astro";
+import Information from "@/components/landing/Information.astro";
+import Partido from "@/components/landing/Partido.astro";
+import Yape from "@/components/landing/Yape.astro";
+
+const candidatoCount = await prisma.candidato.count();
+const partidos = await prisma.partido.findMany({
+  select: {
+    slug: true,
+    nombre: true,
+    logo_url: true,
+    posicion: true,
+    siglas: true,
+    color: true,
+    ideologia: true,
+    candidatos: {
+      where: { cargo: { has: Cargo.PRESIDENTE } },
+      select: {
+        nombre: true,
+        apellido_p: true,
+        apellido_m: true,
+        foto_url: true,
+      },
+      take: 1,
+    },
+  },
+});
+
+const totalPartidos = partidos.length;
+---
+
+<Layout title="¡Chapa tu Presi! - Fiscalización Electoral 2026">
+  <section
+    class="relative overflow-hidden bg-stone-50 dark:bg-stone-950 border-b border-stone-200 dark:border-stone-800"
+  >
+    <div
+      class="max-w-7xl mx-auto px-8 py-20 grid lg:grid-cols-12 gap-12 items-center"
+    >
+      <div class="lg:col-span-7 flex flex-col gap-8 z-10">
+        <div class="space-y-4">
+          <Pill
+            icon="mdi:alert-decagram"
+            className="bg-pavlova-100 text-pavlova-700 dark:bg-pavlova-900/30 dark:text-pavlova-400 border-none"
+          >
+            Elecciones el 12 de abril de 2026.
+          </Pill>
+          <Heading className="text-stone-900 dark:text-white">
+            Tu voto <span class="text-roof-terracotta-600">importa</span>.
+          </Heading>
+          <Text class="text-xl max-w-xl text-stone-600 dark:text-stone-400">
+            Chapa tu Presi es la plataforma independiente que desnuda los planes
+            de gobierno y antecedentes de quienes buscan tu voto.
+          </Text>
+        </div>
+
+        <div class="flex flex-col gap-4 max-w-lg">
+          <div class="relative group">
+            <div
+              class="absolute -inset-1 bg-linear-to-r from-roof-terracotta-500 to-amber-500 rounded-2xl blur opacity-0 group-focus-within:opacity-25 transition duration-500"
+            >
+            </div>
+            <div
+              class="relative flex items-center bg-white dark:bg-stone-900 rounded-xl shadow-sm"
+            >
+              <Icon name="mdi:magnify" class="ml-4 text-stone-400 w-6 h-6" />
+              <input
+                id="party-search"
+                type="text"
+                placeholder="Busca un partido o candidato..."
+                class="w-full p-4 bg-transparent outline-none text-stone-800 dark:text-white"
+              />
+            </div>
+          </div>
+          <div class="flex justify-between items-center px-1">
+            <a
+              href="/buscador"
+              class="text-xs font-bold uppercase tracking-widest text-roof-terracotta-600 hover:text-roof-terracotta-700 flex items-center gap-1 transition-all"
+            >
+              Buscador Avanzado <Icon name="mdi:chevron-right" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 relative hidden lg:block">
+        <div
+          class="absolute -inset-10 bg-roof-terracotta-500/10 blur-3xl rounded-full"
+        >
+        </div>
+        <img
+          src="/hero.png"
+          alt="Fiscalización Electoral"
+          class="relative w-full h-auto drop-shadow-2xl"
+        />
+      </div>
+    </div>
+  </section>
+
+  <div
+    class="bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800 sticky top-0 z-40"
+  >
+    <div
+      class="max-w-7xl mx-auto px-8 py-4 flex flex-wrap justify-between items-center gap-4"
+    >
+      <div class="flex items-center gap-6">
+        <div class="flex flex-col">
+          <span
+            class="text-2xl font-black text-stone-900 dark:text-white leading-none"
+            >{totalPartidos}</span
+          >
+          <span class="text-[10px] uppercase text-stone-700 dark:text-stone-400"
+            >Partidos Inscritos</span
+          >
+        </div>
+        <div class="h-8 w-px bg-stone-200 dark:bg-stone-800"></div>
+        <div class="flex flex-col">
+          <span
+            class="text-2xl font-black text-stone-900 dark:text-white leading-none"
+            >{
+              candidatoCount.toLocaleString("en-US", {
+                notation: "compact",
+                compactDisplay: "short",
+              })
+            }</span
+          >
+          <span class="text-[10px] uppercase text-stone-700 dark:text-stone-400"
+            >Candidatos</span
+          >
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <Icon name="mdi:filter-variant" class="text-stone-400 w-5 h-5" />
+        <label
+          for="posicion-filter"
+          class="font-bold text-stone-600 dark:text-stone-300 text-xs"
+          >Posición:</label
+        >
+        <select
+          id="posicion-filter"
+          class="bg-stone-100 dark:bg-stone-800 border-none rounded-lg px-3 py-1.5 text-xs font-bold text-stone-600 dark:text-stone-300 outline-none focus:ring-2 focus:ring-roof-terracotta-500"
+        >
+          <option value="todos">Todos</option>
+          {
+            [...new Set(partidos.map((p) => p.posicion))].map((pos) => (
+              <option value={pos.toLowerCase()}>{pos}</option>
+            ))
+          }
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <section id="results-section" class="max-w-7xl w-full mx-auto px-8 py-16">
+    <div
+      id="party-grid"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+    >
+      {partidos.map((partido) => <Partido partido={partido} />)}
+    </div>
+
+    <div class="flex justify-center mt-16">
+      <button
+        id="show-more-btn"
+        class="group flex items-center gap-3 bg-stone-900 dark:bg-white text-white dark:text-stone-900 px-10 py-4 rounded-2xl font-black text-sm hover:scale-105 transition-all shadow-xl shadow-stone-500/20"
+      >
+        <span>EXPLORAR MÁS PARTIDOS</span>
+        <Icon
+          name="mdi:chevron-down"
+          id="show-more-icon"
+          class="w-5 h-5 group-hover:translate-y-1 transition-transform"
+        />
+      </button>
+    </div>
+
+    <div
+      id="no-results"
+      class="hidden py-32 text-center flex-col items-center gap-6"
+    >
+      <div
+        class="w-24 h-24 bg-stone-100 dark:bg-stone-800 rounded-full flex items-center justify-center"
+      >
+        <Icon name="mdi:magnify-close" class="w-12 h-12 text-stone-300" />
+      </div>
+      <div class="space-y-2">
+        <Heading level="h3">No hay coincidencias</Heading>
+        <Text>Intenta con otros términos o usa el buscador avanzado.</Text>
+      </div>
+    </div>
+  </section>
+
+  <Information />
+
+  <NewsFeed />
+
+  <Yape />
+</Layout>
+
+<script>
+  import { updateDisplay } from "@/lib/searchParties";
+  import { prepareFallback } from "@/lib/imageFallback";
+
+  document.addEventListener("astro:page-load", () => {
+    console.log("Page loaded, initializing event listeners...");
+    updateDisplay();
+    prepareFallback("president-candidate-photo");
+  });
+  updateDisplay();
+  prepareFallback("president-candidate-photo");
+</script>

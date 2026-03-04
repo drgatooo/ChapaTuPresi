@@ -1,0 +1,21 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    className?: string;
+    spanClassName?: string;
+    icon?: string;
+}
+
+const { className = "", icon, spanClassName = "" } = Astro.props;
+const baseStyle =
+    "flex gap-1 items-center rounded-full py-1 px-2 text-sm w-max font-bold uppercase bg-pavlova-500/40 transition-colors text-pavlova-800 dark:text-pavlova-300";
+const styles = [className, baseStyle];
+---
+
+<span class:list={styles}>
+    {Boolean(icon) && <Icon name={icon} />}
+    <span class={spanClassName}>
+        <slot />
+    </span>
+</span>

@@ -1,0 +1,699 @@
+---
+export const prerender = false;
+
+import Heading from "@/components/common/Heading.astro";
+import Pill from "@components/common/Pill.astro";
+import Layout from "@layouts/Layout.astro";
+import prisma from "@/lib/prisma";
+import { marked } from "marked";
+import { cargoSort, candSort } from "@/lib/sorts";
+import { Icon } from "astro-icon/components";
+import { Cargo } from "@prisma/client";
+import Text from "@/components/common/Text.astro";
+
+const { partido: partidoSlug } = Astro.params;
+
+const partido = await prisma.partido
+  .findUnique({
+    where: {
+      slug: partidoSlug,
+    },
+    include: {
+      //pick candidatos where their "cargo" array contains "PRESIDENTE" and "VICEPRESIDENTE"
+      candidatos: {
+        where: {
+          cargo: {
+            hasSome: [
+              Cargo.PRESIDENTE,
+              Cargo.PRIMER_VICEPRESIDENTE,
+              Cargo.SEGUNDO_VICEPRESIDENTE,
+            ],
+          },
+        },
+      },
+    },
+  })
+  .catch((e) => console.error(e));
+
+if (!partido) return Astro.redirect("/404");
+
+const candidatoCount = await prisma.candidato.count({
+  where: {
+    partidoId: partido.id,
+  },
+});
+
+const sentenciadoCount = await prisma.candidato.count({
+  where: {
+    partidoId: partido.id,
+    sentencias: {
+      isEmpty: false,
+    },
+  },
+});
+
+const estudiosSuperioresCount = await prisma.candidato.count({
+  where: {
+    partidoId: partido.id,
+    educacion: {
+      is: {
+        OR: [
+          { tecnico: { isEmpty: false } },
+          { universitario: { isEmpty: false } },
+        ],
+      },
+    },
+  },
+});
+
+const todosLosPartidos = await prisma.partido.findMany({
+  where: { id: { not: partido.id } }, // Excluimos el partido actual
+  select: {
+    slug: true,
+    nombre: true,
+    siglas: true,
+    logo_url: true,
+    color: true,
+    ideologia: true,
+    posicion: true,
+  },
+});
+
+const partidosSimilares = todosLosPartidos
+  .map((p) => {
+    let score = 0;
+
+    // 1. Similitud de Posición (+2 puntos)
+    const mismaPosicion =
+      p.posicion.toLowerCase() === partido.posicion.toLowerCase();
+    if (mismaPosicion) score += 2;
+
+    // 2. Ideologías Compartidas (+3 puntos por cada coincidencia)
+    const sharedIdeologies = p.ideologia.filter((ide) =>
+      partido.ideologia.includes(ide),
+    );
+    score += sharedIdeologies.length * 3;
+
+    return { ...p, score, sharedIdeologies, mismaPosicion };
+  })
+  .filter((p) => p.score > 0)
+  .sort((a, b) => b.score - a.score)
+  .slice(0, 3);
+
+const biografiaHtml = marked.parse(partido.resumen);
+const planResumenHtml = partido.plan_de_gobierno
+  ? marked.parse(partido.plan_de_gobierno.resumen)
+  : "";
+
+const allCategories = new Set();
+if (partido.plan_de_gobierno) {
+  ["social", "economica", "ambiental", "institucional"].forEach((dim) => {
+    const key = `dimension_${dim}`;
+    const items = partido.plan_de_gobierno?.[key as "dimension_social"] || [];
+    items.forEach((item) => {
+      if (item.categoria) {
+        // Dividimos por comas, limpiamos espacios y agregamos al Set
+        item.categoria
+          .split(",")
+          .flat(1)
+          .forEach((cat) => allCategories.add(cat.trim()));
+      }
+    });
+  });
+}
+const sortedCategories = Array.from(allCategories).sort();
+---
+
+<Layout
+  title={`${partido.nombre} - Chapa tu Presi`}
+  description={partido.resumen}
+  image={partido.logo_url}
+  color={partido.color}
+>
+  <header
+    class="relative pt-20 pb-12 overflow-hidden border-b border-stone-200 dark:border-stone-800"
+  >
+    <div
+      class="absolute inset-0 opacity-5 pointer-events-none"
+      style={`background-color: ${partido.color}`}
+    >
+    </div>
+
+    <div class="max-w-7xl mx-auto px-8 relative z-10">
+      <div class="flex flex-col md:flex-row gap-8 items-center md:items-end">
+        <div
+          class="w-32 h-32 md:min-w-40 md:min-h-40 bg-white rounded-3xl p-4 shadow-xl border-4"
+          style={`border-color: ${partido.color}`}
+        >
+          <img
+            src={partido.logo_url}
+            alt={partido.siglas}
+            class="w-full h-full object-contain"
+          />
+        </div>
+
+        <div class="grow text-center md:text-left space-y-4">
+          <div class="flex flex-wrap justify-center md:justify-start gap-2">
+            <Pill
+              className="bg-stone-100 dark:bg-stone-800 text-stone-600 border-none font-bold uppercase text-[10px]"
+            >
+              Fundado en {partido.fundacion}
+            </Pill>
+            {
+              partido.alianza && (
+                <Pill
+                  icon="mdi:handshake"
+                  className="bg-amber-100 text-amber-700 border-none"
+                >
+                  Alianza Electoral
+                </Pill>
+              )
+            }
+          </div>
+          <Heading
+            level="h1"
+            className="text-5xl md:text-7xl font-black tracking-tighter"
+          >
+            {partido.nombre}
+          </Heading>
+          <div class="flex flex-wrap justify-center md:justify-start gap-3">
+            {
+              partido.ideologia.map((ide) => (
+                <Text
+                  tag="a"
+                  href={`/ideologia/${ide.split(" ").join("_")}`}
+                  class="text-sm font-medium text-stone-500 dark:text-stone-500 italic hover:text-pavlova-500"
+                >
+                  #{ide}
+                </Text>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="flex gap-3 flex-wrap md:flex-nowrap justify-center">
+          {
+            partido.links.map((link) => {
+              const prefix = link.key === "web" ? "mdi" : "fa-brands";
+              const iconName = link.key === "x" ? "twitter" : link.key;
+
+              return (
+                <a
+                  href={link.enlace}
+                  target="_blank"
+                  class="p-3 bg-white dark:bg-stone-900 rounded-xl shadow-sm border border-stone-200 dark:border-stone-800 hover:scale-110 transition"
+                >
+                  <Icon
+                    name={`${prefix}:${iconName}`}
+                    class="w-6 h-6 text-black dark:text-white"
+                  />
+                </a>
+              );
+            })
+          }
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-8 py-12 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-8">
+      <div
+        class="sticky top-0 bg-stone-50 dark:bg-stone-950 flex border-b border-stone-200 dark:border-stone-800 mb-8 overflow-x-auto"
+      >
+        <button
+          class="tab-btn active px-6 py-4 text-sm font-bold border-b-2 transition-all"
+          data-target="bio"
+          style={`--active-color: ${partido.color}`}
+        >
+          PERFIL DEL PARTIDO
+        </button>
+        <button
+          class="tab-btn px-6 py-4 text-sm font-bold border-b-2 border-transparent text-stone-400 transition-all"
+          data-target="plan"
+          style={`--active-color: ${partido.color}`}
+        >
+          PLAN DE GOBIERNO
+        </button>
+      </div>
+
+      <div id="tab-content">
+        <div id="content-bio" class="tab-pane block">
+          <article
+            class="prose prose-stone dark:prose-invert max-w-none prose-p:text-lg prose-headings:font-black"
+          >
+            <Fragment set:html={biografiaHtml} />
+          </article>
+
+          <br />
+
+          <span
+            class="text-lg font-black text-stone-400 uppercase tracking-tight"
+          >
+            <Icon name="mdi:flag-variant" class="w-6 h-6 inline-block" />
+            Posición: {partido.posicion}
+          </span>
+
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div
+              class="bg-stone-50 dark:bg-stone-900/50 p-6 rounded-2xl border border-stone-200 dark:border-stone-800 text-center"
+            >
+              <p
+                class="text-sm text-stone-400 uppercase font-bold tracking-widest mb-2"
+              >
+                Candidatos Inscritos en Total
+              </p>
+              <p class="text-2xl font-black text-tuscany-600">
+                {candidatoCount}
+              </p>
+            </div>
+            <div
+              class="bg-stone-50 dark:bg-stone-900/50 p-6 rounded-2xl border border-stone-200 dark:border-stone-800 text-center"
+            >
+              <p
+                class="text-sm text-stone-400 uppercase font-bold tracking-widest mb-2"
+              >
+                Candidatos con Sentencias
+              </p>
+              <p class="text-2xl font-black text-tuscany-600">
+                {sentenciadoCount}
+              </p>
+            </div>
+            <div
+              class="bg-stone-50 dark:bg-stone-900/50 p-6 rounded-2xl border border-stone-200 dark:border-stone-800 text-center"
+            >
+              <p
+                class="text-sm text-stone-400 uppercase font-bold tracking-widest mb-2"
+              >
+                Candidatos con Estudios Superiores
+              </p>
+              <p class="text-2xl font-black text-tuscany-600">
+                {estudiosSuperioresCount}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div id="content-plan" class="tab-pane hidden space-y-10">
+          {
+            partido.plan_de_gobierno ? (
+              <>
+                <div class="bg-stone-50 dark:bg-stone-900/50 p-8 rounded-3xl border border-stone-200 dark:border-stone-800">
+                  <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 mb-6">
+                    <Heading level="h3" className="text-2xl">
+                      Resumen Ejecutivo
+                    </Heading>
+                    <a
+                      href={partido.plan_de_gobierno.url}
+                      target="_blank"
+                      class="text-roof-terracotta-600 font-bold text-xs flex items-center gap-1"
+                    >
+                      PDF ORIGINAL <Icon name="mdi:open-in-new" />
+                    </a>
+                  </div>
+                  <article class="prose prose-stone dark:prose-invert max-w-none italic text-stone-600 dark:text-stone-400">
+                    <Fragment set:html={planResumenHtml} />
+                  </article>
+                </div>
+
+                <div class="space-y-4">
+                  <h4 class="text-[10px] font-black tracking-widest text-stone-400 uppercase">
+                    Filtrar propuestas por eje:
+                  </h4>
+                  <div class="flex flex-wrap gap-2" id="category-filters">
+                    <button
+                      class="cat-filter active text-black dark:text-stone-300 px-4 py-2 rounded-full text-xs font-bold border-2 border-stone-100 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-600 transition-all"
+                      data-category="all"
+                      style={`--party-color: ${partido.color}55`}
+                    >
+                      Todas las propuestas
+                    </button>
+                    {sortedCategories.map((cat) => (
+                      <button
+                        class="cat-filter text-black dark:text-stone-300 px-4 py-2 rounded-full text-xs font-bold border-2 border-stone-100 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-600 transition-all"
+                        data-category={cat}
+                        style={`--party-color: ${partido.color}55`}
+                      >
+                        {cat}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 gap-6">
+                  {["social", "economica", "ambiental", "institucional"].map(
+                    (dim) => {
+                      const key = `dimension_${dim}`;
+                      const items =
+                        partido.plan_de_gobierno?.[key as "dimension_social"] ||
+                        [];
+                      if (items.length === 0) return null;
+
+                      return (
+                        <div class="dimension-container border border-stone-200 dark:border-stone-800 rounded-2xl p-6">
+                          <h4 class="flex items-center gap-2 font-black uppercase text-xs tracking-widest text-stone-400 mb-6">
+                            <div
+                              class="w-3 h-3 rounded-full"
+                              style={`background-color: ${partido.color}`}
+                            />
+                            Dimensión {dim}
+                          </h4>
+                          <div class="space-y-4">
+                            {items.map((item) => (
+                              <div
+                                class="proposal-item group bg-white dark:bg-stone-900/40 border border-stone-200 dark:border-stone-800 rounded-xl p-5 transition-all duration-300 cursor-pointer hover:border-stone-400 dark:hover:border-stone-600 shadow-sm"
+                                data-categories={item.categoria.trim()}
+                              >
+                                <div class="flex justify-between items-start mb-2">
+                                  <p class="text-[10px] font-black text-roof-terracotta-600 uppercase tracking-widest">
+                                    {item.categoria || "General"}
+                                  </p>
+                                  <Icon
+                                    name="mdi:chevron-down"
+                                    class="w-5 h-5 text-stone-400 transition-transform duration-300 group-[.is-open]:rotate-180"
+                                  />
+                                </div>
+
+                                <h5 class="whitespace-pre-line objective-text font-bold text-stone-900 dark:text-white leading-tight mb-2 line-clamp-2 group-[.is-open]:line-clamp-none transition-all">
+                                  {item.objetivo}
+                                </h5>
+
+                                <p class="problem-text text-sm text-stone-500 dark:text-stone-400 line-clamp-2 group-[.is-open]:line-clamp-none transition-all">
+                                  {item.problema}
+                                </p>
+
+                                <div class="details-pane hidden opacity-0 group-[.is-open]:block group-[.is-open]:opacity-100 transition-opacity duration-500 pt-6 mt-4 border-t border-stone-100 dark:border-stone-800">
+                                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="space-y-1">
+                                      <span class="text-[10px] font-black text-stone-400 uppercase tracking-widest">
+                                        Indicador de Éxito
+                                      </span>
+                                      <p class="whitespace-pre-line text-sm font-medium text-stone-700 dark:text-stone-300 bg-stone-50 dark:bg-stone-800/50 p-3 rounded-lg border border-stone-100 dark:border-stone-700">
+                                        {item.indicador}
+                                      </p>
+                                    </div>
+                                    <div class="space-y-1">
+                                      <span class="text-[10px] font-black text-stone-400 uppercase tracking-widest">
+                                        Meta al 2031
+                                      </span>
+                                      <p class="whitespace-pre-line text-sm font-bold text-livid-brown-700 dark:text-livid-brown-400 bg-livid-brown-50 dark:bg-livid-brown-900/20 p-3 rounded-lg border border-livid-brown-100 dark:border-livid-brown-900/30">
+                                        {item.meta}
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      );
+                    },
+                  )}
+                </div>
+              </>
+            ) : (
+              <div class="py-20 text-center text-stone-400">
+                Este partido aún no ha registrado su plan de gobierno.
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </div>
+
+    <aside class="lg:col-span-4 space-y-8">
+      <div class="sticky top-24">
+        <Heading level="h3" className="mb-6">Candidatos Principales</Heading>
+        <div class="flex flex-col gap-4">
+          {
+            partido.candidatos
+              .sort((a, b) => candSort(a.cargo, b.cargo))
+              .map((cand) => (
+                <a
+                  href={`/candidato/${cand.slug}`}
+                  class="flex items-center gap-4 p-4 bg-white dark:bg-stone-900 rounded-2xl border border-stone-100 dark:border-stone-800 hover:shadow-md transition group"
+                >
+                  <div class="w-12 h-12 rounded-full overflow-hidden bg-stone-100 shrink-0">
+                    <img
+                      src={cand.foto_url}
+                      alt={cand.nombre}
+                      class="w-full h-full object-cover candidate"
+                    />
+                  </div>
+                  <div>
+                    <Text class="text-sm font-black group-hover:text-roof-terracotta-600 transition-colors">
+                      {cand.nombre + " " + cand.apellido_p}
+                    </Text>
+                    <p class="text-[10px] uppercase text-stone-400 font-bold tracking-tighter">
+                      {cand.cargo
+                        .sort(cargoSort)
+                        .join(" / ")
+                        .split("_")
+                        .join(" ")}
+                    </p>
+                  </div>
+                </a>
+              ))
+          }
+        </div>
+
+        <Text tag="a" href={`/partido/${partido.slug}/candidatos`}>
+          <div
+            class="flex items-center justify-center w-full mt-6 py-4 border-2 border-dashed border-stone-200 dark:border-stone-800 rounded-2xl text-stone-400 text-xs font-bold hover:text-white hover:border-stone-400 transition"
+          >
+            VER TODOS LOS CANDIDATOS DEL PARTIDO
+          </div>
+        </Text>
+      </div>
+    </aside>
+
+    {
+      partidosSimilares.length > 0 && (
+        <section class="lg:col-span-12 mt-12 pt-12 border-t border-stone-200 dark:border-stone-800">
+          <div class="flex items-center gap-3 mb-8">
+            <Icon name="mdi:network-outline" class="w-8 h-8 text-stone-400" />
+            <div>
+              <Heading level="h2" className="text-2xl">
+                Partidos similares
+              </Heading>
+              <Text class="text-sm">
+                Partidos con posturas y espectro político similares a{" "}
+                {partido.siglas}.
+              </Text>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {partidosSimilares.map((sim) => (
+              <a
+                href={`/partido/${sim.slug}`}
+                class="group bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-4xl p-6 hover:-translate-y-1 hover:shadow-xl transition-all relative overflow-hidden flex flex-col h-full"
+              >
+                <div
+                  class="absolute top-0 left-0 w-full h-2"
+                  style={`background-color: ${sim.color}`}
+                />
+
+                <div class="flex items-center gap-4 mb-4 mt-2">
+                  <div class="w-14 h-14 bg-stone-50 dark:bg-stone-800 p-2 rounded-xl shrink-0 border border-stone-100 dark:border-stone-700">
+                    <img
+                      src={sim.logo_url}
+                      alt={sim.siglas}
+                      class="w-full h-full object-contain transition-all"
+                    />
+                  </div>
+                  <div class="overflow-hidden">
+                    <h3 class="font-black text-sm uppercase truncate group-hover:text-roof-terracotta-600 transition-colors dark:text-white">
+                      {sim.nombre}
+                    </h3>
+                    <p class="text-[10px] font-bold text-stone-400 tracking-widest">
+                      {sim.siglas}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="mt-auto space-y-3 bg-stone-50 dark:bg-stone-950 p-4 rounded-xl border border-stone-100 dark:border-stone-800">
+                  <p class="text-[9px] font-black uppercase text-stone-400 tracking-widest border-b border-stone-200 dark:border-stone-800 pb-1">
+                    Puntos en Común
+                  </p>
+
+                  {sim.mismaPosicion && (
+                    <p class="text-xs font-bold text-stone-600 dark:text-stone-300 flex items-center gap-2">
+                      <Icon
+                        name="mdi:arrow-right-bottom"
+                        class="w-4 h-4 text-green-500"
+                      />
+                      Ambos son de {partido.posicion}
+                    </p>
+                  )}
+
+                  {sim.sharedIdeologies.length > 0 && (
+                    <div class="flex flex-wrap gap-1">
+                      <Icon
+                        name="mdi:lightbulb-on-outline"
+                        class="w-4 h-4 text-amber-500 shrink-0 mr-1"
+                      />
+                      {sim.sharedIdeologies.map((ide) => (
+                        <span class="text-[10px] bg-white dark:bg-stone-800 text-stone-600 dark:text-stone-300 px-1.5 py-0.5 rounded border border-stone-200 dark:border-stone-700 font-medium">
+                          {ide}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )
+    }
+  </main>
+</Layout>
+
+<style>
+  .tab-btn.active {
+    color: var(--active-color);
+    border-bottom-color: var(--active-color);
+  }
+
+  /* Píldora activa con el color del partido */
+  .cat-filter.active {
+    background-color: var(--party-color);
+    border-color: var(--party-color);
+  }
+
+  .proposal-item.hidden-proposal {
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    position: absolute; /* Para que no ocupe espacio al ocultarse */
+  }
+
+  /* Para que el grid no colapse feo al ocultar items */
+  .dimension-container.hidden-dim {
+    display: none;
+  }
+
+  .whitespace-pre-line {
+    white-space: pre-line;
+  }
+
+  .proposal-item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .proposal-item.is-open {
+    border-color: var(--active-color);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    cursor: default;
+  }
+</style>
+
+<script>
+  import { prepareFallback } from "@/lib/imageFallback";
+
+  function setupTabs() {
+    const btns = document.querySelectorAll(".tab-btn");
+    const panes = document.querySelectorAll(".tab-pane");
+
+    btns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-target");
+
+        // Update Buttons
+        btns.forEach((b) => {
+          b.classList.remove("active", "text-stone-900", "dark:text-white");
+          b.classList.add("text-stone-400", "border-transparent");
+        });
+        btn.classList.add("active", "text-stone-900", "dark:text-white");
+        btn.classList.remove("text-stone-400", "border-transparent");
+
+        // Update Content
+        panes.forEach((p) => p.classList.add("hidden"));
+        document
+          .getElementById(`content-${target}`)
+          ?.classList.remove("hidden");
+      });
+    });
+  }
+
+  function setupAccordion() {
+    const proposals = document.querySelectorAll(".proposal-item");
+
+    proposals.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        // Si el usuario hace clic en un link o botón interno, no colapsar
+        if ((e.target as HTMLElement).closest("a")) return;
+
+        const isOpen = item.classList.contains("is-open");
+
+        // Opcional: Cerrar otros antes de abrir este
+        // document.querySelectorAll('.proposal-item.is-open').forEach(el => el.classList.remove('is-open'));
+
+        if (isOpen) {
+          item.classList.remove("is-open");
+        } else {
+          item.classList.add("is-open");
+        }
+      });
+    });
+  }
+
+  function setupFilters() {
+    const filterBtns = document.querySelectorAll(".cat-filter");
+    const dimensions = document.querySelectorAll(".dimension-container");
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const category = btn.getAttribute("data-category");
+
+        // 1. UI: Actualizar botones
+        filterBtns.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // 2. Lógica de filtrado
+        dimensions.forEach((dim) => {
+          let visibleProposalsInDim = 0;
+          const itemsInDim = dim.querySelectorAll(".proposal-item");
+
+          itemsInDim.forEach((item) => {
+            const itemCats = item.getAttribute("data-categories") || "";
+
+            if (category === "all" || itemCats.includes(category!)) {
+              (item as HTMLElement).style.display = "block";
+              (item as HTMLElement).style.opacity = "1";
+              visibleProposalsInDim++;
+            } else {
+              (item as HTMLElement).style.display = "none";
+              (item as HTMLElement).style.opacity = "0";
+            }
+          });
+
+          console.log(
+            `Dimensión ${dim.id} tiene ${visibleProposalsInDim} propuestas visibles`,
+          );
+
+          // Ocultar la dimensión entera si no tiene propuestas que coincidan
+          if (visibleProposalsInDim === 0) {
+            dim.classList.add("hidden-dim");
+          } else {
+            dim.classList.remove("hidden-dim");
+          }
+        });
+      });
+    });
+  }
+
+  // Ejecutar en carga inicial y tras navegación de Astro
+  document.addEventListener("astro:page-load", () => {
+    setupTabs();
+    setupFilters();
+    setupAccordion();
+    prepareFallback("candidate");
+  });
+
+  setupTabs();
+  setupFilters();
+  setupAccordion();
+  prepareFallback("candidate");
+</script>

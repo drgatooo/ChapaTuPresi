@@ -1,0 +1,95 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+/* @plugin "@tailwindcss/forms"; */
+
+@theme {
+  /* Fuentes */
+  --font-display: "Merriweather", ui-serif, Georgia, serif;
+
+  /* Black Rose */
+  --color-black-rose-50: #fcf3f7;
+  --color-black-rose-100: #fae9f1;
+  --color-black-rose-200: #f8d2e3;
+  --color-black-rose-300: #f3aec9;
+  --color-black-rose-400: #ea7ca6;
+  --color-black-rose-500: #e05485;
+  --color-black-rose-600: #ce3462;
+  --color-black-rose-700: #b2244b;
+  --color-black-rose-800: #93213f;
+  --color-black-rose-900: #681b2f;
+  --color-black-rose-950: #4b0c1c;
+
+  /* Livid Brown */
+  --color-livid-brown-50: #fbf4f7;
+  --color-livid-brown-100: #f8ebf1;
+  --color-livid-brown-200: #f2d8e4;
+  --color-livid-brown-300: #e8b9ce;
+  --color-livid-brown-400: #d98dad;
+  --color-livid-brown-500: #ca6a8f;
+  --color-livid-brown-600: #b54d70;
+  --color-livid-brown-700: #9b3b59;
+  --color-livid-brown-800: #81334a;
+  --color-livid-brown-900: #6d2e41;
+  --color-livid-brown-950: #431724;
+
+  /* Pavlova */
+  --color-pavlova-50: #fbf9f1;
+  --color-pavlova-100: #f6f0de;
+  --color-pavlova-200: #ebdebd;
+  --color-pavlova-300: #e0ca99;
+  --color-pavlova-400: #d0a967;
+  --color-pavlova-500: #c69249;
+  --color-pavlova-600: #b87e3e;
+  --color-pavlova-700: #996435;
+  --color-pavlova-800: #7b5031;
+  --color-pavlova-900: #64432a;
+  --color-pavlova-950: #352215;
+
+  /* Tuscany */
+  --color-tuscany-50: #fbf6f1;
+  --color-tuscany-100: #f7e9dd;
+  --color-tuscany-200: #edd0bb;
+  --color-tuscany-300: #e2af8f;
+  --color-tuscany-400: #d58962;
+  --color-tuscany-500: #c9643a;
+  --color-tuscany-600: #be5638;
+  --color-tuscany-700: #9e4330;
+  --color-tuscany-800: #7f382d;
+  --color-tuscany-900: #673027;
+  --color-tuscany-950: #371713;
+
+  /* Terracotta */
+  --color-roof-terracotta-50: #fdf4f3;
+  --color-roof-terracotta-100: #fce6e4;
+  --color-roof-terracotta-200: #fbd1cd;
+  --color-roof-terracotta-300: #f7b1aa;
+  --color-roof-terracotta-400: #f18378;
+  --color-roof-terracotta-500: #e65b4d;
+  --color-roof-terracotta-600: #d23f30;
+  --color-roof-terracotta-700: #a42e22;
+  --color-roof-terracotta-800: #922c22;
+  --color-roof-terracotta-900: #7a2a22;
+  --color-roof-terracotta-950: #42120d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Clases de estado para el JS */
+.party-card[data-open="true"] {
+  @apply border-white/20 shadow-xl;
+}
+.party-card[data-open="true"] .summary-container {
+  grid-template-rows: 1fr;
+}
+.party-card[data-open="true"] .summary-content {
+  @apply opacity-100 delay-100;
+}
+.party-card[data-open="true"] .chevron-icon {
+  @apply rotate-180 opacity-100;
+}
+
+input {
+  @apply ring-0 focus:ring-0 focus:outline-none focus:border-roof-terracotta-500;
+}

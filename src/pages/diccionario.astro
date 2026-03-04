@@ -1,0 +1,170 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Heading from "@/components/common/Heading.astro";
+import Text from "@/components/common/Text.astro";
+import { Icon } from "astro-icon/components";
+import prisma from "@/lib/prisma";
+import ideologiasData from "@/data/ideologias.json";
+
+// 1. Obtenemos todos los partidos para contar cuántos siguen cada ideología
+const partidos = await prisma.partido.findMany({ 
+  select: { ideologia: true } 
+});
+
+const ideologyCounts: Record<string, number> = {};
+partidos.forEach(p => {
+  p.ideologia.forEach(ide => {
+    ideologyCounts[ide] = (ideologyCounts[ide] || 0) + 1;
+  });
+});
+
+// 2. Mapeamos el JSON y le inyectamos el conteo de partidos, luego ordenamos alfabéticamente
+const ideologiesList = Object.entries(ideologiasData).map(([nombre, data]) => ({
+  nombre,
+  resumen: data.resumen,
+  pilares: data.pilares.slice(0, 3), // Mostramos max 3 pilares por tarjeta
+  count: ideologyCounts[nombre] || 0
+})).sort((a, b) => a.nombre.localeCompare(b.nombre));
+
+// Estadísticas rápidas para el hero
+const totalIdeologies = ideologiesList.length;
+const topIdeologies = [...ideologiesList].sort((a, b) => b.count - a.count).slice(0, 3);
+---
+
+<Layout title="Diccionario de Ideologías Políticas - Chapa tu Presi" description="Descubre el significado de las corrientes políticas que definen las Elecciones Generales 2026 en Perú.">
+  
+  <header class="bg-stone-50 dark:bg-stone-950 pt-32 pb-20 border-b border-stone-200 dark:border-stone-800 relative overflow-hidden">
+    <Icon name="mdi:book-open-page-variant-outline" class="absolute -right-20 -top-10 w-160 h-160 text-stone-200/40 dark:text-stone-800/20 pointer-events-none -rotate-12" />
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="h-1 w-12 bg-roof-terracotta-600"></div>
+          <span class="text-xs font-black uppercase tracking-[0.3em] text-stone-500">Educación Cívica</span>
+        </div>
+        <Heading level="h1" className="text-5xl md:text-7xl font-black tracking-tighter mb-6">
+          Diccionario <span class="text-roof-terracotta-600">Político</span>.
+        </Heading>
+        <Text class="text-xl text-stone-600 dark:text-stone-400 leading-relaxed mb-10">
+          Explora las <strong>{totalIdeologies} corrientes de pensamiento</strong> que definen el panorama electoral peruano. Entiende qué proponen, cuáles son sus pilares y qué partidos las defienden.
+        </Text>
+
+        <div class="relative max-w-xl group">
+          <div class="absolute -inset-1 bg-linear-to-r from-roof-terracotta-500 to-amber-500 rounded-2xl blur opacity-0 group-focus-within:opacity-25 transition duration-500"></div>
+          <div class="relative flex items-center bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-700 rounded-xl shadow-sm">
+            <Icon name="mdi:magnify" class="ml-5 text-stone-400 w-6 h-6 shrink-0" />
+            <input 
+              type="text" 
+              id="ideology-search" 
+              placeholder="Buscar ideología (ej. Socialdemocracia, Liberalismo)..." 
+              class="w-full p-4 pl-3 bg-transparent outline-none font-bold text-stone-800 dark:text-white placeholder:text-stone-400 placeholder:font-medium"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-20">
+    
+    <section class="mb-16">
+      <h3 class="text-sm font-black uppercase tracking-widest text-stone-400 mb-6 flex items-center gap-2">
+        <Icon name="mdi:trending-up" class="w-5 h-5" /> Corrientes con más partidos en 2026
+      </h3>
+      <div class="flex flex-wrap gap-4">
+        {topIdeologies.map(ide => (
+          <a href={`/ideologia/${ide.nombre}`} class="bg-roof-terracotta-50 dark:bg-roof-terracotta-900/10 border border-roof-terracotta-200 dark:border-roof-terracotta-900/30 text-roof-terracotta-800 dark:text-roof-terracotta-400 px-5 py-3 rounded-2xl flex items-center gap-3 hover:bg-roof-terracotta-600 hover:text-white transition-colors font-bold shadow-sm">
+            {ide.nombre}
+            <span class="bg-white/50 dark:bg-black/20 px-2 py-0.5 rounded text-xs">{ide.count} partidos</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <div id="ideologies-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {ideologiesList.map(ide => (
+        <a 
+          href={`/ideologia/${ide.nombre.split(' ').join('_')}`} 
+          class="ideology-card group bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 p-8 rounded-4xl flex flex-col h-full hover:border-roof-terracotta-500 hover:shadow-xl hover:-translate-y-1 transition-all"
+          data-name={ide.nombre.toLowerCase()}
+        >
+          <div class="flex justify-between items-start mb-4 gap-4">
+            <h2 class="text-2xl font-black dark:text-white group-hover:text-roof-terracotta-600 transition-colors leading-tight">
+              {ide.nombre}
+            </h2>
+            {ide.count > 0 && (
+              <span class="shrink-0 bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg flex items-center gap-1">
+                <Icon name="mdi:flag-variant" class="w-3 h-3" /> {ide.count}
+              </span>
+            )}
+          </div>
+          
+          <p class="text-stone-600 dark:text-stone-400 text-sm leading-relaxed mb-8 line-clamp-3 grow">
+            {ide.resumen}
+          </p>
+          
+          <div class="mt-auto pt-6 border-t border-stone-100 dark:border-stone-800">
+            <p class="text-[10px] font-bold text-stone-400 uppercase tracking-widest mb-3">Pilares principales</p>
+            <div class="flex flex-wrap gap-2">
+              {ide.pilares.map(pilar => (
+                <span class="bg-stone-50 dark:bg-stone-950 text-stone-500 dark:text-stone-400 border border-stone-200 dark:border-stone-800 px-2.5 py-1 rounded text-[10px] font-bold">
+                  {pilar}
+                </span>
+              ))}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div id="no-results" class="hidden py-20 text-center flex-col items-center gap-4">
+      <div class="w-20 h-20 bg-stone-100 dark:bg-stone-800 rounded-full flex items-center justify-center">
+        <Icon name="mdi:book-search-outline" class="w-10 h-10 text-stone-400" />
+      </div>
+      <Heading level="h3" className="text-xl">No se encontró la ideología</Heading>
+      <Text class="text-stone-500">Intenta buscar con otros términos o explora la lista completa.</Text>
+    </div>
+
+  </main>
+</Layout>
+
+<script>
+  // Script super ligero para el buscador en tiempo real
+  function initIdeologySearch() {
+    const searchInput = document.getElementById('ideology-search') as HTMLInputElement;
+    const cards = document.querySelectorAll('.ideology-card');
+    const noResults = document.getElementById('no-results');
+
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', (e) => {
+      const query = (e.target as HTMLInputElement).value.toLowerCase().trim();
+      let hasVisibleCards = false;
+
+      cards.forEach(card => {
+        const name = card.getAttribute('data-name') || '';
+        if (name.includes(query)) {
+          (card as HTMLElement).style.display = 'flex';
+          hasVisibleCards = true;
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+
+      // Mostrar/ocultar mensaje de "No hay resultados"
+      if (noResults) {
+        if (hasVisibleCards) {
+          noResults.classList.add('hidden');
+          noResults.classList.remove('flex');
+        } else {
+          noResults.classList.remove('hidden');
+          noResults.classList.add('flex');
+        }
+      }
+    });
+  }
+
+  // Soporte para Astro View Transitions
+  document.addEventListener('astro:page-load', initIdeologySearch);
+  initIdeologySearch();
+</script>
