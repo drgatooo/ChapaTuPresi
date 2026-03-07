@@ -64,19 +64,13 @@ type SentenciaPenal {
 }
 
 type AlertaPeriodistica {
-  fecha             DateTime @default(now())
+  fecha             String
   titulo            String
   medio             String
   resumen           String
+  adicional_info    String?
   enlace            String
-  categoria         AlertaTipo @default(INVESTIGACION)
-}
-
-enum AlertaTipo {
-  INVESTIGACION
-  DENUNCIA
-  CONTROVERSIA
-  SANCION_ADMINISTRATIVA
+  estado            String
 }
 
 type Noticia {
