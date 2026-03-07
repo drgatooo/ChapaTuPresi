@@ -16,6 +16,19 @@ const partido = await prisma.partido.findUnique({
   include: {
     candidatos: {
       orderBy: [{ numero_lista: "asc" }, { apellido_p: "asc" }],
+      select: {
+        nombre: true,
+        apellido_p: true,
+        apellido_m: true,
+        slug: true,
+        foto_url: true,
+        cargo: true,
+        postula_region: true,
+        sentencias: true,
+        numero_lista: true,
+        es_gobierno: true,
+        cargo_gobierno: true,
+      },
     },
   },
 });
@@ -74,8 +87,9 @@ plancha.sort((a, b) => {
 });
 
 // Helper para ordenar las regiones alfabéticamente
-const sortRegiones = (obj: Record<string, any>) =>
-  Object.entries(obj).sort(([a], [b]) => a.localeCompare(b));
+function sortRegiones<T>(obj: Record<string, T>): [string, T][] {
+  return Object.entries(obj).sort(([a], [b]) => a.localeCompare(b));
+}
 ---
 
 <Layout title={`Candidatos de ${partido.nombre} - Elecciones 2026`}>
@@ -255,43 +269,39 @@ const sortRegiones = (obj: Record<string, any>) =>
                 </h3>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                  {candidatos.map(
-                    (c: {
-                      slug: any;
-                      numero_lista: any;
-                      nombre: unknown;
-                      apellido_p: unknown;
-                      sentencias: string | any[];
-                      foto_url: string | null | undefined;
-                    }) => (
-                      <a
-                        href={`/candidato/${c.slug}`}
-                        class="flex items-center gap-4 p-3 bg-white dark:bg-stone-900 rounded-2xl border border-stone-200 dark:border-stone-800 hover:border-roof-terracotta-500 transition-all group shadow-sm"
-                      >
-                        <div class="w-12 h-12 bg-stone-100 dark:bg-stone-800 rounded-xl flex flex-col items-center justify-center shrink-0 border border-stone-200 dark:border-stone-700">
-                          <span class="font-black text-lg text-stone-800 dark:text-white leading-none">
-                            {c.numero_lista || "-"}
+                  {candidatos.map((c) => (
+                    <a
+                      href={`/candidato/${c.slug}`}
+                      class="flex items-center gap-4 p-3 bg-white dark:bg-stone-900 rounded-2xl border border-stone-200 dark:border-stone-800 hover:border-roof-terracotta-500 transition-all group shadow-sm"
+                    >
+                      <div class="w-12 h-12 bg-stone-100 dark:bg-stone-800 rounded-xl flex flex-col items-center justify-center shrink-0 border border-stone-200 dark:border-stone-700">
+                        <span class="font-black text-lg text-stone-800 dark:text-white leading-none">
+                          {c.numero_lista || "-"}
+                        </span>
+                      </div>
+                      <div class="grow overflow-hidden">
+                        <p class="text-sm font-bold dark:text-white truncate group-hover:text-roof-terracotta-600 transition-colors">
+                          {c.nombre} {c.apellido_p}
+                        </p>
+                        {c.sentencias.length > 0 && (
+                          <span class="text-[9px] text-red-600 font-bold uppercase">
+                            Registra sentencias
                           </span>
-                        </div>
-                        <div class="grow overflow-hidden">
-                          <p class="text-sm font-bold dark:text-white truncate group-hover:text-roof-terracotta-600 transition-colors">
-                            {c.nombre} {c.apellido_p}
-                          </p>
-                          {c.sentencias.length > 0 && (
-                            <span class="text-[9px] text-red-600 font-bold uppercase">
-                              Registra sentencias
-                            </span>
-                          )}
-                        </div>
-                        <div class="w-10 h-10 rounded-full overflow-hidden shrink-0 opacity-80 group-hover:opacity-100 transition-opacity">
-                          <img
-                            src={c.foto_url}
-                            class="w-full h-full object-cover candidate"
-                          />
-                        </div>
-                      </a>
-                    ),
-                  )}
+                        )}
+                        {c.es_gobierno && (
+                          <span class="text-[9px] text-blue-500 font-bold uppercase">
+                            Actual {c.cargo_gobierno?.toLowerCase()}
+                          </span>
+                        )}
+                      </div>
+                      <div class="w-10 h-10 rounded-full overflow-hidden shrink-0 opacity-80 group-hover:opacity-100 transition-opacity">
+                        <img
+                          src={c.foto_url}
+                          class="w-full h-full object-cover candidate"
+                        />
+                      </div>
+                    </a>
+                  ))}
                 </div>
               </div>
             ))}
@@ -329,7 +339,7 @@ const sortRegiones = (obj: Record<string, any>) =>
                 </h3>
 
                 <div class="space-y-3">
-                  {candidatos.map((c: Candidato) => (
+                  {candidatos.map((c) => (
                     <a
                       href={`/candidato/${c.slug}`}
                       class="flex items-center gap-3 group"
@@ -348,11 +358,21 @@ const sortRegiones = (obj: Record<string, any>) =>
                       </p>
 
                       {/* punto rojo si tiene sentencias */}
-                      {c.sentencias.length > 0 && (
-                        <Icon
-                          name="mdi:court-hammer"
-                          class="w-4 h-4 text-red-600 inline-block ml-auto"
-                        />
+                      {(c.sentencias.length > 0 || c.es_gobierno) && (
+                        <div class="flex gap-1 items-center">
+                          {c.sentencias.length > 0 && (
+                            <Icon
+                              name="mdi:court-hammer"
+                              class="w-4 h-4 text-red-600 inline-block ml-auto"
+                            />
+                          )}
+                          {c.es_gobierno && (
+                            <Icon
+                              name="mdi:bank"
+                              class="w-4 h-4 text-blue-500 inline-block"
+                            />
+                          )}
+                        </div>
                       )}
                     </a>
                   ))}
@@ -387,9 +407,11 @@ const sortRegiones = (obj: Record<string, any>) =>
                   <p class="text-sm font-bold dark:text-white truncate group-hover:text-roof-terracotta-600 transition-colors">
                     {c.nombre} {c.apellido_p}
                   </p>
-                  {c.sentencias.length > 0 && (
+                  {(c.sentencias.length > 0 || c.es_gobierno) && (
                     <p class="text-[10px] font-bold text-red-400 uppercase">
-                      Registra sentencias
+                      {c.sentencias.length > 0
+                        ? "Registra sentencias"
+                        : "Es miembro del gobierno"}
                     </p>
                   )}
                 </div>

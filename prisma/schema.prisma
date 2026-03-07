@@ -28,6 +28,11 @@ model Candidato {
   links             Link[]
   searchable        String?
 
+  // Información adicional para candidatos que han sido parte del gobierno
+  es_gobierno       Boolean?
+  gobierno_url      String?
+  cargo_gobierno    String?
+
   partido           Partido @relation(fields: [partidoId], references: [id])
   partidoId         String  @db.ObjectId
 }

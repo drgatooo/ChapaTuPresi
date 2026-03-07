@@ -221,11 +221,7 @@ const searchTypes = [
 
     // SECCIÓN CANDIDATOS
     if (data.candidatos.length > 0) {
-      const sortedCandidatos = data.candidatos.sort((a: any, b: any) => {
-        const pesoA = cargoWeight[a.cargo[0]] || 99;
-        const pesoB = cargoWeight[b.cargo[0]] || 99;
-        return pesoA - pesoB;
-      });
+      const sortedCandidatos = data.candidatos;
 
       html += `
         <div>

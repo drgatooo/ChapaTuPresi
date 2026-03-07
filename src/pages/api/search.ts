@@ -51,16 +51,16 @@ export const GET: APIRoute = async ({ request }) => {
         // Concatenamos el nombre completo al vuelo para Fuse.js
         const candidatosConNombreCompleto = candidatosDB.map(c => ({
           ...c,
-          nombre_completo: `${c.nombre} ${c.apellido_p} ${c.apellido_m}`
+          nombre_completo: `${c.nombre} ${c.apellido_p} ${c.apellido_m}`.toLowerCase()
         }));
 
         const fuseCandidatos = new Fuse(candidatosConNombreCompleto, {
-          keys: ['nombre_completo', 'partido.siglas'],
-          threshold: 0.3, // 0.0 es coincidencia exacta, 1.0 es cualquier cosa. 0.3 es ideal para errores de tipeo.
+          keys: ['nombre_completo'],
+          threshold: 0.4, // 0.0 es coincidencia exacta, 1.0 es cualquier cosa. 0.3 es ideal para errores de tipeo.
           ignoreLocation: true,
         });
 
-        candidatosFinales = fuseCandidatos.search(query).map(result => result.item).slice(0, 250);
+        candidatosFinales = fuseCandidatos.search(query.toLowerCase()).sort((a, b) => a.score! - b.score!).map(result => result.item).slice(0, 250);
         console.log(query);
         
       } else {

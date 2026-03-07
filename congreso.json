@@ -1,0 +1,1167 @@
+{
+  "Estado": "success",
+  "Mensaje": "",
+  "Data": [
+    {
+      "TxNombres": "SEGUNDO TORIBIO MONTALVO CUBAS",
+      "TxRutaPolitico": "/Politico/FichaPolitico/segundo-toribio-montalvo-cubas_historial-partidario_kyb801k6SEQ=b1",
+      "TxProcedencia": "AMAZONAS",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=Orr5ydoxV0e4CCuVIHIjUw4ywuFjrVrnrd\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "MERY ELIANA INFANTES CASTAÑEDA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/mery-eliana-infantes-castañeda_historial-partidario_F9nGT1o+waM=n1",
+      "TxProcedencia": "AMAZONAS",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=pPwmqFgIVwd%2B6n/XmHBmGRGrHGGmSgXJwF\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "KELLY ROXANA PORTALATINO AVALOS",
+      "TxRutaPolitico": "/Politico/FichaPolitico/kelly-roxana-portalatino-avalos_historial-partidario_QmL6EfvtkEI=Lf",
+      "TxProcedencia": "ANCASH",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=OCizLD12JC6asPC0PcDGBuiuXxqb0Bf0iD\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ELIAS MARCIAL VARAS MELENDEZ",
+      "TxRutaPolitico": "/Politico/FichaPolitico/elias-marcial-varas-melendez_historial-partidario_fiS2FtE2NQ8c6+@0ElOxMA==St",
+      "TxProcedencia": "ANCASH",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=LhJpvnmUzRXl2mas9b/yK0zLQ4SsQ0ReJn\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "NILZA MERLY CHACON TRUJILLO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/nilza-merly-chacon-trujillo_historial-partidario_d7BAt9N+PYgc6+@0ElOxMA==B9",
+      "TxProcedencia": "ANCASH",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=eK0OD5ys2oXe5wCVrVAXmi/XwQYp%2B1YQ05\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "LADY MERCEDES CAMONES SORIANO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/lady-mercedes-camones-soriano_historial-partidario_P+kKEbrWTpAc6+@0ElOxMA==kb",
+      "TxProcedencia": "ANCASH",
+      "TxOrgPol": "ALIANZA PARA EL PROGRESO",
+      "TxRutaOrgPol": "/Partido/FichaPartido/alianza-para-el-progreso_acerca-de_pJhAQf798iw=hf",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw8GF1p3P2EJgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=56OIFy03%2BDX9HXtIxyDTkhijf4ng43JdOy\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JHAEC DARWIN ESPINOZA VARGAS",
+      "TxRutaPolitico": "/Politico/FichaPolitico/jhaec-darwin-espinoza-vargas_historial-partidario_m1arXjllrQA=aj",
+      "TxProcedencia": "ANCASH",
+      "TxOrgPol": "ACCION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/accion-popular_acerca-de_sY5dLXlhrMU=5X",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKx%2Bv7TmWf5ffgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=Bz3NGtThaaR5tXb16Cp3U5pLysUibWPR3t\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "PAUL SILVIO GUTIERREZ TICONA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/paul-silvio-gutierrez-ticona_historial-partidario_JZNoOQVsm00=NQ",
+      "TxProcedencia": "APURIMAC",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=rLqoDIyr9MLkN%2BLpje/2fxRyAD7bq0bLqI\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "MARIA ELIZABETH TAIPE CORONADO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/maria-elizabeth-taipe-coronado_historial-partidario_EtIVZCaC@xUc6+@0ElOxMA==IC",
+      "TxProcedencia": "APURIMAC",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=ypKOaaZwvMbfjQ83ZgKmefoGQ0uvpJvrKa\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "BERNARDO JAIME QUITO SARMIENTO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/bernardo-jaime-quito-sarmiento_historial-partidario_25Kq21uh07Mc6+@0ElOxMA==K1",
+      "TxProcedencia": "AREQUIPA",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=Pq%2B6PqIUBfrLUYMoHRR5UQeZ3717/0sJ%2Bq\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "MARIA ANTONIETA AGÜERO GUTIERREZ",
+      "TxRutaPolitico": "/Politico/FichaPolitico/maria-antonieta-agüero-gutierrez_historial-partidario_GuBwkDZyltg=BD",
+      "TxProcedencia": "AREQUIPA",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=cTrRKYTpfslP64/09im9qlkiEtpToH8frY\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ALEX ANTONIO PAREDES GONZALES",
+      "TxRutaPolitico": "/Politico/FichaPolitico/alex-antonio-paredes-gonzales_historial-partidario_IpveJT4zdaU=vT",
+      "TxProcedencia": "AREQUIPA",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=TRDG8WXHhr1MaoXpdTXTEuEjLojIu5GkDW\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "DIANA CAROLINA GONZALES DELGADO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/diana-carolina-gonzales-delgado_historial-partidario_g9qi2+cw3zYc6+@0ElOxMA==q+",
+      "TxProcedencia": "AREQUIPA",
+      "TxOrgPol": "AVANZA PAIS - PARTIDO DE INTEGRACION SOCIAL",
+      "TxRutaOrgPol": "/Partido/FichaPartido/avanza-pais-partido-de-integracion-social_acerca-de_sycTVJgySHw=cJ",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK/%2BntvGgSPy6gyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=O%2BCjtu6I5wSh3IG4eudvZSTFMyxVf2IgCu\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "PEDRO EDWIN MARTINEZ TALAVERA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/pedro-edwin-martinez-talavera_historial-partidario_knKepfWbjjk=Kf",
+      "TxProcedencia": "AREQUIPA",
+      "TxOrgPol": "ACCION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/accion-popular_acerca-de_sY5dLXlhrMU=5X",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKx%2Bv7TmWf5ffgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=RgyurqV1S/iAg8to3477993jdIgi2LD8yq\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ESDRAS RICARDO MEDINA MINAYA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/esdras-ricardo-medina-minaya_historial-partidario_oaUx7s55ofA=Us",
+      "TxProcedencia": "AREQUIPA",
+      "TxOrgPol": "RENOVACION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/renovacion-popular_acerca-de_3RK1ouU6BPI=Ku",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2%2Bxymf%2BI3%2BDgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=V1VPpNRSWYQkl73WQFEYQBvw%2BQQM7%2BiCVN\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ALEX RANDU FLORES RAMIREZ",
+      "TxRutaPolitico": "/Politico/FichaPolitico/alex-randu-flores-ramirez_historial-partidario_jk2vCZ96BTMc6+@0ElOxMA==2Z",
+      "TxProcedencia": "AYACUCHO",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=MMQLN3mjwj6%2BMo4qy7paGgqBXHdHX0wNQ3\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "MARGOT PALACIOS HUAMAN",
+      "TxRutaPolitico": "/Politico/FichaPolitico/margot-palacios-huaman_historial-partidario_N3VJfHzu4Ac=VH",
+      "TxProcedencia": "AYACUCHO",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=ZCkMlT/rLgMEoWLldCa%2BF%2BEjLojIu5GkkT\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "GERMAN ADOLFO TACURI VALDIVIA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/german-adolfo-tacuri-valdivia_historial-partidario_aJqgKuQRdks=qu",
+      "TxProcedencia": "AYACUCHO",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=tif4%2BnS7v6JIq7X2tbvRNd3jdIgi2LD8fn\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "SEGUNDO TEODOMIRO QUIROZ BARBOZA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/segundo-teodomiro-quiroz-barboza_historial-partidario_akHUx+sF8CUc6+@0ElOxMA==H+",
+      "TxProcedencia": "CAJAMARCA",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=wfN8eFZ1Fl7XhgFB9BTDo2/T8wqipD49NF\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "AMÉRICO GONZA CASTILLO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/américo-gonza-castillo_historial-partidario_9QDZfGgsdg0=DG",
+      "TxProcedencia": "CAJAMARCA",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=XQs1niylB4lI11dpLJs/QEzLQ4SsQ0Resi\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "HAMLET ECHEVERRIA RODRIGUEZ",
+      "TxRutaPolitico": "/Politico/FichaPolitico/hamlet-echeverria-rodriguez_historial-partidario_haCL2qDVzyA=Cq",
+      "TxProcedencia": "CAJAMARCA",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=Hsqo05JWJ//s/drtnfmgaVkiEtpToH8fq5\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ELVA EDHIT JULON IRIGOIN",
+      "TxRutaPolitico": "/Politico/FichaPolitico/elva-edhit-julon-irigoin_historial-partidario_ZsN@lUp7nTQc6+@0ElOxMA==NU",
+      "TxProcedencia": "CAJAMARCA",
+      "TxOrgPol": "ALIANZA PARA EL PROGRESO",
+      "TxRutaOrgPol": "/Partido/FichaPartido/alianza-para-el-progreso_acerca-de_pJhAQf798iw=hf",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw8GF1p3P2EJgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=2vUrKdY4TXQjV5YMLwdbhkmtQ1Q3PcDQUd\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "SILVIA MARIA MONTEZA FACHO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/silvia-maria-monteza-facho_historial-partidario_GeygcMXbdMIc6+@0ElOxMA==yM",
+      "TxProcedencia": "CAJAMARCA",
+      "TxOrgPol": "ACCION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/accion-popular_acerca-de_sY5dLXlhrMU=5X",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKx%2Bv7TmWf5ffgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=P2T7tg96lwJrdUpUQMnfyldg6O9VUCqCTg\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "TANIA ESTEFANY RAMIREZ GARCIA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/tania-estefany-ramirez-garcia_historial-partidario_hKCxu5c5+a0c6+@0ElOxMA==C5",
+      "TxProcedencia": "CAJAMARCA",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=qcrYaacauUQFMkPhrNA9RxxXYuCCYjYKra\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "AURISTELA ANA OBANDO MORGAN",
+      "TxRutaPolitico": "/Politico/FichaPolitico/auristela-ana-obando-morgan_historial-partidario_Ajeq9DqAIM4=eD",
+      "TxProcedencia": "CALLAO",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=dNGiPujn5EM6lK63XH291St8KziMF2kcGu\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "NOELIA ROSSVITH HERRERA MEDINA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/noelia-rossvith-herrera-medina_historial-partidario_Luy+SrgX4j4c6+@0ElOxMA==yr",
+      "TxProcedencia": "CALLAO",
+      "TxOrgPol": "RENOVACION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/renovacion-popular_acerca-de_3RK1ouU6BPI=Ku",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2%2Bxymf%2BI3%2BDgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=OrxPY2%2BlDnSxxEbbENl16T0H9rJWYvJpx2\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "PATRICIA ROSA CHIRINOS VENEGAS",
+      "TxRutaPolitico": "/Politico/FichaPolitico/patricia-rosa-chirinos-venegas_historial-partidario_+TReT2Nlf5o=R2",
+      "TxProcedencia": "CALLAO",
+      "TxOrgPol": "AVANZA PAIS - PARTIDO DE INTEGRACION SOCIAL",
+      "TxRutaOrgPol": "/Partido/FichaPartido/avanza-pais-partido-de-integracion-social_acerca-de_sycTVJgySHw=cJ",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK/%2BntvGgSPy6gyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=5DbhXZXZ1W/XIQr%2BX2J/PzMgjbfC%2BBL0bZ\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ARIANA MAYBEE ORUÉ MEDINA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/ariana-maybee-orué-medina_historial-partidario_oC6XAL2e4d0c6+@0ElOxMA==6L",
+      "TxProcedencia": "CALLAO",
+      "TxOrgPol": "PODEMOS PERU",
+      "TxRutaOrgPol": "/Partido/FichaPartido/podemos-peru_acerca-de_CufmLrFdFg0=fr",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK3SsxNBG0G%2BZgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=yiCgYEaCnM5wK6U/7bM/v3INTAfLsZLNCE\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "GUIDO BELLIDO UGARTE",
+      "TxRutaPolitico": "/Politico/FichaPolitico/guido-bellido-ugarte_historial-partidario_y3B@9Ql7kvoc6+@0ElOxMA==BQ",
+      "TxProcedencia": "CUSCO",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=Ulj1FyTHEP3pBgVFY6jXhG/T8wqipD49jy\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JHAKELINE KATY UGARTE MAMANI",
+      "TxRutaPolitico": "/Politico/FichaPolitico/jhakeline-katy-ugarte-mamani_historial-partidario_1m6GnGmfXpYc6+@0ElOxMA==6G",
+      "TxProcedencia": "CUSCO",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=TIeAIYv4fFuQoTEWr0iwdXIPJ%2B9Zi3UteY\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "RUTH LUQUE IBARRA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/ruth-luque-ibarra_historial-partidario_zoza@MAH61wc6+@0ElOxMA==zM",
+      "TxProcedencia": "CUSCO",
+      "TxOrgPol": "JUNTOS POR EL PERU",
+      "TxRutaOrgPol": "/Partido/FichaPartido/juntos-por-el-peru_acerca-de_0ne4JngMrLI=en",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw6joI0JP0x6gyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=x1GK7CIOShzgnpxfkMeBNgCOf3LXYQVpGC\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "LUIS ANGEL ARAGON CARREÑO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/luis-angel-aragon-carreño_historial-partidario_7rxbZ91EK9o=x9",
+      "TxProcedencia": "CUSCO",
+      "TxOrgPol": "ACCION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/accion-popular_acerca-de_sY5dLXlhrMU=5X",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKx%2Bv7TmWf5ffgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=q9mbuktygrh87oCLfc0ilppLysUibWPRmk\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ALEJANDRO SOTO REYES",
+      "TxRutaPolitico": "/Politico/FichaPolitico/alejandro-soto-reyes_historial-partidario_5VGFeCncrcU=GC",
+      "TxProcedencia": "CUSCO",
+      "TxOrgPol": "ALIANZA PARA EL PROGRESO",
+      "TxRutaOrgPol": "/Partido/FichaPartido/alianza-para-el-progreso_acerca-de_pJhAQf798iw=hf",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw8GF1p3P2EJgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=J/vdlFLAZnnNcoY5eFhEyme2Cip40ZlMvF\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ALFREDO PARIONA SINCHE",
+      "TxRutaPolitico": "/Politico/FichaPolitico/alfredo-pariona-sinche_historial-partidario_e7c56ej7xs0=ce",
+      "TxProcedencia": "HUANCAVELICA",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=g5u5Zhgfjb8wuw4noWCL6Bijf4ng43Jduh\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "WILSON SOTO PALACIOS",
+      "TxRutaPolitico": "/Politico/FichaPolitico/wilson-soto-palacios_historial-partidario_oTdEvIGu6Mcc6+@0ElOxMA==dI",
+      "TxProcedencia": "HUANCAVELICA",
+      "TxOrgPol": "ACCION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/accion-popular_acerca-de_sY5dLXlhrMU=5X",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKx%2Bv7TmWf5ffgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=N79NBon39%2BoxM8K4o3%2BHF3IPJ%2B9Zi3Ut9o\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ELIZABETH SARA MEDINA HERMOSILLA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/elizabeth-sara-medina-hermosilla_historial-partidario_PdHFmThWvxg=HT",
+      "TxProcedencia": "HUANUCO",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=9d/0onr50MzKSp9PUHTdpfOCaCAeVEJW/n\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ABEL AUGUSTO REYES CAM",
+      "TxRutaPolitico": "/Politico/FichaPolitico/abel-augusto-reyes-cam_historial-partidario_NubPM09VLhgc6+@0ElOxMA==b0",
+      "TxProcedencia": "HUANUCO",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=dmFqDYWx5yA%2B/sTRcNh7RjPX9dCGrsw4FY\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "LUIS RAUL PICON QUEDO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/luis-raul-picon-quedo_historial-partidario_NBy3ThktbBc=yh",
+      "TxProcedencia": "HUANUCO",
+      "TxOrgPol": "ALIANZA PARA EL PROGRESO",
+      "TxRutaOrgPol": "/Partido/FichaPartido/alianza-para-el-progreso_acerca-de_pJhAQf798iw=hf",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw8GF1p3P2EJgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=uxJgu/GXsxzKelJky41iS5JQprC%2BLD07J/\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "RAUL HUAMAN CORONADO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/raul-huaman-coronado_historial-partidario_NC9KUHwPrJAc6+@0ElOxMA==9H",
+      "TxProcedencia": "ICA",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=TcILun8J%2BGk/VEoYPyY5wnIPJ%2B9Zi3UtIn\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "RAUL FELIPE DOROTEO CARBAJO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/raul-felipe-doroteo-carbajo_historial-partidario_U38Z@8LVGgk=88",
+      "TxProcedencia": "ICA",
+      "TxOrgPol": "ACCION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/accion-popular_acerca-de_sY5dLXlhrMU=5X",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKx%2Bv7TmWf5ffgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=5rvbdq0HsKjsDQi3oUUUcRRyAD7bq0bLvq\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JORGE ALFONSO MARTICORENA MENDOZA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/jorge-alfonso-marticorena-mendoza_historial-partidario_hcUaBv@V3rIc6+@0ElOxMA==Uv",
+      "TxProcedencia": "ICA",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=R3FNXB/dr%2BbK80tTGfeAXu0bge9h1v8mFB\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JOSE LUIS ELIAS AVALOS",
+      "TxRutaPolitico": "/Politico/FichaPolitico/jose-luis-elias-avalos_historial-partidario_TuGWxD4bwwM=GD",
+      "TxProcedencia": "ICA",
+      "TxOrgPol": "PODEMOS PERU",
+      "TxRutaOrgPol": "/Partido/FichaPartido/podemos-peru_acerca-de_CufmLrFdFg0=fr",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK3SsxNBG0G%2BZgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=bp1ZLqv75C6jFv6iEcRk4RRyAD7bq0bL1q\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "WALDEMAR JOSE CERRON ROJAS",
+      "TxRutaPolitico": "/Politico/FichaPolitico/waldemar-jose-cerron-rojas_historial-partidario_sn+@8uMhF@E=+u",
+      "TxProcedencia": "JUNIN",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=9%2BmZyud5kVkXxuv54RGgLULIfnRrdpQZmu\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "SILVANA EMPERATRIZ ROBLES ARAUJO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/silvana-emperatriz-robles-araujo_historial-partidario_QWJF8ZCRe8Qc6+@0ElOxMA==JZ",
+      "TxProcedencia": "JUNIN",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=exaqi0dR7qv9RDrF/aEg8z9ZTdN1Xkb8a0\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ILICH FREDY LOPEZ UREÑA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/ilich-fredy-lopez-ureña_historial-partidario_PcwLxeU40boc6+@0ElOxMA==we",
+      "TxProcedencia": "JUNIN",
+      "TxOrgPol": "ACCION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/accion-popular_acerca-de_sY5dLXlhrMU=5X",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKx%2Bv7TmWf5ffgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=zT57LZib3qJaCIN5Ahw2fHe1Uv0TpZ105Z\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "DAVID JULIO JIMENEZ HEREDIA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/david-julio-jimenez-heredia_historial-partidario_kiCUZ0HZh7Qc6+@0ElOxMA==C0",
+      "TxProcedencia": "JUNIN",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=3fYgtY2E0Fs%2BYPx5mNR/wVS0Eq9JH6ntYY\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "EDGARD CORNELIO REYMUNDO MERCADO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/edgard-cornelio-reymundo-mercado_historial-partidario_1jIkVBlYZk0=IB",
+      "TxProcedencia": "JUNIN",
+      "TxOrgPol": "JUNTOS POR EL PERU",
+      "TxRutaOrgPol": "/Partido/FichaPartido/juntos-por-el-peru_acerca-de_0ne4JngMrLI=en",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw6joI0JP0x6gyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=avFZUp89nSP3H8ilcSGap5JQprC%2BLD07Fp\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "SEGUNDO HECTOR ACUÑA PERALTA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/segundo-hector-acuña-peralta_historial-partidario_MssDlDSRP0A=sD",
+      "TxProcedencia": "LA LIBERTAD",
+      "TxOrgPol": "ALIANZA PARA EL PROGRESO",
+      "TxRutaOrgPol": "/Partido/FichaPartido/alianza-para-el-progreso_acerca-de_pJhAQf798iw=hf",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw8GF1p3P2EJgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=h%2B9%2BEq4QYfEP2hIt0oQ7ruI1Q9TECjXx9q\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "MAGALY ROSMERY RUIZ RODRIGUEZ",
+      "TxRutaPolitico": "/Politico/FichaPolitico/magaly-rosmery-ruiz-rodriguez_historial-partidario_PH64GQfso8cc6+@0ElOxMA==6Q",
+      "TxProcedencia": "LA LIBERTAD",
+      "TxOrgPol": "ALIANZA PARA EL PROGRESO",
+      "TxRutaOrgPol": "/Partido/FichaPartido/alianza-para-el-progreso_acerca-de_pJhAQf798iw=hf",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw8GF1p3P2EJgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=C443UWOVm7Mg2ZNyvGABzX%2BFnnhuT8y44W\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "VICTOR SEFERINO FLORES RUIZ",
+      "TxRutaPolitico": "/Politico/FichaPolitico/victor-seferino-flores-ruiz_historial-partidario_PK2xB92D8YEc6+@0ElOxMA==29",
+      "TxProcedencia": "LA LIBERTAD",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=hvBVJp9AzZloVblRtJNmXYOhhQZ3J4KqBp\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "DIEGO ALONSO FERNANDO BAZAN CALDERON",
+      "TxRutaPolitico": "/Politico/FichaPolitico/diego-alonso-fernando-bazan-calderon_historial-partidario_EokeGoyTlYsc6+@0ElOxMA==ko",
+      "TxProcedencia": "LA LIBERTAD",
+      "TxOrgPol": "RENOVACION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/renovacion-popular_acerca-de_3RK1ouU6BPI=Ku",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2%2Bxymf%2BI3%2BDgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=8FaIwgCtitLXrly8srUC53/odv4sxzXbag\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "LUIS ROBERTO KAMICHE MORANTE",
+      "TxRutaPolitico": "/Politico/FichaPolitico/luis-roberto-kamiche-morante_historial-partidario_dPJGNQuTEAg=JQ",
+      "TxProcedencia": "LA LIBERTAD",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=obVdGZlK1zDTsm%2BPr0tI0iBdRu8W4EzmVZ\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JUAN BARTOLOME BURGOS OLIVEROS",
+      "TxRutaPolitico": "/Politico/FichaPolitico/juan-bartolome-burgos-oliveros_historial-partidario_XlvsFQDQhJk=vQ",
+      "TxProcedencia": "LA LIBERTAD",
+      "TxOrgPol": "AVANZA PAIS - PARTIDO DE INTEGRACION SOCIAL",
+      "TxRutaOrgPol": "/Partido/FichaPartido/avanza-pais-partido-de-integracion-social_acerca-de_sycTVJgySHw=cJ",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK/%2BntvGgSPy6gyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=05YWG0INYOI8qkaYxhdHtIFJ3XaYTnqIY0\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "CARLOS ENRIQUE ALVA ROJAS",
+      "TxRutaPolitico": "/Politico/FichaPolitico/carlos-enrique-alva-rojas_historial-partidario_@D8zge@DOhg=8e",
+      "TxProcedencia": "LA LIBERTAD",
+      "TxOrgPol": "ACCION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/accion-popular_acerca-de_sY5dLXlhrMU=5X",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKx%2Bv7TmWf5ffgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=h%2B9%2BEq4QYfGtuoVLXcWd8Q4ywuFjrVrn9q\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ALEJANDRO AURELIO AGUINAGA RECUENCO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/alejandro-aurelio-aguinaga-recuenco_historial-partidario_XLqpCWICcEM=qW",
+      "TxProcedencia": "LAMBAYEQUE",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=OPgOVGr8WSmonSYDaCitlhRyAD7bq0bLgG\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "MARIA JESSICA CORDOVA LOBATON",
+      "TxRutaPolitico": "/Politico/FichaPolitico/maria-jessica-cordova-lobaton_historial-partidario_ck622zrWXqoc6+@0ElOxMA==6z",
+      "TxProcedencia": "LAMBAYEQUE",
+      "TxOrgPol": "RENOVACION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/renovacion-popular_acerca-de_3RK1ouU6BPI=Ku",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2%2Bxymf%2BI3%2BDgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=5nLp5Cw8gVo2nyH0L/8mtn%2BFnnhuT8y4LC\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "MARIA GRIMANEZA ACUÑA PERALTA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/maria-grimaneza-acuña-peralta_historial-partidario_TgLa8qBagv8c6+@0ElOxMA==Lq",
+      "TxProcedencia": "LAMBAYEQUE",
+      "TxOrgPol": "ALIANZA PARA EL PROGRESO",
+      "TxRutaOrgPol": "/Partido/FichaPartido/alianza-para-el-progreso_acerca-de_pJhAQf798iw=hf",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw8GF1p3P2EJgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=iIOMBPPj5goRx0dAHwBZ4A4ywuFjrVrnOP\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "HILDA MARLENY PORTERO LOPEZ",
+      "TxRutaPolitico": "/Politico/FichaPolitico/hilda-marleny-portero-lopez_historial-partidario_TXYFBD584doc6+@0ElOxMA==YD",
+      "TxProcedencia": "LAMBAYEQUE",
+      "TxOrgPol": "ACCION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/accion-popular_acerca-de_sY5dLXlhrMU=5X",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKx%2Bv7TmWf5ffgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=0vQes0k4s2WjAsTVJ1abCB7MBTrCHBYZQ0\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JORGE CARLOS MONTOYA MANRIQUE",
+      "TxRutaPolitico": "/Politico/FichaPolitico/jorge-carlos-montoya-manrique_historial-partidario_fEFy4YX9WP8c6+@0ElOxMA==FY",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "RENOVACION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/renovacion-popular_acerca-de_3RK1ouU6BPI=Ku",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2%2Bxymf%2BI3%2BDgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=2sJ0m72YYWyd4ka0GBmctf3z%2BRH8a/K0J7\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "MARIA DE LOS MILAGROS JACKELINE JAUREGUI MARTINEZ DE AGUAYO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/maria-de-los-milagros-jackeline-jauregui-martinez-de-aguayo_historial-partidario_NVvDD81yHwE=v8",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "RENOVACION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/renovacion-popular_acerca-de_3RK1ouU6BPI=Ku",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2%2Bxymf%2BI3%2BDgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=bGNO00JHxP5pqD041d9qVR7MBTrCHBYZN0\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "HECTOR VALER PINTO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/hector-valer-pinto_historial-partidario_zLXiC2KtRFcc6+@0ElOxMA==X2",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "RENOVACION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/renovacion-popular_acerca-de_3RK1ouU6BPI=Ku",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2%2Bxymf%2BI3%2BDgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=PrCHfvWDI3BlFMQWuCXPT1jCsn/fbsrdCv\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "NORMA MARTINA YARROW LUMBRERAS",
+      "TxRutaPolitico": "/Politico/FichaPolitico/norma-martina-yarrow-lumbreras_historial-partidario_nANaM9U3Kecc6+@0ElOxMA==N9",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "RENOVACION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/renovacion-popular_acerca-de_3RK1ouU6BPI=Ku",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2%2Bxymf%2BI3%2BDgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=PEwHx6y1rNCky6Ap0PNKvnIPJ%2B9Zi3Utw6\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JOSE ERNESTO CUETO ASERVI",
+      "TxRutaPolitico": "/Politico/FichaPolitico/jose-ernesto-cueto-aservi_historial-partidario_RzYIeRAWXNQc6+@0ElOxMA==YR",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "RENOVACION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/renovacion-popular_acerca-de_3RK1ouU6BPI=Ku",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2%2Bxymf%2BI3%2BDgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=2V7JfdEy/yPPhmOx45zIHX/odv4sxzXb7d\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ALEJANDRO MUÑANTE BARRIOS",
+      "TxRutaPolitico": "/Politico/FichaPolitico/alejandro-muñante-barrios_historial-partidario_W5YQUI64q64c6+@0ElOxMA==YI",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "RENOVACION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/renovacion-popular_acerca-de_3RK1ouU6BPI=Ku",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2%2Bxymf%2BI3%2BDgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=ILTY%2BkB5i7Z4S2Tfi8oi2n%2BFnnhuT8y4Tk\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "FERNANDO MIGUEL ROSPIGLIOSI CAPURRO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/fernando-miguel-rospigliosi-capurro_historial-partidario_GZEmklI6@Zs=El",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=QfmuHd7I0YpGI8M/20TnVRGrHGGmSgXJmd\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "CARMEN PATRICIA JUAREZ GALLEGOS",
+      "TxRutaPolitico": "/Politico/FichaPolitico/carmen-patricia-juarez-gallegos_historial-partidario_BUjwplWbOMU=jl",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=qJsAKubrynyoZc1baneWWjMgjbfC%2BBL0su\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "CARLOS ERNESTO BUSTAMANTE DONAYRE",
+      "TxRutaPolitico": "/Politico/FichaPolitico/carlos-ernesto-bustamante-donayre_historial-partidario_m59CAkijfMs=9k",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=7LAhdSww6rPzqFLoA2lZsYwFdToW5SyvAS\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "MARTHA LUPE MOYANO DELGADO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/martha-lupe-moyano-delgado_historial-partidario_2hyZQWGNs7o=yW",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=I5nwfTKhZX8Qhd1bQwAJfIwFdToW5SyvnT\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ROSANGELLA ANDREA BARBARAN REYES",
+      "TxRutaPolitico": "/Politico/FichaPolitico/rosangella-andrea-barbaran-reyes_historial-partidario_@0M2ikOS1I4c6+@0ElOxMA==Mk",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=Dl8fW2CbwOzr04mV3UdyCD9ZTdN1Xkb882\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JOSE DANIEL WILLIAMS ZAPATA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/jose-daniel-williams-zapata_historial-partidario_rz6bCqsb3Tgc6+@0ElOxMA==6q",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "AVANZA PAIS - PARTIDO DE INTEGRACION SOCIAL",
+      "TxRutaOrgPol": "/Partido/FichaPartido/avanza-pais-partido-de-integracion-social_acerca-de_sycTVJgySHw=cJ",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK/%2BntvGgSPy6gyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=yDpNSJHHcSr9GJroLCQHNf1gC7gNJUBipJ\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "YESSICA ROSSELLI AMURUZ DULANTO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/yessica-rosselli-amuruz-dulanto_historial-partidario_FAAMc@GERAQc6+@0ElOxMA==A@",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "AVANZA PAIS - PARTIDO DE INTEGRACION SOCIAL",
+      "TxRutaOrgPol": "/Partido/FichaPartido/avanza-pais-partido-de-integracion-social_acerca-de_sycTVJgySHw=cJ",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK/%2BntvGgSPy6gyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=NwUTaatFRwI9uYuLtwNFHQCOf3LXYQVpUa\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ADRIANA JOSEFINA TUDELA GUTIERREZ",
+      "TxRutaPolitico": "/Politico/FichaPolitico/adriana-josefina-tudela-gutierrez_historial-partidario_64sHFKtnl2wc6+@0ElOxMA==sK",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "AVANZA PAIS - PARTIDO DE INTEGRACION SOCIAL",
+      "TxRutaOrgPol": "/Partido/FichaPartido/avanza-pais-partido-de-integracion-social_acerca-de_sycTVJgySHw=cJ",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK/%2BntvGgSPy6gyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=oFtYyIqnNjzSn4ak7SnTbS/XwQYp%2B1YQtI\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ALEJANDRO ENRIQUE CAVERO ALVA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/alejandro-enrique-cavero-alva_historial-partidario_Gkg6LRGj2vkc6+@0ElOxMA==gR",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "AVANZA PAIS - PARTIDO DE INTEGRACION SOCIAL",
+      "TxRutaOrgPol": "/Partido/FichaPartido/avanza-pais-partido-de-integracion-social_acerca-de_sycTVJgySHw=cJ",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK/%2BntvGgSPy6gyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=SIwlpnQ6MVp3h1Uv1FssW4OhhQZ3J4Kqwn\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "SUSEL ANA MARIA PAREDES PIQUE",
+      "TxRutaPolitico": "/Politico/FichaPolitico/susel-ana-maria-paredes-pique_historial-partidario_HBICZ8YVzUAc6+@0ElOxMA==I8",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "PARTIDO MORADO",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-morado_acerca-de_JAjH92+Hhok=j2",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK34bAothCXefgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=DBhbIQkyAikJMz33cGSUohijf4ng43JdhQ\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "FLOR AIDEE PABLO MEDINA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/flor-aidee-pablo-medina_historial-partidario_i5SNu0czBZ0=S0",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "PARTIDO MORADO",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-morado_acerca-de_JAjH92+Hhok=j2",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK34bAothCXefgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=phXr/WTv3PHRbvV0NuusSD0H9rJWYvJpXW\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "GEORGE EDWARD MALAGA TRILLO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/george-edward-malaga-trillo_historial-partidario_+2nJjW@eO00=nW",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "PARTIDO MORADO",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-morado_acerca-de_JAjH92+Hhok=j2",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK34bAothCXefgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=yZt0KkkKLVS3FoXbhtzASYOhhQZ3J4Kqtk\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "YOREL KIRA ALCARRAZ AGUERO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/yorel-kira-alcarraz-aguero_historial-partidario_cRZkwVa5Hq0=ZV",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "PARTIDO DEMOCRATICO SOMOS PERU",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-democratico-somos-peru_acerca-de_DW0wUeQ3lT8=0e",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKwAId3zKlZ%2BFgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=w%2BT2Sa1pMNQZ3QXJFKM9yVkiEtpToH8fTa\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JOSE ENRIQUE JERI ORE",
+      "TxRutaPolitico": "/Politico/FichaPolitico/jose-enrique-jeri-ore_historial-partidario_ug@eTICaAcoc6+@0ElOxMA==@I",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "PARTIDO DEMOCRATICO SOMOS PERU",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-democratico-somos-peru_acerca-de_DW0wUeQ3lT8=0e",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKwAId3zKlZ%2BFgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=zBjnv%2BiLE9H9cCJ7kRXNJX%2BFnnhuT8y4j%2B\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ALFREDO AZURIN LOAYZA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/alfredo-azurin-loayza_historial-partidario_ddlKSJKSu6sc6+@0ElOxMA==lJ",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "PARTIDO DEMOCRATICO SOMOS PERU",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-democratico-somos-peru_acerca-de_DW0wUeQ3lT8=0e",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKwAId3zKlZ%2BFgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=SyulA7Ver/J8rDk%2B2hojZNRYvMiYaYiru7\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JOSE LEON LUNA GALVEZ",
+      "TxRutaPolitico": "/Politico/FichaPolitico/jose-leon-luna-galvez_historial-partidario_C5qCCrkRN4c=qr",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "PODEMOS PERU",
+      "TxRutaOrgPol": "/Partido/FichaPartido/podemos-peru_acerca-de_CufmLrFdFg0=fr",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK3SsxNBG0G%2BZgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=x2Dc9Q7BMbZA9jKmvP%2BYY5bMI1l8FIdnDQ\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "DIGNA CALLE LOBATON",
+      "TxRutaPolitico": "/Politico/FichaPolitico/digna-calle-lobaton_historial-partidario_7iaN2Ece6QQ=aE",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "PODEMOS PERU",
+      "TxRutaOrgPol": "/Partido/FichaPartido/podemos-peru_acerca-de_CufmLrFdFg0=fr",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK3SsxNBG0G%2BZgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=mSCIoqq5ZY5lh8uoTmrj9gCOf3LXYQVpCq\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "CARLOS ANTONIO ANDERSON RAMIREZ",
+      "TxRutaPolitico": "/Politico/FichaPolitico/carlos-antonio-anderson-ramirez_historial-partidario_xDBaTLkhS18=BL",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "PODEMOS PERU",
+      "TxRutaOrgPol": "/Partido/FichaPartido/podemos-peru_acerca-de_CufmLrFdFg0=fr",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK3SsxNBG0G%2BZgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=IhiR7E/ub6EKEngfyxFgaBijf4ng43JdiE\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ROBERTO HELBERT SANCHEZ PALOMINO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/roberto-helbert-sanchez-palomino_historial-partidario_mDIDCbZ0jT0=Ib",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "JUNTOS POR EL PERU",
+      "TxRutaOrgPol": "/Partido/FichaPartido/juntos-por-el-peru_acerca-de_0ne4JngMrLI=en",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw6joI0JP0x6gyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=puyI%2Bp3tWGTQEIaXEbOzx5eMZWx4fjjEyp\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ISABEL CORTEZ AGUIRRE",
+      "TxRutaPolitico": "/Politico/FichaPolitico/isabel-cortez-aguirre_historial-partidario_XaMElGTxa8c=MG",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "JUNTOS POR EL PERU",
+      "TxRutaOrgPol": "/Partido/FichaPartido/juntos-por-el-peru_acerca-de_0ne4JngMrLI=en",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw6joI0JP0x6gyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=dgcSM5Ezs/LrX4UMx%2BXyfQ2TT1KUKNsVc5\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "SIGRID TESORO BAZAN NARRO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/sigrid-tesoro-bazan-narro_historial-partidario_DiKS8mFgjTEc6+@0ElOxMA==Km",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "JUNTOS POR EL PERU",
+      "TxRutaOrgPol": "/Partido/FichaPartido/juntos-por-el-peru_acerca-de_0ne4JngMrLI=en",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw6joI0JP0x6gyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=ywPeny%2BKqi/NpQAqdIwt1ybF8v10aZFpPy\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JOSE ALBERTO ARRIOLA TUEROS",
+      "TxRutaPolitico": "/Politico/FichaPolitico/jose-alberto-arriola-tueros_historial-partidario_LMD4FwXG1Jwc6+@0ElOxMA==Dw",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "ACCION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/accion-popular_acerca-de_sY5dLXlhrMU=5X",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKx%2Bv7TmWf5ffgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=qN3MhVO6KJexorNa1dN8R2zawBrahX2%2B3V\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "MARIA DEL CARMEN ALVA PRIETO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/maria-del-carmen-alva-prieto_historial-partidario_lmwlzN9P25M=wN",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "ACCION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/accion-popular_acerca-de_sY5dLXlhrMU=5X",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKx%2Bv7TmWf5ffgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=fN//CBqeX9qZudJa6cjRS%2BiuXxqb0Bf0/B\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "GUILLERMO BERMEJO ROJAS",
+      "TxRutaPolitico": "/Politico/FichaPolitico/guillermo-bermejo-rojas_historial-partidario_FFtyHAWr@egc6+@0ElOxMA==tA",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=TFrnUTVnVhznHb/GIzM/P7CJ3WU4XYjgrT\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "NIVARDO EDGAR TELLO MONTES",
+      "TxRutaPolitico": "/Politico/FichaPolitico/nivardo-edgar-tello-montes_historial-partidario_DfMvfwyg89Uc6+@0ElOxMA==Mw",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=mQ7GejRWArd%2B1tHhOoV6JhxXYuCCYjYK7j\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "GLADYS MARGOT ECHAIZ DE NUÑEZ IZAGA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/gladys-margot-echaiz-de-nuñez-izaga_historial-partidario_I5BG1czvjxs=Bc",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "ALIANZA PARA EL PROGRESO",
+      "TxRutaOrgPol": "/Partido/FichaPartido/alianza-para-el-progreso_acerca-de_pJhAQf798iw=hf",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw8GF1p3P2EJgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=bfBtNHwqg3rgoPVmrvvYvtRYvMiYaYirBH\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ROBERTO ENRIQUE CHIABRA LEON",
+      "TxRutaPolitico": "/Politico/FichaPolitico/roberto-enrique-chiabra-leon_historial-partidario_kivWSYO@4tUc6+@0ElOxMA==vY",
+      "TxProcedencia": "LIMA",
+      "TxOrgPol": "ALIANZA PARA EL PROGRESO",
+      "TxRutaOrgPol": "/Partido/FichaPartido/alianza-para-el-progreso_acerca-de_pJhAQf798iw=hf",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw8GF1p3P2EJgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=Ricsmh340pNe9KYHwS7we3KngPLRcFKGch\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "LESLIE VIVIAN OLIVOS MARTINEZ",
+      "TxRutaPolitico": "/Politico/FichaPolitico/leslie-vivian-olivos-martinez_historial-partidario_nKAA95Fx1lEc6+@0ElOxMA==A5",
+      "TxProcedencia": "LIMA PROVINCIAS",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=AzY6bCjtawimiNM1o02vbweZ3717/0sJYC\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "LUIS GUSTAVO CORDERO JON TAY",
+      "TxRutaPolitico": "/Politico/FichaPolitico/luis-gustavo-cordero-jon-tay_historial-partidario_gxAcuskbr7Q=As",
+      "TxProcedencia": "LIMA PROVINCIAS",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=fS5l6tSaa1yAVQRvlIQ52lj0luAqWUgE5t\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JANET MILAGROS RIVAS CHACARA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/janet-milagros-rivas-chacara_historial-partidario_Wuh0@EeqLLwc6+@0ElOxMA==hE",
+      "TxProcedencia": "LIMA PROVINCIAS",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=h2/0c%2BJQ2Xk2oPADRsXR1HkMIGQhan3A/%2B\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JAVIER ROMMEL PADILLA ROMERO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/javier-rommel-padilla-romero_historial-partidario_7h6KZjtShbg=6j",
+      "TxProcedencia": "LIMA PROVINCIAS",
+      "TxOrgPol": "RENOVACION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/renovacion-popular_acerca-de_3RK1ouU6BPI=Ku",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2%2Bxymf%2BI3%2BDgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=C58sffMbjBQKo5pYTzvERYOhhQZ3J4Kq8f\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JUAN CARLOS MORI CELIS",
+      "TxRutaPolitico": "/Politico/FichaPolitico/juan-carlos-mori-celis_historial-partidario_P1ZPh8BH1DYc6+@0ElOxMA==Z8",
+      "TxProcedencia": "LORETO",
+      "TxOrgPol": "ACCION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/accion-popular_acerca-de_sY5dLXlhrMU=5X",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKx%2Bv7TmWf5ffgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=gK1q9XoVxPVwD8qISK9pbppLysUibWPR1X\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JORGE ALBERTO MORANTE FIGARI",
+      "TxRutaPolitico": "/Politico/FichaPolitico/jorge-alberto-morante-figari_historial-partidario_LVfwiSZnrCYc6+@0ElOxMA==fS",
+      "TxProcedencia": "LORETO",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=%2BTG546ue4AmVQWzHVr82IxV2tJJjveo4G6\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ROSIO TORRES SALINAS",
+      "TxRutaPolitico": "/Politico/FichaPolitico/rosio-torres-salinas_historial-partidario_AUlIe2h5cAQ=l2",
+      "TxProcedencia": "LORETO",
+      "TxOrgPol": "ALIANZA PARA EL PROGRESO",
+      "TxRutaOrgPol": "/Partido/FichaPartido/alianza-para-el-progreso_acerca-de_pJhAQf798iw=hf",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw8GF1p3P2EJgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=1voFPwGXloOLzCf8vmRzWwqBXHdHX0wNow\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ANA ZADITH ZEGARRA SABOYA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/ana-zadith-zegarra-saboya_historial-partidario_kXvm8WVK@zQ=vW",
+      "TxProcedencia": "LORETO",
+      "TxOrgPol": "PARTIDO DEMOCRATICO SOMOS PERU",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-democratico-somos-peru_acerca-de_DW0wUeQ3lT8=0e",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKwAId3zKlZ%2BFgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=k6EQb3LBExggFVDY1TFrzJiwGbDldQt/E3\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "EDUARDO SALHUANA CAVIDES",
+      "TxRutaPolitico": "/Politico/FichaPolitico/eduardo-salhuana-cavides_historial-partidario_h9q4CPHPuyU=qP",
+      "TxProcedencia": "MADRE DE DIOS",
+      "TxOrgPol": "ALIANZA PARA EL PROGRESO",
+      "TxRutaOrgPol": "/Partido/FichaPartido/alianza-para-el-progreso_acerca-de_pJhAQf798iw=hf",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw8GF1p3P2EJgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=IlZHMxy7P7etqP3R2qLIw5L6An3KlvS2Zx\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JORGE SAMUEL COAYLA JUAREZ",
+      "TxRutaPolitico": "/Politico/FichaPolitico/jorge-samuel-coayla-juarez_historial-partidario_hLmdp5lkFuE=m5",
+      "TxProcedencia": "MOQUEGUA",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=Do6Lxb4m%2B3V/g9Ql2R3VZkmtQ1Q3PcDQ6b\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "VICTOR RAUL CUTIPA CCAMA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/victor-raul-cutipa-ccama_historial-partidario_cC19nO5HnsIc6+@0ElOxMA==1O",
+      "TxProcedencia": "MOQUEGUA",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=cgIMz5zHgJPFJtAt8rPOr4FJ3XaYTnqII5\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "PASION NEOMIAS DAVILA ATANACIO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/pasion-neomias-davila-atanacio_historial-partidario_GAubL4LD8Bo=u4",
+      "TxProcedencia": "PASCO",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=W0M3WbLObSKg0nBU57SCyeEjLojIu5GkMb\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "NELCY LIDIA HEIDINGER BALLESTEROS",
+      "TxRutaPolitico": "/Politico/FichaPolitico/nelcy-lidia-heidinger-ballesteros_historial-partidario_rwbn6s7pnucc6+@0ElOxMA==bs",
+      "TxProcedencia": "PASCO",
+      "TxOrgPol": "ALIANZA PARA EL PROGRESO",
+      "TxRutaOrgPol": "/Partido/FichaPartido/alianza-para-el-progreso_acerca-de_pJhAQf798iw=hf",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw8GF1p3P2EJgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=XAkG414MC7vRSxDyWl4QG2zawBrahX2%2Bk1\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "EDUARDO ENRIQUE CASTILLO RIVAS",
+      "TxRutaPolitico": "/Politico/FichaPolitico/eduardo-enrique-castillo-rivas_historial-partidario_qkInH@oXk4gc6+@0ElOxMA==I@",
+      "TxProcedencia": "PIURA",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=JCV8XlGTWFBIFiBhZpYeoq1lk%2BeuOUOkVl\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "CRUZ MARIA ZETA CHUNGA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/cruz-maria-zeta-chunga_historial-partidario_4tzSGhsjBpA=zh",
+      "TxProcedencia": "PIURA",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=QpCZ26%2BVmdAP9Vh8lt2o%2BW/T8wqipD49C6\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "CESAR MANUEL REVILLA VILLANUEVA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/cesar-manuel-revilla-villanueva_historial-partidario_eqJLyY@QzTwc6+@0ElOxMA==JY",
+      "TxProcedencia": "PIURA",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=ZwS2%2BgQ0rZSSSaKrWdBjtW/T8wqipD49Sg\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "HEIDY LISBETH JUAREZ CALLE",
+      "TxRutaPolitico": "/Politico/FichaPolitico/heidy-lisbeth-juarez-calle_historial-partidario_BpDxSkuxu50=Dk",
+      "TxProcedencia": "PIURA",
+      "TxOrgPol": "ALIANZA PARA EL PROGRESO",
+      "TxRutaOrgPol": "/Partido/FichaPartido/alianza-para-el-progreso_acerca-de_pJhAQf798iw=hf",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw8GF1p3P2EJgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=SLyMSPB%2Bsn1vBUbdw4JBzDPX9dCGrsw4yP\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "IDELSO MANUEL GARCIA CORREA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/idelso-manuel-garcia-correa_historial-partidario_1qZjrNu4vRIc6+@0ElOxMA==ZN",
+      "TxProcedencia": "PIURA",
+      "TxOrgPol": "ALIANZA PARA EL PROGRESO",
+      "TxRutaOrgPol": "/Partido/FichaPartido/alianza-para-el-progreso_acerca-de_pJhAQf798iw=hf",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw8GF1p3P2EJgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=lFmUgQVNGW/QVKnDZ3mwdJZJSVQMO7QcmQ\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JOSE BERNARDO PAZO NUNURA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/jose-bernardo-pazo-nunura_historial-partidario_lQaONEDGNwUc6+@0ElOxMA==aE",
+      "TxProcedencia": "PIURA",
+      "TxOrgPol": "PARTIDO DEMOCRATICO SOMOS PERU",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-democratico-somos-peru_acerca-de_DW0wUeQ3lT8=0e",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKwAId3zKlZ%2BFgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=iY8T1qDdwMGQwHENVFGguBarR14WZeVc8q\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "MIGUEL ANGEL CICCIA VASQUEZ",
+      "TxRutaPolitico": "/Politico/FichaPolitico/miguel-angel-ciccia-vasquez_historial-partidario_PnyfWTzbEUU=yT",
+      "TxProcedencia": "PIURA",
+      "TxOrgPol": "RENOVACION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/renovacion-popular_acerca-de_3RK1ouU6BPI=Ku",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2%2Bxymf%2BI3%2BDgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=mUHs9MRxGVgVTvJL/kIIlOAu/%2BKBoWNMHM\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "FLAVIO CRUZ MAMANI",
+      "TxRutaPolitico": "/Politico/FichaPolitico/flavio-cruz-mamani_historial-partidario_2PI26G8OwlQ=IG",
+      "TxProcedencia": "PUNO",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=NtyKuvBWHxT1p27OOYv2mULIfnRrdpQZyv\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "OSCAR ZEA CHOQUECHAMBI",
+      "TxRutaPolitico": "/Politico/FichaPolitico/oscar-zea-choquechambi_historial-partidario_h+LTxIeWYw4=LI",
+      "TxProcedencia": "PUNO",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=34d3H3Mq87Zr%2B%2BsssKFT7JxfZ2oUJDUdd3\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "WILSON RUSBEL QUISPE MAMANI",
+      "TxRutaPolitico": "/Politico/FichaPolitico/wilson-rusbel-quispe-mamani_historial-partidario_+rBDZ@1wyuMc6+@0ElOxMA==B@",
+      "TxProcedencia": "PUNO",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=X/SPY/LNgz%2BGt0nxv9V7IP1gC7gNJUBiS/\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JORGE LUIS FLORES ANCACHI",
+      "TxRutaPolitico": "/Politico/FichaPolitico/jorge-luis-flores-ancachi_historial-partidario_@KzSMtf28jc=zt",
+      "TxProcedencia": "PUNO",
+      "TxOrgPol": "ACCION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/accion-popular_acerca-de_sY5dLXlhrMU=5X",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKx%2Bv7TmWf5ffgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=j32HsP5u0FdrANU/ujQnhRxXYuCCYjYK2P\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "CARLOS JAVIER ZEBALLOS MADARIAGA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/carlos-javier-zeballos-madariaga_historial-partidario_OXrwIlBrVsAc6+@0ElOxMA==rl",
+      "TxProcedencia": "PUNO",
+      "TxOrgPol": "ACCION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/accion-popular_acerca-de_sY5dLXlhrMU=5X",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKx%2Bv7TmWf5ffgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=eG/xnBhGduw89wTgzeJgJz0H9rJWYvJp/B\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JORGE ARTURO ZEBALLOS APONTE",
+      "TxRutaPolitico": "/Politico/FichaPolitico/jorge-arturo-zeballos-aponte_historial-partidario_TYK6waZp1Xg=Ka",
+      "TxProcedencia": "RESIDENTES EN EL EXTRANJERO",
+      "TxOrgPol": "RENOVACION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/renovacion-popular_acerca-de_3RK1ouU6BPI=Ku",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2%2Bxymf%2BI3%2BDgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=YS3OjJrMJLI%2BMh7m6sL%2BqCBUvTYMcx5r3J\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JUAN CARLOS MARTIN LIZARZABURU LIZARZABURU",
+      "TxRutaPolitico": "/Politico/FichaPolitico/juan-carlos-martin-lizarzaburu-lizarzaburu_historial-partidario_x7PfPXDKfVIc6+@0ElOxMA==PX",
+      "TxProcedencia": "RESIDENTES EN EL EXTRANJERO",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=yZt0KkkKLVSfyU36kz5Nz%2BBl05nenf9Qtk\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "CHERYL TRIGOZO REÁTEGUI",
+      "TxRutaPolitico": "/Politico/FichaPolitico/cheryl-trigozo-reátegui_historial-partidario_qR30KhMpdnkc6+@0ElOxMA==3h",
+      "TxProcedencia": "SAN MARTIN",
+      "TxOrgPol": "ALIANZA PARA EL PROGRESO",
+      "TxRutaOrgPol": "/Partido/FichaPartido/alianza-para-el-progreso_acerca-de_pJhAQf798iw=hf",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKw8GF1p3P2EJgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=131SbiLBhFOb38arpaYnjg2TT1KUKNsV1i\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "LUCINDA VASQUEZ VELA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/lucinda-vasquez-vela_historial-partidario_AmHxxAb9JSw=HA",
+      "TxProcedencia": "SAN MARTIN",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=tq0BLFIYpMh2ERtc7D9uKw4ywuFjrVrn0F\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "LUIS ARTURO ALEGRIA GARCIA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/luis-arturo-alegria-garcia_historial-partidario_tD4dfeAweD0c6+@0ElOxMA==4e",
+      "TxProcedencia": "SAN MARTIN",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=EAar1y0tH8HR2D3jDMqKrWe2Cip40ZlMay\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "KAROL IVETT PAREDES FONSECA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/karol-ivett-paredes-fonseca_historial-partidario_pD0XPmoqAts=0m",
+      "TxProcedencia": "SAN MARTIN",
+      "TxOrgPol": "ACCION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/accion-popular_acerca-de_sY5dLXlhrMU=5X",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKx%2Bv7TmWf5ffgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=LT/U%2BJwdnxef0rNHaYDoCHINTAfLsZLN/J\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ISAAC MITA ALANOCA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/isaac-mita-alanoca_historial-partidario_0pulr48aKswc6+@0ElOxMA==u4",
+      "TxProcedencia": "TACNA",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=hQnZhHN5UbAnHtzUSzIPo2QTmoKr%2BJkenH\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "NIEVES ESMERALDA LIMACHI QUISPE",
+      "TxRutaPolitico": "/Politico/FichaPolitico/nieves-esmeralda-limachi-quispe_historial-partidario_e7pZFN0z5IA=pN",
+      "TxProcedencia": "TACNA",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=a73v1JXYT42K9sM5SQqmLhV2tJJjveo43J\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "MAGALLY SANTISTEBAN SUCLUPE",
+      "TxRutaPolitico": "/Politico/FichaPolitico/magally-santisteban-suclupe_historial-partidario_l4vJz3iZHAQ=v3",
+      "TxProcedencia": "TUMBES",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=xg8dRj%2BNGw/kVZbOtIGMLBijf4ng43Jd8j\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "HECTOR JOSE VENTURA ANGEL",
+      "TxRutaPolitico": "/Politico/FichaPolitico/hector-jose-ventura-angel_historial-partidario_DMfdLIgEkFk=fI",
+      "TxProcedencia": "TUMBES",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=axKPQPfPaKtEyO/A9IAHJRGrHGGmSgXJKP\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "JENY LUZ LOPEZ MORALES",
+      "TxRutaPolitico": "/Politico/FichaPolitico/jeny-luz-lopez-morales_historial-partidario_y79iEhwVMkU=9h",
+      "TxProcedencia": "UCAYALI",
+      "TxOrgPol": "FUERZA POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/fuerza-popular_acerca-de_SgCRMofD1dM=Co",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK2nuLeEK2mFCgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=7HkJbDDQWYyriDMS0eCKb1S0Eq9JH6ntkD\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "ELVIS HERNAN VERGARA MENDOZA",
+      "TxRutaPolitico": "/Politico/FichaPolitico/elvis-hernan-vergara-mendoza_historial-partidario_dieSJiuml78c6+@0ElOxMA==ei",
+      "TxProcedencia": "UCAYALI",
+      "TxOrgPol": "ACCION POPULAR",
+      "TxRutaOrgPol": "/Partido/FichaPartido/accion-popular_acerca-de_sY5dLXlhrMU=5X",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xKx%2Bv7TmWf5ffgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=VzCAK/priT837fIitcVsoELIfnRrdpQZC/\u0026tk=v%2BEJ7TEQE2c=ET"
+    },
+    {
+      "TxNombres": "FRANCIS JHASMINA PAREDES CASTRO",
+      "TxRutaPolitico": "/Politico/FichaPolitico/francis-jhasmina-paredes-castro_historial-partidario_jNLvgiu+gm4=Li",
+      "TxProcedencia": "UCAYALI",
+      "TxOrgPol": "PARTIDO POLITICO NACIONAL PERU LIBRE",
+      "TxRutaOrgPol": "/Partido/FichaPartido/partido-politico-nacional-peru-libre_acerca-de_nKh676Fplqw=h6",
+      "TxRutaSimbolo": "/General/ObtenerLogoPorProceso?photoURL=Y/sIMI4ot1GxHsgWu94xK77LbJy2EUMmgyYlwJA04rY=sI\u0026tk=v%2BEJ7TEQE2c=ET",
+      "TxRutaFoto": "/General/ObtenerFotoPolitico?photoURL=%2BRHnLsHOmN55%2BdFJ0fRupUD43ugl2Nj/Hs\u0026tk=v%2BEJ7TEQE2c=ET"
+    }
+  ]
+}
