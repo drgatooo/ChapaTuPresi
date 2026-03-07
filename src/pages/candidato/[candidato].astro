@@ -9,6 +9,7 @@ import { Icon } from "astro-icon/components";
 import prisma from "@/lib/prisma";
 import { cargoSort } from "@/lib/sorts";
 import { marked } from "marked";
+import AlertCard from "@/components/candidato/AlertCard.astro";
 
 const { candidato: candidatoSlug } = Astro.params;
 
@@ -30,9 +31,11 @@ const biografiaHtml = marked.parse(
 // Formateador de títulos de cargos
 const formatCargo = (c: string) => c.replace(/_/g, " ");
 
-const hasEstudios = candidato.educacion.universitario.length > 0 || candidato.educacion.tecnico.length > 0;
+const hasEstudios =
+  candidato.educacion.universitario.length > 0 ||
+  candidato.educacion.tecnico.length > 0;
 const hasExperiencia = candidato.experiencia.length > 0;
-const isPresidente = candidato.cargo.some(c => c === "PRESIDENTE");
+const isPresidente = candidato.cargo.some((c) => c === "PRESIDENTE");
 ---
 
 <Layout
@@ -186,6 +189,44 @@ const isPresidente = candidato.cargo.some(c => c === "PRESIDENTE");
         }
       </section>
 
+      {
+        isPresidente && (
+          <section id="alertas" class="scroll-mt-24">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+              <div class="flex items-center gap-4">
+                <div class="p-3 bg-amber-100 dark:bg-amber-900/30 rounded-2xl">
+                  <Icon
+                    name="mdi:alert-circle"
+                    class="w-8 h-8 text-amber-600"
+                  />
+                </div>
+                <div>
+                  <Heading level="h2">Alertas Periodísticas</Heading>
+                  <Text class="text-sm">
+                    Investigaciones y destapes en medios de comunicación.
+                  </Text>
+                </div>
+              </div>
+              <span class="bg-amber-100 text-amber-700 text-xs font-black px-3 py-1 rounded-full uppercase tracking-widest h-fit">
+                {candidato.alertas.length} Registros
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {candidato.alertas.map((alerta) => (
+                <AlertCard alerta={alerta} />
+              ))}
+            </div>
+
+            <p class="mt-6 text-[10px] text-stone-400 italic bg-stone-50 dark:bg-stone-900/50 p-4 rounded-xl border border-stone-200 dark:border-stone-800">
+              * Nota: Las alertas mostradas son recopilaciones de
+              investigaciones de medios periodísticos (OjoPúblico, IDL, Cuarto
+              Poder, etc.) y no constituyen una sentencia judicial firme.
+            </p>
+          </section>
+        )
+      }
+
       <section id="educacion" class="scroll-mt-24">
         <Heading level="h2" className="mb-6 flex items-center gap-4">
           <Icon name="mdi:school" class="w-8 h-8 text-stone-400" />
@@ -205,58 +246,66 @@ const isPresidente = candidato.cargo.some(c => c === "PRESIDENTE");
           </div>
         </div> -->
 
-        {hasEstudios ? (
-          <div class="grid md:grid-cols-2 gap-6">
-            {/* Universitarios y Postgrados */}
-            {[
-              ...candidato.educacion.universitario,
-              ...candidato.educacion.tecnico,
-            ].map((edu) => (
-              <div class="relative p-6 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl shadow-sm hover:border-stone-400 transition">
-                {edu.postgrado && (
-                  <span class="absolute -top-3 right-4 bg-purple-600 text-white text-[8px] font-black px-2 py-1 rounded-full uppercase shadow-sm">
-                    Postgrado
-                  </span>
-                )}
-                <p class="text-[10px] font-black text-stone-400 uppercase mb-1">
-                  {edu.centro_educativo}
-                </p>
-                <h4 class="font-bold text-stone-900 dark:text-white leading-tight mb-3">
-                  {edu.grado}
-                </h4>
-                <div class="flex items-center justify-between text-xs">
-                  <span
-                    class={
-                      edu.concluido
-                        ? "text-green-600 dark:text-green-400 font-bold flex items-center gap-1"
-                        : "text-amber-600 dark:text-amber-500 font-bold flex items-center gap-1"
-                    }
-                  >
-                    <Icon name={edu.concluido ? "mdi:check" : "mdi:progress-clock"} class="w-4 h-4" />
-                    {edu.concluido ? "Concluido" : "En curso"}
-                  </span>
-                  {edu.fecha_conclusion && (
-                    <span class="text-stone-400 font-medium bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded">
-                      {edu.fecha_conclusion}
+        {
+          hasEstudios ? (
+            <div class="grid md:grid-cols-2 gap-6">
+              {/* Universitarios y Postgrados */}
+              {[
+                ...candidato.educacion.universitario,
+                ...candidato.educacion.tecnico,
+              ].map((edu) => (
+                <div class="relative p-6 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl shadow-sm hover:border-stone-400 transition">
+                  {edu.postgrado && (
+                    <span class="absolute -top-3 right-4 bg-purple-600 text-white text-[8px] font-black px-2 py-1 rounded-full uppercase shadow-sm">
+                      Postgrado
                     </span>
                   )}
+                  <p class="text-[10px] font-black text-stone-400 uppercase mb-1">
+                    {edu.centro_educativo}
+                  </p>
+                  <h4 class="font-bold text-stone-900 dark:text-white leading-tight mb-3">
+                    {edu.grado}
+                  </h4>
+                  <div class="flex items-center justify-between text-xs">
+                    <span
+                      class={
+                        edu.concluido
+                          ? "text-green-600 dark:text-green-400 font-bold flex items-center gap-1"
+                          : "text-amber-600 dark:text-amber-500 font-bold flex items-center gap-1"
+                      }
+                    >
+                      <Icon
+                        name={
+                          edu.concluido ? "mdi:check" : "mdi:progress-clock"
+                        }
+                        class="w-4 h-4"
+                      />
+                      {edu.concluido ? "Concluido" : "En curso"}
+                    </span>
+                    {edu.fecha_conclusion && (
+                      <span class="text-stone-400 font-medium bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded">
+                        {edu.fecha_conclusion}
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div class="flex items-center gap-4 p-8 bg-stone-50 dark:bg-stone-900/50 rounded-3xl border border-stone-200 dark:border-stone-800 border-dashed">
-            <Icon name="mdi:book-off" class="w-10 h-10 text-stone-400" />
-            <div>
-              <p class="font-black text-stone-600 dark:text-stone-300">
-                No registra formación superior (Técnica o Universitaria)
-              </p>
-              <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">
-                Según la declaración jurada de hoja de vida (DJHV) presentada ante el JNE.
-              </p>
+              ))}
             </div>
-          </div>
-        )}
+          ) : (
+            <div class="flex items-center gap-4 p-8 bg-stone-50 dark:bg-stone-900/50 rounded-3xl border border-stone-200 dark:border-stone-800 border-dashed">
+              <Icon name="mdi:book-off" class="w-10 h-10 text-stone-400" />
+              <div>
+                <p class="font-black text-stone-600 dark:text-stone-300">
+                  No registra formación superior (Técnica o Universitaria)
+                </p>
+                <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">
+                  Según la declaración jurada de hoja de vida (DJHV) presentada
+                  ante el JNE.
+                </p>
+              </div>
+            </div>
+          )
+        }
       </section>
 
       <section id="experiencia" class="scroll-mt-24">
@@ -266,93 +315,112 @@ const isPresidente = candidato.cargo.some(c => c === "PRESIDENTE");
         </Heading>
 
         <div
-          class={`space-y-12 relative ${hasExperiencia ? 'before:absolute before:left-4 before:top-2 before:bottom-2 before:w-0.5 before:bg-stone-200 dark:before:bg-stone-800' : ''}`}
+          class={`space-y-12 relative ${hasExperiencia ? "before:absolute before:left-4 before:top-2 before:bottom-2 before:w-0.5 before:bg-stone-200 dark:before:bg-stone-800" : ""}`}
         >
           {
-            hasExperiencia ?
-            candidato.experiencia
-              .sort((a, b) => {
-                const dateA = +a.periodo.split("-")[0];
-                const dateB = +b.periodo.split("-")[0];
-                return dateB - dateA;
-              })
-              .map((exp) => (
-                <div class="relative pl-12">
-                  <div
-                    class={`absolute left-4 -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white dark:border-stone-950 ${exp.politica ? "bg-roof-terracotta-600" : "bg-stone-400"}`}
-                  />
-                  <div class="flex flex-col md:flex-row md:justify-between gap-1 mb-2">
-                    <h4 class="font-black text-lg text-stone-900 dark:text-white leading-none">
-                      {exp.ocupacion}
-                    </h4>
-                    <span class="text-xs font-bold text-stone-400 tabular-nums">
-                      {exp.periodo}
-                    </span>
+            hasExperiencia ? (
+              candidato.experiencia
+                .sort((a, b) => {
+                  const dateA = +a.periodo.split("-")[0];
+                  const dateB = +b.periodo.split("-")[0];
+                  return dateB - dateA;
+                })
+                .map((exp) => (
+                  <div class="relative pl-12">
+                    <div
+                      class={`absolute left-4 -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white dark:border-stone-950 ${exp.politica ? "bg-roof-terracotta-600" : "bg-stone-400"}`}
+                    />
+                    <div class="flex flex-col md:flex-row md:justify-between gap-1 mb-2">
+                      <h4 class="font-black text-lg text-stone-900 dark:text-white leading-none">
+                        {exp.ocupacion}
+                      </h4>
+                      <span class="text-xs font-bold text-stone-400 tabular-nums">
+                        {exp.periodo}
+                      </span>
+                    </div>
+                    <p class="text-sm text-stone-600 dark:text-stone-400 font-medium mb-2">
+                      {exp.centro_trabajo}
+                    </p>
+                    {exp.politica && (
+                      <span class="text-[9px] font-black uppercase tracking-widest text-roof-terracotta-600 bg-roof-terracotta-50 dark:bg-roof-terracotta-900/20 px-2 py-1 rounded">
+                        Cargo Político
+                      </span>
+                    )}
                   </div>
-                  <p class="text-sm text-stone-600 dark:text-stone-400 font-medium mb-2">
-                    {exp.centro_trabajo}
+                ))
+            ) : (
+              <div class="flex items-center gap-4 p-8 bg-stone-50 dark:bg-stone-900/50 rounded-3xl border border-stone-200 dark:border-stone-800 border-dashed">
+                <Icon
+                  name="mdi:briefcase-off"
+                  class="w-10 h-10 text-stone-400"
+                />
+                <div>
+                  <p class="font-black text-stone-600 dark:text-stone-300">
+                    No registra experiencia laboral
                   </p>
-                  {exp.politica && (
-                    <span class="text-[9px] font-black uppercase tracking-widest text-roof-terracotta-600 bg-roof-terracotta-50 dark:bg-roof-terracotta-900/20 px-2 py-1 rounded">
-                      Cargo Político
-                    </span>
-                  )}
+                  <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">
+                    Según la declaración jurada de hoja de vida (DJHV)
+                    presentada ante el JNE.
+                  </p>
                 </div>
-              ))
-              : (
-                <div class="flex items-center gap-4 p-8 bg-stone-50 dark:bg-stone-900/50 rounded-3xl border border-stone-200 dark:border-stone-800 border-dashed">
-                  <Icon name="mdi:briefcase-off" class="w-10 h-10 text-stone-400" />
-                  <div>
-                    <p class="font-black text-stone-600 dark:text-stone-300">
-                      No registra experiencia laboral
-                    </p>
-                    <p class="text-sm text-stone-500 dark:text-stone-400 mt-1">
-                      Según la declaración jurada de hoja de vida (DJHV) presentada ante el JNE.
-                    </p>
-                  </div>
-                </div>
-              )
+              </div>
+            )
           }
         </div>
       </section>
 
-      {isPresidente && (
-        <section id="noticias" class="scroll-mt-24" data-candidato={`${candidato.nombre} ${candidato.apellido_p}`} data-shortname={candidato.searchable || 0}>
-          <Heading level="h2" className="mb-8 flex items-center gap-4">
-            <Icon name="mdi:newspaper-variant-outline" class="w-8 h-8 text-stone-400" />
-            En las Noticias
-          </Heading>
+      {
+        isPresidente && (
+          <section
+            id="noticias"
+            class="scroll-mt-24"
+            data-candidato={`${candidato.nombre} ${candidato.apellido_p}`}
+            data-shortname={candidato.searchable || 0}
+          >
+            <Heading level="h2" className="mb-8 flex items-center gap-4">
+              <Icon
+                name="mdi:newspaper-variant-outline"
+                class="w-8 h-8 text-stone-400"
+              />
+              En las Noticias
+            </Heading>
 
-          <div id="news-container" class="space-y-4">
-            {[1, 2, 3].map(() => (
-              <div class="animate-pulse flex gap-4 p-5 bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-800 rounded-2xl shadow-sm">
-                <div class="w-24 h-24 bg-stone-200 dark:bg-stone-800 rounded-xl shrink-0"></div>
-                <div class="flex-1 space-y-3 py-1">
-                  <div class="h-4 bg-stone-200 dark:bg-stone-800 rounded w-3/4"></div>
-                  <div class="h-4 bg-stone-200 dark:bg-stone-800 rounded w-5/6"></div>
-                  <div class="h-3 bg-stone-200 dark:bg-stone-800 rounded w-1/4 mt-4"></div>
+            <div id="news-container" class="space-y-4">
+              {[1, 2, 3].map(() => (
+                <div class="animate-pulse flex gap-4 p-5 bg-white dark:bg-stone-900 border border-stone-100 dark:border-stone-800 rounded-2xl shadow-sm">
+                  <div class="w-24 h-24 bg-stone-200 dark:bg-stone-800 rounded-xl shrink-0" />
+                  <div class="flex-1 space-y-3 py-1">
+                    <div class="h-4 bg-stone-200 dark:bg-stone-800 rounded w-3/4" />
+                    <div class="h-4 bg-stone-200 dark:bg-stone-800 rounded w-5/6" />
+                    <div class="h-3 bg-stone-200 dark:bg-stone-800 rounded w-1/4 mt-4" />
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
+              ))}
+            </div>
+          </section>
+        )
+      }
     </div>
 
     <aside class="lg:col-span-4">
       <div class="sticky top-24 space-y-8">
-        {(candidato.cv_url || "") !== "" &&
-          <div class="space-y-4 flex justify-between">
-            <Text
-              tag="a"
-              target="_blank"
-              href={candidato.cv_url}
-              class="flex w-full items-center gap-2 px-4 py-3 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl text-sm font-bold hover:scale-105 transition"
-            >
-              <Icon name="mdi:file-document" class="w-5 h-5 inline-block mr-2" />
-              Ver hoja de vida (PDF)
-            </Text>
-          </div>
+        {
+          (candidato.cv_url || "") !== "" && (
+            <div class="space-y-4 flex justify-between">
+              <Text
+                tag="a"
+                target="_blank"
+                href={candidato.cv_url}
+                class="flex w-full items-center gap-2 px-4 py-3 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl text-sm font-bold hover:scale-105 transition"
+              >
+                <Icon
+                  name="mdi:file-document"
+                  class="w-5 h-5 inline-block mr-2"
+                />
+                Ver hoja de vida (PDF)
+              </Text>
+            </div>
+          )
         }
 
         <div
@@ -378,46 +446,23 @@ const isPresidente = candidato.cargo.some(c => c === "PRESIDENTE");
           >
         </div>
 
-        {
-          candidato.cargo.some(c => c === "PRESIDENTE") ? 
-            <div class="space-y-4">
-              <Heading
-                level="h3"
-                className="text-sm uppercase tracking-widest text-stone-400"
-              >
-                Alertas
-              </Heading>
-              {
-                candidato.alertas.length > 0 ? (
-                  candidato.alertas.map((a) => <span />)
-                ) : (
-                  <div class="p-6 border-2 border-dashed border-stone-200 dark:border-stone-800 rounded-2xl text-center">
-                    <Text class="text-xs text-stone-400 italic">
-                      Próximamente podrás ver aquí las alertas periodísticas
-                      relacionadas a este candidato.
-                    </Text>
-                  </div>
-                )
-              }
-            </div>
-            : <></>
-        }
-
         <div class="flex flex-wrap gap-4">
           {
-            candidato.links.map((link) => (
-              <a
-                href={link.enlace}
-                target="_blank"
-                class="grow flex items-center justify-center gap-2 p-4 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl hover:scale-105 transition shadow-sm"
-              >
-                <Icon
-                  name={`mdi:${link.key === "x" ? "twitter" : link.key}`}
-                  class="w-5 h-5"
-                />
-                <span class="text-xs font-bold capitalize">{link.key}</span>
-              </a>
-            ))
+            candidato.links.map((link) => {
+              const prefix = link.key === "web" ? "mdi" : "fa7-brands";
+              const iconName = link.key === "x" ? "x-twitter" : link.key;
+
+              return (
+                <Text
+                  tag="a"
+                  href={link.enlace}
+                  target="_blank"
+                  class="grow flex items-center justify-center gap-2 p-4 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl hover:scale-105 transition shadow-sm"
+                >
+                  <Icon name={`${prefix}:${iconName}`} class="w-5 h-5" />
+                </Text>
+              );
+            })
           }
         </div>
       </div>
@@ -435,19 +480,23 @@ const isPresidente = candidato.cargo.some(c => c === "PRESIDENTE");
 
 <script>
   import { prepareFallback } from "@/lib/imageFallback";
-  
+
   async function fetchCandidateNews() {
-    const newsSection = document.getElementById('noticias');
-    const newsContainer = document.getElementById('news-container');
-    
+    const newsSection = document.getElementById("noticias");
+    const newsContainer = document.getElementById("news-container");
+
     // Si no existe la sección (no es candidato presidencial), no hacemos nada
     if (!newsSection || !newsContainer) return;
 
-    const candidatoName = newsSection.getAttribute('data-shortname') || newsSection.getAttribute('data-candidato');
+    const candidatoName =
+      newsSection.getAttribute("data-shortname") ||
+      newsSection.getAttribute("data-candidato");
     if (!candidatoName) return;
 
     try {
-      const res = await fetch(`/api/noticias?q=${encodeURIComponent(candidatoName)}`);
+      const res = await fetch(
+        `/api/noticias?q=${encodeURIComponent(candidatoName)}`,
+      );
       const noticias = await res.json();
 
       if (!noticias || noticias.length === 0 || noticias.error) {
@@ -459,26 +508,34 @@ const isPresidente = candidato.cargo.some(c => c === "PRESIDENTE");
       }
 
       // Renderizamos las noticias reales
-      newsContainer.innerHTML = noticias.filter((n: {image: string|null}) => !!n.image).map((n: any) => `
+      newsContainer.innerHTML = noticias
+        .filter((n: { image: string | null }) => !!n.image)
+        .map(
+          (n: any) => `
         <a href="${n.link}" target="_blank" rel="noopener noreferrer" class="group flex flex-col sm:flex-row gap-4 p-5 bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl hover:border-roof-terracotta-500 hover:shadow-md transition-all">
-          ${n.image ? `
+          ${
+            n.image
+              ? `
             <div class="w-full sm:w-32 h-32 sm:h-24 rounded-xl overflow-hidden shrink-0 bg-stone-100 dark:bg-stone-800">
               <img src="${n.image}" alt="Imagen noticia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             </div>
-          ` : ''}
+          `
+              : ""
+          }
           <div class="flex-grow flex flex-col justify-between">
             <h3 class="font-bold line-clamp-2 text-sm md:text-base leading-tight mb-2 group-hover:text-roof-terracotta-600 transition-colors dark:text-stone-200">
               ${n.title}
             </h3>
             <div class="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-stone-400">
-              <span class="text-roof-terracotta-600">${n.source || 'Medio Local'}</span>
+              <span class="text-roof-terracotta-600">${n.source || "Medio Local"}</span>
               <span>•</span>
-              <span>${n.date || 'Reciente'}</span>
+              <span>${n.date || "Reciente"}</span>
             </div>
           </div>
         </a>
-      `).join('');
-
+      `,
+        )
+        .join("");
     } catch (error) {
       console.error("Error cargando noticias del candidato:", error);
       newsContainer.innerHTML = `
@@ -492,7 +549,7 @@ const isPresidente = candidato.cargo.some(c => c === "PRESIDENTE");
     prepareFallback("candidate");
     fetchCandidateNews();
   });
-  
+
   prepareFallback("candidate");
   fetchCandidateNews();
 </script>

@@ -14,7 +14,7 @@ importers:
       '@fontsource/merriweather':
         specifier: ^5.2.11
         version: 5.2.11
-      '@iconify-json/fa-brands':
+      '@iconify-json/fa7-brands':
         specifier: ^1.2.2
         version: 1.2.2
       '@iconify-json/mdi':
@@ -445,8 +445,8 @@ packages:
   '@fontsource/merriweather@5.2.11':
     resolution: {integrity: sha512-ZiIMeUh5iT8d73o6xlSF8GKgjV5pgiFrufYc5jZTVAfExtWKqM2vQHnsqXSFMv4ELhAcjt6Vf+5T3oVGXhAizQ==}
 
-  '@iconify-json/fa-brands@1.2.2':
-    resolution: {integrity: sha512-Aze0j7l95gmOLdeC4L+8MvvpN3+QmAVk9IuTJN170zYH5I7jS0jGSIMFsf0KE8vGbG8jPpXkmmDq7qQU8Rymnw==}
+  '@iconify-json/fa7-brands@1.2.2':
+    resolution: {integrity: sha512-y6ZBdlLS4v1suB6fuMI5kqSO0B91Y19nlqTz7VfBYu9lI948tbRh+6lU2kNMOlo8I4qgSWX0SEdN7jkhOzI5gA==}
 
   '@iconify-json/mdi@1.2.3':
     resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
@@ -3023,7 +3023,7 @@ snapshots:
 
   '@fontsource/merriweather@5.2.11': {}
 
-  '@iconify-json/fa-brands@1.2.2':
+  '@iconify-json/fa7-brands@1.2.2':
     dependencies:
       '@iconify/types': 2.0.0
 

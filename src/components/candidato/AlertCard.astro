@@ -1,0 +1,50 @@
+---
+import type { AlertaPeriodistica } from "@prisma/client";
+import { Icon } from "astro-icon/components";
+import Heading from "../common/Heading.astro";
+
+interface Props {
+  alerta: AlertaPeriodistica;
+}
+
+const { alerta } = Astro.props;
+
+// Colores según el estado de la alerta
+const statusColors: Record<string, string> = {
+  "Investigación": "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400",
+  "Denuncia": "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400",
+  "Confirmado": "bg-stone-900 text-white dark:bg-white dark:text-stone-900",
+};
+
+const currentStatusColor = statusColors[alerta.estado] || "bg-stone-100 text-stone-600";
+---
+
+<div class="group relative bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-5 hover:border-roof-terracotta-500 transition-all shadow-sm">
+  <div class="flex justify-between items-start mb-3">
+    <span class={`text-[9px] font-black uppercase tracking-widest px-2 py-1 rounded-md ${currentStatusColor}`}>
+      {alerta.estado}
+    </span>
+    <span class="text-[10px] font-bold text-stone-400 uppercase">{alerta.fecha}</span>
+  </div>
+
+  <Heading level="h6" className="font-black text-sm leading-tight mb-2 group-hover:text-roof-terracotta-600 transition-colors">
+    {alerta.titulo}
+  </Heading>
+
+  <p class="text-[11px] text-stone-500 dark:text-stone-400 line-clamp-3 mb-4 italic">
+    "{alerta.resumen}"
+  </p>
+
+  {alerta.adicional_info && (
+    <div class="mb-4 p-2 bg-stone-50 dark:bg-stone-800/50 rounded-lg border border-stone-100 dark:border-stone-700">
+      <p class="text-[10px] text-stone-400 font-medium">Info adicional: <span class="text-stone-600 dark:text-stone-300">{alerta.adicional_info}</span></p>
+    </div>
+  )}
+
+  <div class="flex justify-between items-center mt-auto pt-3 border-t border-stone-100 dark:border-stone-800">
+    <span class="text-[10px] font-black text-stone-400 uppercase tracking-tighter">Fuente: {alerta.medio}</span>
+    <a href={alerta.enlace} target="_blank" class="text-roof-terracotta-600 hover:text-roof-terracotta-700">
+      <Icon name="mdi:open-in-new" class="w-4 h-4" />
+    </a>
+  </div>
+</div>
